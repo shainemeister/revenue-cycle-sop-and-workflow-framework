@@ -39,6 +39,28 @@ The framework is organized into four primary components, each with a distinct ro
 
 Because these components are loosely coupled, development or updates in one area do not require changes in the others.
 
+## Recommended Design Patterns
+
+### SOP + Companion Workflow Pairing
+
+This framework strongly recommends creating a **companion Workflow** for most SOPs. This pairing supports the core philosophy of reducing mental friction and enabling intuitive flow.
+
+- **SOP (Standard Operating Procedure)**: The fuller, authoritative documented version. It includes purpose, scope, roles, regulatory context, quality checks, version history, and detailed procedural guidance. It serves as the complete reference and training resource.
+- **Workflow**: The simplified, visual, quick-reference version optimized for day-to-day use. It focuses on the core step-by-step flow with minimal text, using diagrams and decision points so users can navigate quickly with little cognitive load.
+
+**When to Create a Companion Workflow**
+- The process is used frequently by team members who need fast reference.
+- The SOP contains enough detail that a lighter, visual version would improve usability.
+- There are clear decision points or branching logic that benefit from a visual representation.
+
+**When a Workflow May Not Be Needed**
+- The process is very simple or rarely used.
+- The SOP itself is already concise and primarily used as a reference rather than a daily tool.
+
+When a Workflow exists, the two documents should clearly reference each other in their “Related Documents” sections. The Workflow is considered the **primary day-to-day reference**, while the SOP remains the authoritative source for context, regulatory notes, and troubleshooting.
+
+This pattern directly supports Principle 2 (Intuitive Flow) and Principle 4 (Usability Over Exhaustiveness) from `core-principles.md`.
+
 ## Adaptation Patterns
 
 The modular design supports several common adaptation scenarios:
