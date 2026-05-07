@@ -11,75 +11,81 @@
 
 ## Process Overview
 
-This workflow provides a practical visual reference for back-end Revenue Cycle teams. The Eligibility section has been simplified for better readability while retaining the key real-world distinctions. Use alongside the full Registration Verification & Follow-Up SOP.
+This workflow is split into three focused Visual Process Flows to improve clarity and reduce complexity:
+- **Eligibility**
+- **Coordination of Benefits (COB)**
+- **Authorization**
 
-## Visual Process Flow
+Each section can be referenced independently while still supporting the overall back-end registration follow-up process. Use alongside the full Registration Verification & Follow-Up SOP.
+
+## Visual Process Flow: Eligibility
 
 ```mermaid
 flowchart TD
-    A[Denial / Edit / Work Queue Received] --> B[Review Denial Code<br/>or Remark]
-    B --> C{Is this a<br/>Registration Issue?}
-    C -->|No| D[Handoff to Billing,<br/>Coding or Denials Team]
-    C -->|Yes| E[Identify Root Cause Category]
+    A[Eligibility Issue Identified] --> B{Check Eligibility Type}
     
-    %% === ELIGIBILITY PATH ===
-    E --> F{Eligibility Issue?}
-    F -->|Yes| G[Check Eligibility Type]
+    B --> B1[Patient Active / Coverage Issue]
+    B1 --> B1a[Re-verify Eligibility<br/>Update Registration]
     
-    G --> G1[Patient Active / Coverage Issue]
-    G1 --> G1a[Re-verify Eligibility<br/>Update Registration]
+    B --> B2[Demographic / Registration Error]
+    B2 --> B2a[Correct Demographics<br/>Re-verify Eligibility]
     
-    G --> G2[Demographic / Registration Error]
-    G2 --> G2a[Correct Demographics<br/>Re-verify Eligibility]
+    B --> B3[Newborn Scenario<br/>(30-day Grace Period)]
+    B3 --> B3a[Send Notification Letter<br/>(Regulatory / Courtesy)]
     
-    G --> G3[Newborn Scenario<br/>(30-day Grace Period)]
-    G3 --> G3a[Send Notification Letter<br/>(Regulatory / Courtesy)]
+    B --> B4[Patient Involvement Needed]
+    B4 --> B4a[Send Letter to Patient/Guarantor<br/>Move to Self-Pay<br/>(Exception: Medicaid/Medicare)]
     
-    G --> G4[Patient Involvement Needed]
-    G4 --> G4a[Send Letter to Patient/Guarantor<br/>Move to Self-Pay<br/>(Exception: Medicaid/Medicare)]
+    B1a --> C[Document Changes<br/>& Rationale]
+    B2a --> C
+    B3a --> C
+    B4a --> C
     
-    %% === COB PATH ===
-    F -->|No| H{COB Issue?}
-    H -->|Yes| I[COB Follow-up Path]
-    I --> I1[Update Registration<br/>and/or Fix Filing Order]
-    I --> I2[Contact Payer<br/>to Verify / Reprocess]
-    I --> I3[Send Patient/Guarantor<br/>Letter for COB Update]
+    C --> D[Resubmit Claim<br/>or Continue Follow-up]
+```
+
+## Visual Process Flow: Coordination of Benefits (COB)
+
+```mermaid
+flowchart TD
+    A[COB Issue Identified] --> B[COB Follow-up Path]
     
-    %% === AUTHORIZATION PATH ===
-    H -->|No| J{Authorization Issue?}
-    J -->|Yes| K[Verify / Obtain<br/>or Update Authorization]
-    J -->|No| L[Research & Correct<br/>Other Registration Data]
+    B --> B1[Update Registration<br/>and/or Fix Filing Order]
+    B --> B2[Contact Payer<br/>to Verify / Reprocess Claim]
+    B --> B3[Send Patient/Guarantor<br/>Letter for COB Update]
     
-    %% Convergence to Document
-    G1a --> M[Document Changes<br/>& Rationale]
-    G2a --> M
-    G3a --> M
-    G4a --> M
-    I1 --> M
-    I2 --> M
-    I3 --> M
-    K --> M
-    L --> M
+    B1 --> C[Document Changes<br/>& Rationale]
+    B2 --> C
+    B3 --> C
     
-    M --> N[Resubmit Claim<br/>or Continue Follow-up]
-    N --> O{Recurring Issue<br/>or Trend?}
-    O -->|Yes| P[Report to Supervisor<br/>/ Quality Team]
-    O -->|No| Q[Monitor for Recurrence]
-    P --> Q
-    D --> R[End]
-    Q --> R
+    C --> D[Resubmit Claim<br/>or Continue Follow-up]
+```
+
+## Visual Process Flow: Authorization
+
+```mermaid
+flowchart TD
+    A[Authorization Issue Identified] --> B{Authorization Action Needed?}
+    
+    B -->|Yes| B1[Verify / Obtain<br/>or Update Authorization]
+    B -->|No| B2[Research & Correct<br/>Other Registration Data]
+    
+    B1 --> C[Document Changes<br/>& Rationale]
+    B2 --> C
+    
+    C --> D[Resubmit Claim<br/>or Continue Follow-up]
 ```
 
 **Key Decision Points**  
-- Is this a Registration Issue? → Triage for back-end ownership.  
-- Under Eligibility: Four distinct scenarios with dedicated resolution paths.  
-- COB and Authorization remain separate categories.  
-- Recurring issues → Escalate for trend analysis.
+- Under **Eligibility**: Four distinct scenarios (Patient Active/Coverage, Demographic Error, Newborn Grace Period, Patient Involvement).  
+- Under **COB**: Three resolution outcomes based on what action is required.  
+- Under **Authorization**: Clear yes/no decision on whether authorization work is needed.  
+- All paths converge on documentation and resubmission/follow-up.
 
 **Notes**  
-- Eligibility path covers: Patient active/coverage, demographic errors, newborn 30-day grace period, and patient involvement decisions.  
-- COB path shows three common outcomes.  
-- Diagram prioritizes clarity of categories while remaining usable as a quick reference.
+- The workflow is now split into three focused diagrams for better readability and maintainability.  
+- Each category (Eligibility, COB, Authorization) can be reviewed independently.  
+- This structure reduces overlap and complexity while preserving real-world decision points.
 
 ## Parent SOP
 
@@ -87,12 +93,5 @@ flowchart TD
 
 ## Version History
 
-| Version | Date       | Changes                                                                 | Author          |
-|---------|------------|-------------------------------------------------------------------------|-----------------|
-| 1.0     | May 6, 2026| Initial front-end focused version created                               | Shaine Meister  |
-| 1.1     | May 6, 2026| Revised to align with back-end SOP focus                                | Shaine Meister  |
-| 1.2     | May 6, 2026| Denial-driven flow with triage and root cause                           | Shaine Meister  |
-| 1.3     | May 6, 2026| Added COB variability with three resolution outcomes                    | Shaine Meister  |
-| 1.4     | May 6, 2026| Separated Eligibility, COB, and Authorization into distinct categories  | Shaine Meister  |
-| 1.5     | May 6, 2026| Expanded Eligibility with granular scenarios                            | Shaine Meister  |
-| 1.6     | May 6, 2026| Fixed Mermaid syntax error in Visual Process Flow (line 11 area). Restructured Eligibility paths with separate lines for clarity and reduced overlap. Version kept at 1.6 per request. | Shaine Meister  |
+| Version | Date       | Changes                                                                 | Author          |\n|---------|------------|-------------------------------------------------------------------------|-----------------|
+| 1.0     | May 6, 2026| Initial front-end focused version created                               | Shaine Meister  |\n| 1.1     | May 6, 2026| Revised to align with back-end SOP focus                                | Shaine Meister  |\n| 1.2     | May 6, 2026| Denial-driven flow with triage and root cause                           | Shaine Meister  |\n| 1.3     | May 6, 2026| Added COB variability with three resolution outcomes                    | Shaine Meister  |\n| 1.4     | May 6, 2026| Separated Eligibility, COB, and Authorization into distinct categories  | Shaine Meister  |\n| 1.5     | May 6, 2026| Expanded Eligibility with granular scenarios                            | Shaine Meister  |\n| 1.6     | May 6, 2026| Restructured into three separate Visual Process Flow sections (Eligibility, COB, Authorization) to fix the layout issues and reduce complexity. Version maintained at 1.6 per request. | Shaine Meister  |
