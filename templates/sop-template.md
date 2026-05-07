@@ -11,7 +11,7 @@
 
 ## Purpose
 
-[One or two sentences explaining why this SOP exists and the business/regulatory outcome it supports.]
+Explain the business or regulatory outcome this SOP supports. Keep this concise (1–2 sentences).
 
 ## Scope
 
@@ -35,7 +35,7 @@
 
 ## Step-by-Step Procedure
 
-Use clear, numbered steps. Keep language concise. Include decision points where relevant.
+Use clear, numbered steps. Keep language concise and focused on the essential action. Include decision points where relevant. Avoid unnecessary detail — the goal is predictable navigation with minimal mental friction.
 
 1. **Step Name**  
    - Action description (keep brief).  
@@ -52,6 +52,14 @@ Use clear, numbered steps. Keep language concise. Include decision points where 
 - [Key validation step or check]
 - [Common error or misunderstanding to avoid]
 - [How to confirm the process was followed correctly]
+
+## Optimization Notes (Optional)
+
+- [How this SOP was designed to reduce mental friction and support intuitive flow]
+- [Any text reduction or simplification choices made during development]
+- [How this SOP supports predictable navigation for daily use]
+
+> See `optimization-standards.md` for the optimization approach used across this framework.
 
 ## Regulatory / Compliance Notes
 
