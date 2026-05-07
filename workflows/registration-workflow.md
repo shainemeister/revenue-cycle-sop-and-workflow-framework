@@ -1,6 +1,6 @@
 # Registration Verification & Follow-Up Workflow (Back-End)
 
-**Version**: 1.3  
+**Version**: 1.4  
 **Last Updated**: May 6, 2026  
 **Owner**: Shaine Meister  
 **Status**: Draft
@@ -11,55 +11,64 @@
 
 ## Process Overview
 
-This workflow provides a dynamic visual quick-reference for back-end Revenue Cycle teams handling real-world registration issues triggered by claim denials, billing edits, and work queue items. It emphasizes Coordination of Benefits (COB) variability and clear resolution paths. Use this alongside the full Registration Verification & Follow-Up SOP.
+This workflow provides a clear, simplified visual reference for back-end Revenue Cycle teams. It separates **Eligibility**, **Coordination of Benefits (COB)**, and **Authorization** as distinct issue categories with their own resolution paths. Use this alongside the full Registration Verification & Follow-Up SOP.
 
 ## Visual Process Flow
 
 ```mermaid
 flowchart TD
-    A[Registration Denial / Edit Received] --> B[Review Payer Denial Code<br/>or Remark]
+    A[Denial / Edit / Work Queue Received] --> B[Review Denial Code<br/>or Remark]
     B --> C{Is this a<br/>Registration Issue?}
     C -->|No| D[Handoff to Billing,<br/>Coding or Denials Team]
-    C -->|Yes| E[Identify Root Cause]
-    E --> F{Eligibility Issue<br/>or COB Issue?}
-    F -->|Yes| G[COB / Eligibility<br/>Follow-up Path]
-    F -->|No| H{Authorization Issue?}
-    G --> G1[Update Registration<br/>and/or Fix Filing Order]
-    G --> G2[Contact Payer<br/>to Verify / Reprocess Claim]
-    G --> G3[Send Patient/Guarantor<br/>Letter for COB Update]
-    H -->|Yes| J[Verify / Obtain<br/>or Update Authorization]
-    H -->|No| I[Research & Correct<br/>Registration Data]
-    I --> K[Document Changes<br/>& Rationale]
-    J --> K
-    G1 --> K
-    G2 --> K
-    G3 --> K
-    K --> L[Resubmit Claim<br/>or Continue Follow-up]
-    L --> M{Recurring Issue<br/>or Trend?}
-    M -->|Yes| N[Report to Supervisor<br/>/ Quality Team]
-    M -->|No| O[Monitor for Recurrence]
-    N --> O
-    D --> P[End]
-    O --> P
+    C -->|Yes| E[Identify Root Cause Category]
+    
+    E --> F{Eligibility Issue?}
+    F -->|Yes| G[Re-verify Eligibility<br/>Update Registration]
+    F -->|No| H{COB Issue?}
+    
+    H -->|Yes| I[COB Follow-up Path]
+    H -->|No| J{Authorization Issue?}
+    
+    I --> I1[Update Registration<br/>and/or Fix Filing Order]
+    I --> I2[Contact Payer<br/>to Verify / Reprocess]
+    I --> I3[Send Patient/Guarantor<br/>Letter for COB Update]
+    
+    J -->|Yes| K[Verify / Obtain<br/>or Update Authorization]
+    J -->|No| L[Research & Correct<br/>Other Registration Data]
+    
+    G --> M[Document Changes<br/>& Rationale]
+    I1 --> M
+    I2 --> M
+    I3 --> M
+    K --> M
+    L --> M
+    
+    M --> N[Resubmit Claim<br/>or Continue Follow-up]
+    N --> O{Recurring Issue<br/>or Trend?}
+    O -->|Yes| P[Report to Supervisor<br/>/ Quality Team]
+    O -->|No| Q[Monitor for Recurrence]
+    P --> Q
+    D --> R[End]
+    Q --> R
 ```
 
 **Key Decision Points**  
-- After reviewing denial/edit: Is this primarily a registration issue? → Guides handoff vs. in-house work.  
-- Eligibility or COB issue? → Enter dedicated COB/Eligibility follow-up path with three possible outcomes.  
-- Authorization issue? → Resolve or escalate.  
-- Recurring issues or high-impact cases? → Escalate and report trends for front-end improvement.
+- After reviewing denial/edit: Is this primarily a registration issue?  
+- Root cause category: Separate paths for **Eligibility**, **COB**, and **Authorization**.  
+- COB path has three distinct resolution outcomes based on what action is needed.  
+- Recurring issues → Escalate and report for front-end improvement.
 
 **Notes**  
-- The COB / Eligibility path now shows three common real-world resolution outcomes:  
-  1. Update registration / fix filing order (internal correction)  
-  2. Contact payer to verify or request reprocessing  
-  3. Send patient/guarantor letter when COB information needs to be updated by the patient  
-- Prioritize based on timely filing deadlines and dollar impact.  
-- Refer to the full SOP for detailed research steps and documentation standards.
+- **Eligibility**, **COB**, and **Authorization** are now treated as three distinct categories with dedicated resolution paths.  
+- The COB path clearly shows the three common real-world outcomes:  
+  1. Internal update to registration / filing order  
+  2. Contact payer for verification or reprocessing  
+  3. Send letter to patient/guarantor when they need to update COB information  
+- Keep the diagram simple while reflecting real A/R decision-making.
 
 ## Parent SOP
 
-- [registration.md](../sops/registration.md) — Full procedures, roles, quality checks, optimization guidance, and version history for back-end registration follow-up.
+- [registration.md](../sops/registration.md) — Full procedures, roles, quality checks, optimization guidance, and version history.
 
 ## Version History
 
@@ -67,5 +76,6 @@ flowchart TD
 |---------|------------|-------------------------------------------------------------------------|-----------------|
 | 1.0     | May 6, 2026| Initial front-end focused version created                               | Shaine Meister  |
 | 1.1     | May 6, 2026| Revised to align with back-end SOP focus                                | Shaine Meister  |
-| 1.2     | May 6, 2026| Updated to denial-driven flow with triage and root cause branches       | Shaine Meister  |
-| 1.3     | May 6, 2026| Added explicit COB / Eligibility variability with three resolution outcomes (update registration/filing order, contact payer, send patient letter). Improved visual clarity and decision points while maintaining simplicity. | Shaine Meister  |
+| 1.2     | May 6, 2026| Denial-driven flow with triage and root cause                           | Shaine Meister  |
+| 1.3     | May 6, 2026| Added COB variability with three resolution outcomes                    | Shaine Meister  |
+| 1.4     | May 6, 2026| Separated Eligibility, COB, and Authorization into three distinct category paths for clearer visual flow and decision-making. | Shaine Meister  |
