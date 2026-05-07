@@ -94,7 +94,7 @@ flowchart TD
     SelfPay --> Update
     WriteOff --> Update
     
-    Update --> End([Account Resolution Complete])
+    Update --> End["Account Resolution Complete"]
 ```
 
 **Key Decision Points**  
@@ -105,7 +105,7 @@ flowchart TD
 
 **Notes**  
 - Eligibility diagram now correctly scopes the 3-contact attempt rule to Medicare/Medicaid payers only.  
-- Authorization diagram updated: "Update account and close follow-up" changed to "Document & Apply Account Note". Removed root cause feedback loop and final workflow complete node per request.  
+- Authorization diagram updated for consistent syntax with the rest of the file (quoted node labels).  
 - Each category remains independently usable.
 
 ## Parent SOP
