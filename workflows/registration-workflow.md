@@ -24,17 +24,17 @@ Each section can be referenced independently while still supporting the overall 
 flowchart TD
     A[Eligibility Issue Identified] --> B{Check Eligibility Type}
     
-    B -->|Patient Active / Coverage Issue| B1[Re-verify Eligibility<br/>Update Registration]
-    B -->|Demographic / Registration Error| B2[Correct Demographics<br/>Re-verify Eligibility]
-    B -->|Newborn Scenario - 30-day Grace Period| B3[Send Notification Letter<br/>(Regulatory / Courtesy)]
-    B -->|Patient Involvement Needed| B4[Send Letter to Patient/Guarantor<br/>Move to Self-Pay<br/>(Exception: Medicaid/Medicare)]
+    B -->|Patient Active / Coverage Issue| B1["Re-verify Eligibility<br>Update Registration"]
+    B -->|Demographic / Registration Error| B2["Correct Demographics<br>Re-verify Eligibility"]
+    B -->|Newborn Scenario - 30-day Grace Period| B3["Send Notification Letter<br>(Regulatory / Courtesy)"]
+    B -->|Patient Involvement Needed| B4["Send Letter to Patient/Guarantor<br>Move to Self-Pay<br>(Exception: Medicaid/Medicare)"]
     
-    B1 --> C[Document Changes<br/>& Rationale]
+    B1 --> C["Document Changes<br>& Rationale"]
     B2 --> C
     B3 --> C
     B4 --> C
     
-    C --> D[Resubmit Claim<br/>or Continue Follow-up]
+    C --> D["Resubmit Claim<br>or Continue Follow-up"]
 ```
 
 ## Visual Process Flow: Coordination of Benefits (COB)
@@ -43,15 +43,15 @@ flowchart TD
 flowchart TD
     A[COB Issue Identified] --> B[COB Follow-up Path]
     
-    B --> B1[Update Registration<br/>and/or Fix Filing Order]
-    B --> B2[Contact Payer<br/>to Verify / Reprocess Claim]
-    B --> B3[Send Patient/Guarantor<br/>Letter for COB Update]
+    B --> B1["Update Registration<br>and/or Fix Filing Order"]
+    B --> B2["Contact Payer<br>to Verify / Reprocess Claim"]
+    B --> B3["Send Patient/Guarantor<br>Letter for COB Update"]
     
-    B1 --> C[Document Changes<br/>& Rationale]
+    B1 --> C["Document Changes<br>& Rationale"]
     B2 --> C
     B3 --> C
     
-    C --> D[Resubmit Claim<br/>or Continue Follow-up]
+    C --> D["Resubmit Claim<br>or Continue Follow-up"]
 ```
 
 ## Visual Process Flow: Authorization
@@ -60,13 +60,13 @@ flowchart TD
 flowchart TD
     A[Authorization Issue Identified] --> B{Authorization Action Needed?}
     
-    B -->|Yes| B1[Verify / Obtain<br/>or Update Authorization]
-    B -->|No| B2[Research & Correct<br/>Other Registration Data]
+    B -->|Yes| B1["Verify / Obtain<br>or Update Authorization"]
+    B -->|No| B2["Research & Correct<br>Other Registration Data"]
     
-    B1 --> C[Document Changes<br/>& Rationale]
+    B1 --> C["Document Changes<br>& Rationale"]
     B2 --> C
     
-    C --> D[Resubmit Claim<br/>or Continue Follow-up]
+    C --> D["Resubmit Claim<br>or Continue Follow-up"]
 ```
 
 **Key Decision Points**  
@@ -87,4 +87,4 @@ flowchart TD
 ## Version History
 
 | Version | Date       | Changes                                                                 | Author          |\n|---------|------------|-------------------------------------------------------------------------|-----------------|
-| 1.0     | May 6, 2026| Initial front-end focused version created                               | Shaine Meister  |\n| 1.1     | May 6, 2026| Revised to align with back-end SOP focus                                | Shaine Meister  |\n| 1.2     | May 6, 2026| Denial-driven flow with triage and root cause                           | Shaine Meister  |\n| 1.3     | May 6, 2026| Added COB variability with three resolution outcomes                    | Shaine Meister  |\n| 1.4     | May 6, 2026| Separated Eligibility, COB, and Authorization into distinct categories  | Shaine Meister  |\n| 1.5     | May 6, 2026| Expanded Eligibility with granular scenarios                            | Shaine Meister  |\n| 1.6     | May 6, 2026| Restructured into three separate Visual Process Flow sections (Eligibility, COB, Authorization) to fix layout issues and reduce complexity. Fixed Mermaid syntax error in Eligibility diagram. Version maintained at 1.6 per request. | Shaine Meister  |
+| 1.0     | May 6, 2026| Initial front-end focused version created                               | Shaine Meister  |\n| 1.1     | May 6, 2026| Revised to align with back-end SOP focus                                | Shaine Meister  |\n| 1.2     | May 6, 2026| Denial-driven flow with triage and root cause                           | Shaine Meister  |\n| 1.3     | May 6, 2026| Added COB variability with three resolution outcomes                    | Shaine Meister  |\n| 1.4     | May 6, 2026| Separated Eligibility, COB, and Authorization into distinct categories  | Shaine Meister  |\n| 1.5     | May 6, 2026| Expanded Eligibility with granular scenarios                            | Shaine Meister  |\n| 1.6     | May 6, 2026| Restructured into three separate Visual Process Flow sections. Fixed Mermaid parsing error by properly quoting node labels containing special characters and line breaks. Version maintained at 1.6 per request. | Shaine Meister  |
