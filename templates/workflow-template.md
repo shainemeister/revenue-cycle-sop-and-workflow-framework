@@ -11,9 +11,11 @@
 
 ## Process Overview
 
-[2–4 sentence description of the end-to-end process, its purpose, and key outcomes. Keep this concise.]
+Keep this to 2–4 sentences maximum. Focus on the end-to-end flow, its purpose, and key outcomes. Be concise.
 
 ## Visual Process Flow
+
+Keep the diagram simple and focused on the main flow. Avoid unnecessary complexity or excessive branching unless essential for understanding.
 
 ```mermaid
 flowchart TD
