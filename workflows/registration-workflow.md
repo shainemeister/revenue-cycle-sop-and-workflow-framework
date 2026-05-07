@@ -1,6 +1,6 @@
-# Registration Workflow
+# Registration Verification & Follow-Up Workflow (Back-End)
 
-**Version**: 1.0  
+**Version**: 1.1  
 **Last Updated**: May 6, 2026  
 **Owner**: Shaine Meister  
 **Status**: Draft
@@ -11,45 +11,43 @@
 
 ## Process Overview
 
-This workflow provides a simplified, visual quick-reference for the day-to-day Patient Registration process. It focuses on the core flow from patient arrival through completion and handoff, highlighting the most common decision points and escalation paths. Use this as your primary day-to-day tool. Refer to the full Registration SOP for detailed procedures, regulatory context, quality checks, and troubleshooting.
+This workflow provides a simplified visual quick-reference for back-end Revenue Cycle teams performing **post-service registration verification and follow-up**. It focuses on work queue review, discrepancy identification, eligibility re-verification, research & correction, authorization follow-up, documentation, and handoff to billing. Use this as your primary day-to-day tool. Refer to the full Registration Verification & Follow-Up SOP for detailed procedures, regulatory context, quality checks, and troubleshooting.
 
 ## Visual Process Flow
 
-Keep the diagram simple and focused on the main flow. Avoid unnecessary complexity or excessive branching unless essential for understanding.
-
 ```mermaid
 flowchart TD
-    A[Patient Arrival /<br/>Appointment Check-in] --> B[Verify Identity<br/>Using 2 Identifiers]
-    B --> C[Collect / Update<br/>Demographics]
-    C --> D[Enter Insurance &<br/>Check Eligibility]
-    D --> E{Eligibility<br/>Successful?}
-    E -->|Yes| F[Obtain Consents &<br/>Authorizations]
-    E -->|No / Issues| G[Escalate to<br/>Financial Counselor]
-    F --> H[Generate Patient<br/>Responsibility Estimate]
-    H --> I{Financial Hardship<br/>or Assistance Needed?}
-    I -->|Yes| G
-    I -->|No| J[Collect Payment or<br/>Arrange Payment Plan]
-    G --> K[Complete Registration<br/>& Document Notes]
-    J --> K
-    K --> L[Provide Documents &<br/>Direct to Next Area]
-    L --> M[End - Patient<br/>to Clinical Area]
+    A[Review Work Queues<br/>Edits & Denials] --> B[Analyze Discrepancies]
+    B --> C[Re-verify Eligibility<br/>Post-Service]
+    C --> D{Eligibility<br/>Issues?}
+    D -->|Yes| E[Research & Correct<br/>Demographics / Insurance]
+    D -->|No| F[Check Authorization<br/>Status]
+    E --> F
+    F --> G{Authorization<br/>Issues?}
+    G -->|Yes| H[Obtain / Update<br/>Authorization or Escalate]
+    G -->|No| I[Document Changes<br/>& Update Account]
+    H --> I
+    I --> J[Release to Billing<br/>or Escalate]
+    J --> K[Monitor Trends &<br/>Provide Feedback]
 ```
 
 **Key Decision Points**  
-- Eligibility check fails or returns issues → Escalate early to Financial Counselor to prevent downstream denials and rework.  
-- Patient expresses financial hardship or requests assistance → Immediate escalation to Financial Counselor.  
-- Emergency Department registrations → Maintain EMTALA compliance (medical screening exam offered regardless of payment ability) throughout the process.
+- Eligibility issues or coverage gaps identified after re-verification → Research and correct information before releasing the account.  
+- Authorization problems (missing, expired, or denied) → Attempt resolution or escalate promptly to protect timely filing and revenue.  
+- Recurring issues, high-dollar impact, or complex cases → Escalate to supervisor and document for trend analysis and front-end feedback.
 
 **Notes**  
-- This diagram represents the primary happy path with the most frequent branches.  
-- The full SOP contains the complete step-by-step details, regulatory notes, and optimization guidance.
+- This diagram represents the primary back-end flow with the most common branches.  
+- Prioritize work based on timely filing deadlines and financial impact.  
+- The full SOP contains detailed research steps, documentation standards, and regulatory considerations.
 
 ## Parent SOP
 
-- [registration.md](../sops/registration.md) — The authoritative documented source containing full procedures, roles, regulatory context, quality checks, and version history.
+- [registration.md](../sops/registration.md) — The authoritative source with full step-by-step procedures, roles & responsibilities, quality checks, optimization guidance, and version history.
 
 ## Version History
 
-| Version | Date       | Changes                              | Author          |
-|---------|------------|--------------------------------------|-----------------|
-| 1.0     | May 6, 2026| Initial companion workflow created as model for the framework | Shaine Meister  |
+| Version | Date       | Changes                                              | Author          |
+|---------|------------|------------------------------------------------------|-----------------|
+| 1.0     | May 6, 2026| Initial front-end focused version created            | Shaine Meister  |
+| 1.1     | May 6, 2026| Revised to align with back-end SOP: post-service work queue management, eligibility re-verification, correction, authorization follow-up, and trend monitoring | Shaine Meister  |
