@@ -2,7 +2,7 @@
 
 **Status**: In Development  
 **Last Updated**: May 2026  
-**Owner**: Shaine Meister
+**Owner**: Shaine Meister  
 **Scope**: This framework focuses on revenue cycle management processes and is designed to be adaptable across different healthcare organizations and systems.
 
 ## Overview
@@ -43,11 +43,11 @@ This project is organized into four main areas:
 
 ## Current Focus Areas
 
-Initial development of this framework is centered on establishing a strong foundational structure across the following areas:
+Initial development of this framework is centered on establishing a strong foundational structure. The four primary components are being developed in parallel:
 
-- **Framework** — Defining the core principles, modular design approach, regulatory foundations, and optimization standards that guide all SOP and workflow development.
-- **Templates** — Creating reusable templates for SOPs and workflows to ensure consistency and efficiency when building new documentation.
-- **SOPs** — Developing clear, standardized operating procedures for key revenue cycle functions.
+- **Framework** — Defining the guiding principles, modular design approach, regulatory foundations, and optimization standards.
+- **Templates** — Creating standardized templates to ensure consistency when building new SOPs and workflows.
+- **SOPs** — Developing clear, well-structured operating procedures for key revenue cycle functions.
 - **Workflows** — Designing visual process flows and decision frameworks that support the SOPs.
 
 Specific SOPs and workflows under active development, along with their current status, are tracked in the `plan.md` file. This separation keeps the high-level structure clear while allowing detailed progress tracking in one central location.
@@ -59,8 +59,19 @@ Specific SOPs and workflows under active development, along with their current s
 3. Follow the established format and structure when developing content in the `sops/` and `workflows/` folders.
 4. Maintain version history and clear documentation so processes remain understandable and maintainable over time.
 
+## Collaboration & Maintenance
+
+This framework is being developed collaboratively. High-level direction, feedback, and new content requests are managed through direct communication and issues. All documentation follows the standards defined in this repository to ensure consistency and long-term usability.
+
+Version history is maintained through Git. When updating existing documents, changes should be clearly described and dated.
+
 ## Status & Roadmap
 
-This framework is currently in active development. The initial phase focuses on establishing the core framework principles and building out foundational SOPs for the areas listed above.
+This framework is currently in the foundational development phase. The initial focus is on building out the core framework principles, establishing reusable templates, and developing initial SOPs and workflows for key revenue cycle functions.
 
-Future phases may include expansion into additional revenue cycle functions and refinement of optimization standards.
+Future phases may include:
+- Expansion into additional revenue cycle areas
+- Refinement of optimization and measurement standards
+- Development of supporting tools and examples
+
+Progress on individual SOPs and workflows is tracked in the `plan.md` file.
