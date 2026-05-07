@@ -67,13 +67,15 @@ To maintain the benefits of modularity:
 
 > **Deeper guidance**: See `core-principles.md` (Principle 5 – Modularity & Adaptability) for the philosophical foundation that underpins these implementation guidelines.
 
+- **Apply optimization practices modularly** — When making improvements related to efficiency, flow, or continuous improvement, follow the guidance in `optimization-standards.md` and apply changes at the appropriate modular level (template, SOP, or workflow) to avoid unnecessary ripple effects across the framework.
+
 ## Relationship to Other Framework Documents
 
 This document provides the **implementation mechanics** for modularity and adaptability.
 
 - `core-principles.md` — Defines the philosophical foundation, particularly Principle 5 (Modularity & Adaptability). This document explains *how* that principle is put into practice through structure, components, and adaptation patterns.
 - `regulatory-foundations.md` — Describes how regulatory and compliance requirements are integrated into the framework in a modular way, allowing compliance elements to be adapted without affecting other components.
-- `optimization-standards.md` — Explains how continuous improvement, measurement, and efficiency practices can be applied modularly across different components and at different levels of the framework.
+- `optimization-standards.md` — Explains how continuous improvement, measurement, and efficiency practices (including reducing mental friction and text volume) can be applied modularly across different components and at different levels of the framework.
 
 ## Purpose of This Document
 
