@@ -1,6 +1,6 @@
 # Registration Verification & Follow-Up (Back-End)
 
-**Version**: 1.1  
+**Version**: 1.2  
 **Last Updated**: May 6, 2026  
 **Owner**: Shaine Meister  
 **Status**: Draft
@@ -33,8 +33,7 @@ To systematically review, verify, correct, and update patient registration infor
 
 | Role                              | Responsibilities                                                                 |
 |-----------------------------------|----------------------------------------------------------------------------------|
-| Revenue Cycle Registration Specialist | Review work queues, verify/correct registration data, resolve edits and authorization issues |
-| Registration Quality / Denial Prevention Analyst | Analyze trends, perform quality audits, identify systemic issues, provide feedback to front-end teams |
+| Revenue Cycle Registration Specialist | Review work queues, verify/correct registration data, resolve edits and authorization issues |n| Registration Quality / Denial Prevention Analyst | Analyze trends, perform quality audits, identify systemic issues, provide feedback to front-end teams |
 | Billing Coordinator / Specialist  | Flag registration-related claim edits and coordinate resolution with Registration team |
 | Revenue Cycle Supervisor          | Oversee work queue management, escalation handling, and process improvement initiatives |
 
@@ -47,83 +46,86 @@ To systematically review, verify, correct, and update patient registration infor
 
 ## Step-by-Step Procedure
 
-Use clear, numbered steps. Keep language concise and focused on the essential action. Include decision points where relevant. This process occurs **after** the patient encounter and point-of-service registration.
+Use clear, numbered steps. Keep language concise and focused on the essential action. Include decision points where relevant. This process occurs **after** the patient encounter and point-of-service registration, typically triggered by claim denials, billing edits, or work queue items.
 
-1. **Review Registration Work Queues and Edits**  
-   - Access and prioritize registration-related work queues, claim edits, and denial reports flagged for registration issues.  
-   - Sort by aging, dollar amount, or denial reason as appropriate.  
-   - **Decision point**: High-volume or high-dollar items → prioritize; recurring issues → flag for trend analysis (Step 8).  
+1. **Triage Incoming Denial, Edit, or Work Queue Item**  
+   - Review the denial code, edit reason, or work queue item.  
+   - Identify whether the issue appears registration-related (common examples: eligibility issues, subscriber not found, invalid insurance, demographic mismatches, missing guarantor, authorization problems).  
+   - **Decision point**: Is this primarily a registration issue? → If No, hand off to Billing, Coding, or Denials Management team. If Yes, proceed to analysis.  
 
-2. **Identify and Analyze Discrepancies**  
-   - Review claim scrubber messages, eligibility responses, and denial codes related to demographics, insurance, guarantor, or authorization.  
-   - Compare current account information against source documents (insurance cards, prior accounts, patient statements, payer portals).  
+2. **Analyze Root Cause and Denial Code**  
+   - Examine the specific denial code and accompanying remarks.  
+   - Determine the likely root cause category (Eligibility, Demographic/Guarantor error, Authorization/Referral issue, Subscriber mismatch, etc.).  
+   - Pull the original registration information and compare against current payer data or claim details.  
 
-3. **Perform Post-Service Eligibility Re-Verification**  
-   - Re-run eligibility and benefits verification for the date of service.  
-   - Confirm coverage was active, subscriber information is correct, and benefits align with the services rendered.  
-   - **Decision point**: Eligibility issues or coverage gaps identified → proceed to research and correction (Step 4) and document impact on claim.  
+3. **Research Registration Data**  
+   - Investigate using multiple sources: original insurance card/registration documents, prior accounts, payer portals, patient contact (if appropriate), and third-party databases.  
+   - Verify current vs. date-of-service information.  
 
-4. **Research and Correct Registration Information**  
-   - Investigate and update inaccurate or incomplete demographics, guarantor details, subscriber ID, group number, or relationship to insured.  
-   - Use multiple sources (patient contact, payer portals, prior encounters, third-party databases) as needed.  
-   - Make corrections in the registration system with clear audit trail notes.  
+4. **Perform Post-Service Eligibility Re-Verification**  
+   - Re-run eligibility and benefits verification for the exact date of service.  
+   - Confirm coverage status, subscriber details, and benefit alignment at the time of service.  
+   - **Decision point**: Eligibility issues confirmed → proceed to correction (Step 5). If no eligibility issue found, re-evaluate if root cause is elsewhere (e.g., authorization).  
 
-5. **Address Authorization and Referral Issues**  
-   - Verify authorization status for services rendered.  
-   - Obtain retro-authorizations or referrals when possible and permitted by payer.  
-   - Update authorization fields and attach supporting documentation.  
-   - **Decision point**: Authorization cannot be obtained or is denied → escalate to supervisor or denial management team; document thoroughly for appeal potential.  
+5. **Correct Registration Information**  
+   - Update inaccurate or incomplete fields (demographics, guarantor, subscriber ID, group number, relationship to insured, etc.).  
+   - Apply corrections in the system with clear, detailed audit notes explaining what was changed and the source used.  
 
-6. **Update Account and Document All Changes**  
-   - Apply all corrections to the patient account.  
-   - Add detailed notes explaining what was changed, why, and any supporting research.  
-   - Flag the account for re-scrubbing or re-submission if it was previously held or denied.  
+6. **Address Related Authorization or Referral Issues**  
+   - Verify authorization status for the services rendered.  
+   - Attempt to obtain retro-authorization or update authorization information when permitted by payer policy.  
+   - Attach supporting documentation.  
+   - **Decision point**: Authorization cannot be resolved → escalate to supervisor or Denials Management for appeal consideration.  
 
-7. **Handoff or Escalate as Needed**  
-   - Release corrected accounts back to billing/claims workflow.  
-   - Escalate complex cases (e.g., coverage disputes, large dollar impact, recurring payer issues) to supervisor or specialized team.  
-   - Communicate systemic front-end issues to Registration Supervisor or Quality team for training/ process improvement.  
+7. **Document All Actions and Rationale**  
+   - Record detailed notes on the account: what was researched, what was corrected, why, and any supporting evidence.  
+   - Flag the account for re-scrubbing or re-submission.  
 
-8. **Monitor Trends and Drive Improvement**  
-   - Track recurring registration error types, payers, or front-end locations.  
-   - Summarize findings and provide actionable feedback to front-end teams or leadership.  
-   - Recommend updates to front-end processes, training, or system edits when patterns emerge.
+8. **Release for Reprocessing or Handoff**  
+   - Release corrected accounts back into the billing/claims workflow for reprocessing.  
+   - For complex or high-impact cases, prepare summary for Denials Management or Appeals team.  
+   - Communicate systemic front-end issues to the appropriate supervisor or Quality team.  
+
+9. **Monitor Trends and Drive Continuous Improvement**  
+   - Track recurring registration error types, specific payers, or originating locations/departments.  
+   - Summarize findings periodically and provide actionable feedback to front-end Registration teams and leadership.  
+   - Recommend process, training, or system enhancements to reduce future occurrences.
 
 **Notes / Tips** (optional)  
-- Always document the "before" state and the source used for corrections to maintain a clear audit trail.  
-- Prioritize accounts based on timely filing deadlines and dollar impact.  
-- When contacting patients or payers, use compliant scripting and document all outreach attempts.
+- Always document the "before" state and the source of corrections to maintain a strong audit trail.  
+- Prioritize work by timely filing deadlines and financial impact.  
+- Use compliant patient and payer communication scripts when outreach is required.
 
 ## Quality Checks & Common Pitfalls
 
-- Verify that corrections align with the actual date of service and services rendered.  
-- Double-check subscriber vs. patient relationship and policy numbers after updates.  
-- Common pitfall: Making changes without sufficient documentation → creates audit risk and confusion for downstream teams.  
-- Common pitfall: Failing to re-verify eligibility after corrections → claim may still deny.  
-- Common pitfall: Not escalating recurring issues → same errors continue to generate work queue volume.
+- Always verify that corrections align with the actual date of service and services billed.  
+- Double-check subscriber vs. patient relationship and policy numbers after any update.  
+- Common pitfall: Making corrections without sufficient documentation or source citation → audit risk and downstream confusion.  
+- Common pitfall: Failing to re-verify eligibility after corrections → claim may deny again on re-submission.  
+- Common pitfall: Treating symptoms instead of root cause → recurring work queue volume from the same front-end issues.
 
 ## Optimization Notes (Optional)
 
-- Designed for predictable navigation: clear sequencing from queue review through research, correction, and handoff.  
-- Decision points and escalation paths are explicit to reduce hesitation and rework.  
-- Text is minimized while preserving necessary regulatory and documentation standards.  
-- Supports back-end workflow efficiency by focusing on high-impact registration issues that affect clean claim rates.
+- Designed around real-world A/R triggers (denials and edits) with clear decision points to reduce hesitation and rework.  
+- Text volume kept concise while preserving necessary research, documentation, and escalation steps.  
+- Supports predictable navigation through a logical sequence from triage to resolution and feedback.  
+- Enables back-end teams to focus effort on high-impact registration issues that directly affect clean claim rates and timely reimbursement.
 
 > See `optimization-standards.md` for the optimization approach used across this framework.
 
 ## Regulatory / Compliance Notes
 
-- **Timely Filing**: Corrections must be completed within payer timely filing limits to protect revenue.  
-- **Audit Trail**: All changes to registration data must be documented with date, time, user, and reason to support internal and external audits.  
-- **HIPAA**: Protect PHI during research and when contacting patients or payers.  
-- **Authorization Compliance**: Only obtain retro-authorizations when permitted; document medical necessity and payer requirements.  
-- **Billing Integrity**: Accurate registration data is foundational to compliant claims and avoidance of false claims risk.
+- **Timely Filing**: All corrections and re-submissions must occur within payer timely filing limits.  
+- **Audit Trail**: Every change to registration data must include date/time, user ID, before/after values, and rationale.  
+- **HIPAA**: Protect all PHI during research, correction, and any patient or payer outreach.  
+- **Authorization Compliance**: Retro-authorizations should only be pursued when permitted; document medical necessity and payer-specific rules.  
+- **Billing Integrity**: Accurate registration data is foundational to compliant claims submission.
 
 > See `regulatory-foundations.md` for the broader regulatory integration approach used in this framework.
 
 ## Related Documents
 
-- **Companion Workflow**: [registration-workflow.md](../workflows/registration-workflow.md) — Simplified visual quick-reference for back-end registration follow-up activities.  
+- **Companion Workflow**: [registration-workflow.md](../workflows/registration-workflow.md) — Dynamic visual flowchart for real-world registration denial and edit scenarios.  
 - Denial Management SOP (planned)  
 - Visit Filing Order SOP (planned)  
 - Organizational timely filing and authorization policies
@@ -132,5 +134,4 @@ Use clear, numbered steps. Keep language concise and focused on the essential ac
 
 | Version | Date       | Changes                                                                 | Author          |
 |---------|------------|-------------------------------------------------------------------------|-----------------|
-| 1.0     | May 6, 2026| Initial front-end focused version created as model                      | Shaine Meister  |
-| 1.1     | May 6, 2026| Revised to back-end Revenue Cycle focus: post-service verification, work queue management, eligibility re-verification, authorization follow-up, and trend identification. Tailored for back-end teams reviewing registration issues after point-of-service. | Shaine Meister  |
+| 1.0     | May 6, 2026| Initial front-end focused version created as model                      | Shaine Meister  |\n| 1.1     | May 6, 2026| Revised to back-end Revenue Cycle focus (post-service verification and follow-up) | Shaine Meister  |\n| 1.2     | May 6, 2026| Refined Step-by-Step Procedure for real-world A/R follow-up scenarios triggered by claim denials and edits. Added explicit triage, root cause analysis, and decision points aligned with typical denial workflows. | Shaine Meister  |
