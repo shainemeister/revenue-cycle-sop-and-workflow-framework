@@ -1,6 +1,6 @@
 # Registration Verification & Follow-Up (Back-End)
 
-**Version**: 1.5  
+**Version**: 1.6  
 **Last Updated**: May 6, 2026  
 **Owner**: Shaine Meister  
 **Status**: Draft
@@ -33,11 +33,7 @@ To systematically review, verify, correct, and update patient registration infor
 
 | Role                                      | Responsibilities                                                                 |
 |-------------------------------------------|----------------------------------------------------------------------------------|
-| Revenue Cycle Registration Specialist     | Review work queues, verify/correct registration data, resolve edits and authorization issues |
-| Registration Quality / Denial Prevention Analyst | Analyze trends, perform quality audits, identify systemic issues, provide feedback to front-end teams |
-| Billing Coordinator / Specialist          | Flag registration-related claim edits and coordinate resolution with Registration team |
-| Revenue Cycle Supervisor                  | Oversee work queue management, escalation handling, and process improvement initiatives |
-
+| Revenue Cycle Registration Specialist     | Review work queues, verify/correct registration data, resolve edits and authorization issues |\n| Registration Quality / Denial Prevention Analyst | Analyze trends, perform quality audits, identify systemic issues, provide feedback to front-end teams |\n| Billing Coordinator / Specialist          | Flag registration-related claim edits and coordinate resolution with Registration team |\n| Revenue Cycle Supervisor                  | Oversee work queue management, escalation handling, and process improvement initiatives |\n
 ## Prerequisites
 
 - Access to registration work queues, claim scrubber reports, denial management system, and eligibility verification tools
@@ -70,6 +66,8 @@ This section follows the structure of the companion workflow. After initial tria
 
 ### Eligibility Procedures
 
+**This section applies when Triage has classified the issue as Eligibility.**
+
 3. **Determine the Specific Eligibility Scenario**  
    - Identify which type applies:  
      - Patient Active / Coverage Issue  
@@ -91,6 +89,8 @@ This section follows the structure of the companion workflow. After initial tria
 
 ### Coordination of Benefits (COB) Procedures
 
+**This section applies when Triage has classified the issue as Coordination of Benefits (COB).**
+
 6. **Select and Execute the Appropriate COB Action**  
    - Choose one of the following based on the situation:  
      - Update registration and/or correct filing order (internal fix).  
@@ -104,6 +104,8 @@ This section follows the structure of the companion workflow. After initial tria
 ---
 
 ### Authorization Procedures
+
+**This section applies when Triage has classified the issue as Authorization.**
 
 8. **Check Prior Authorization Validity**  
    - Determine whether valid prior authorization was obtained before the date of service.  
@@ -194,4 +196,5 @@ This section follows the structure of the companion workflow. After initial tria
 | 1.2     | May 6, 2026| Refined for real-world A/R denial-driven scenarios                      | Shaine Meister  |
 | 1.3     | May 6, 2026| Restructured into category-specific sections to mirror workflow         | Shaine Meister  |
 | 1.4     | May 6, 2026| Simplified and visually separated the three category procedures         | Shaine Meister  |
-| 1.5     | May 6, 2026| Fixed Roles & Responsibilities table formatting. Made Eligibility, COB, and Authorization explicit sub-categories/outcomes under the Triage section for clearer structure. | Shaine Meister  |
+| 1.5     | May 6, 2026| Fixed Roles & Responsibilities table. Made Eligibility, COB, and Authorization explicit sub-categories under Triage. | Shaine Meister  |
+| 1.6     | May 6, 2026| Added linking sentences at the top of each category section to reinforce Triage as the parent process. Lightly tightened Authorization section for improved usability while preserving all key decision logic. | Shaine Meister  |
