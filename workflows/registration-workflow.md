@@ -17,21 +17,21 @@ This workflow provides a dynamic visual quick-reference for back-end Revenue Cyc
 
 ```mermaid
 flowchart TD
-    A[Denial / Edit / Work Queue Item Received] --> B[Review Denial Code<br/>or Edit Reason]
+    A[Registration Denial] --> B[Review Payor<br />Denial Code / Remark]
     B --> C{Is this a<br/>Registration Issue?}
-    C -->|No| D[Handoff to Billing,<br/>Coding or Denials Team]
-    C -->|Yes| E[Analyze Root Cause<br/>& Categorize Issue]
+    C -->|No| D[Analyze Denial Reason<br />Handoff to Billing,<br/>Coding or Appropriate Team]
+    C -->|Yes| E[Identify Root Cause]
     E --> F{Eligibility Issue?}
-    F -->|Yes| G[Re-verify Eligibility<br/>Post-Service]
+    F -->|Yes| G[Verify Eligibility<br/>Fix Registration]
     F -->|No| H{Authorization Issue?}
     G --> I[Research & Correct<br/>Registration Data]
-    H -->|Yes| J[Verify / Obtain<br/>Authorization]
+    H -->|Yes| J[Verify / Obtain<br />or<br/>Update Authorization]
     H -->|No| I
-    I --> K[Document Changes<br/>& Rationale]
+    I --> K[Activity Note:<br />Document Changes<br/>& Rationale]
     J --> K
-    K --> L[Release for Reprocessing<br/>or Prepare for Appeal]
-    L --> M{Escalation or<br/>Trend Identified?}
-    M -->|Yes| N[Escalate to Supervisor<br/>or Report to Quality Team]
+    K --> L[Resubmit claim<br/>or Send Patient Letter]
+    L --> M{Reoccurance or<br/>Trend Identified?}
+    M -->|Yes| N[Report to Supervisor]
     M -->|No| O[Monitor for Recurrence]
     N --> O
     D --> P[End]
