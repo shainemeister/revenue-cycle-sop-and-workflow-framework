@@ -26,10 +26,17 @@ flowchart TD
     E --> F{Eligibility Issue?}
     F -->|Yes| G[Check Eligibility Type]
     
-    G --> G1[Patient Active / Coverage Issue] --> G1a[Re-verify Eligibility<br/>Update Registration]
-    G --> G2[Demographic / Registration Error] --> G2a[Correct Demographics<br/>Re-verify Eligibility]
-    G --> G3[Newborn Scenario<br/>(30-day Grace Period)] --> G3a[Send Notification Letter<br/>(Regulatory / Courtesy)]
-    G --> G4[Patient Involvement Needed] --> G4a[Send Letter to Patient/Guarantor<br/>Move to Self-Pay<br/>(Exception: Medicaid/Medicare)]
+    G --> G1[Patient Active / Coverage Issue]
+    G1 --> G1a[Re-verify Eligibility<br/>Update Registration]
+    
+    G --> G2[Demographic / Registration Error]
+    G2 --> G2a[Correct Demographics<br/>Re-verify Eligibility]
+    
+    G --> G3[Newborn Scenario<br/>(30-day Grace Period)]
+    G3 --> G3a[Send Notification Letter<br/>(Regulatory / Courtesy)]
+    
+    G --> G4[Patient Involvement Needed]
+    G4 --> G4a[Send Letter to Patient/Guarantor<br/>Move to Self-Pay<br/>(Exception: Medicaid/Medicare)]
     
     %% === COB PATH ===
     F -->|No| H{COB Issue?}
@@ -62,3 +69,30 @@ flowchart TD
     D --> R[End]
     Q --> R
 ```
+
+**Key Decision Points**  
+- Is this a Registration Issue? → Triage for back-end ownership.  
+- Under Eligibility: Four distinct scenarios with dedicated resolution paths.  
+- COB and Authorization remain separate categories.  
+- Recurring issues → Escalate for trend analysis.
+
+**Notes**  
+- Eligibility path covers: Patient active/coverage, demographic errors, newborn 30-day grace period, and patient involvement decisions.  
+- COB path shows three common outcomes.  
+- Diagram prioritizes clarity of categories while remaining usable as a quick reference.
+
+## Parent SOP
+
+- [registration.md](../sops/registration.md) — Full procedures, roles, quality checks, optimization guidance, and version history.
+
+## Version History
+
+| Version | Date       | Changes                                                                 | Author          |
+|---------|------------|-------------------------------------------------------------------------|-----------------|
+| 1.0     | May 6, 2026| Initial front-end focused version created                               | Shaine Meister  |
+| 1.1     | May 6, 2026| Revised to align with back-end SOP focus                                | Shaine Meister  |
+| 1.2     | May 6, 2026| Denial-driven flow with triage and root cause                           | Shaine Meister  |
+| 1.3     | May 6, 2026| Added COB variability with three resolution outcomes                    | Shaine Meister  |
+| 1.4     | May 6, 2026| Separated Eligibility, COB, and Authorization into distinct categories  | Shaine Meister  |
+| 1.5     | May 6, 2026| Expanded Eligibility with granular scenarios                            | Shaine Meister  |
+| 1.6     | May 6, 2026| Fixed Mermaid syntax error in Visual Process Flow (line 11 area). Restructured Eligibility paths with separate lines for clarity and reduced overlap. Version kept at 1.6 per request. | Shaine Meister  |
