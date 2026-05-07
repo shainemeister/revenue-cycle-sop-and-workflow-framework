@@ -1,6 +1,6 @@
 # Registration Verification & Follow-Up (Back-End)
 
-**Version**: 1.4  
+**Version**: 1.5  
 **Last Updated**: May 6, 2026  
 **Owner**: Shaine Meister  
 **Status**: Draft
@@ -31,8 +31,12 @@ To systematically review, verify, correct, and update patient registration infor
 
 ## Roles & Responsibilities
 
-| Role                              | Responsibilities                                                                 |
-|-----------------------------------|----------------------------------------------------------------------------------|\n| Revenue Cycle Registration Specialist | Review work queues, verify/correct registration data, resolve edits and authorization issues |\n| Registration Quality / Denial Prevention Analyst | Analyze trends, perform quality audits, identify systemic issues, provide feedback to front-end teams |\n| Billing Coordinator / Specialist  | Flag registration-related claim edits and coordinate resolution with Registration team |\n| Revenue Cycle Supervisor          | Oversee work queue management, escalation handling, and process improvement initiatives |
+| Role                                      | Responsibilities                                                                 |
+|-------------------------------------------|----------------------------------------------------------------------------------|
+| Revenue Cycle Registration Specialist     | Review work queues, verify/correct registration data, resolve edits and authorization issues |
+| Registration Quality / Denial Prevention Analyst | Analyze trends, perform quality audits, identify systemic issues, provide feedback to front-end teams |
+| Billing Coordinator / Specialist          | Flag registration-related claim edits and coordinate resolution with Registration team |
+| Revenue Cycle Supervisor                  | Oversee work queue management, escalation handling, and process improvement initiatives |
 
 ## Prerequisites
 
@@ -43,18 +47,24 @@ To systematically review, verify, correct, and update patient registration infor
 
 ## Step-by-Step Procedure
 
-This section is organized by the three main categories used in the companion workflow. Each category can be referenced independently after initial triage.
+This section follows the structure of the companion workflow. After initial triage, issues are classified into one of three categories: **Eligibility**, **Coordination of Benefits (COB)**, or **Authorization**.
 
 ### Triage (Common Starting Point)
+
+**Triage determines whether the issue is registration-related and classifies it into one of the following categories:**
+
+- **Eligibility**
+- **Coordination of Benefits (COB)**
+- **Authorization**
 
 1. **Triage the Denial, Edit, or Work Queue Item**  
    - Review the denial code or edit reason.  
    - Determine if the issue is primarily registration-related.  
    - **Decision**: If not registration-related → hand off to Billing, Coding, or Denials team.
 
-2. **Identify the Primary Category**  
-   - Classify the issue as **Eligibility**, **Coordination of Benefits (COB)**, or **Authorization**.  
-   - Proceed to the matching section below.
+2. **Classify into Primary Category**  
+   - Assign the issue to **Eligibility**, **COB**, or **Authorization**.  
+   - Proceed to the corresponding section below.
 
 ---
 
@@ -71,7 +81,7 @@ This section is organized by the three main categories used in the companion wor
    - **Patient Active / Coverage Issue**: Re-verify eligibility and update registration.  
    - **Demographic / Registration Error**: Correct demographics and re-verify eligibility.  
    - **Newborn 30-day Grace Period**: Send required notification letter.  
-   - **Patient Involvement Needed**: Send letter to patient/guarantor. For Medicare or Medicaid, complete up to 3 contact attempts before moving balance to self-pay.
+   - **Patient Involvement Needed**: Send letter to patient/guarantor. For Medicare or Medicaid payers, complete up to 3 contact attempts before moving balance to self-pay.
 
 5. **Document and Advance the Account**  
    - Record changes with clear rationale.  
@@ -183,4 +193,5 @@ This section is organized by the three main categories used in the companion wor
 | 1.1     | May 6, 2026| Revised to back-end Revenue Cycle focus                                 | Shaine Meister  |
 | 1.2     | May 6, 2026| Refined for real-world A/R denial-driven scenarios                      | Shaine Meister  |
 | 1.3     | May 6, 2026| Restructured into category-specific sections to mirror workflow         | Shaine Meister  |
-| 1.4     | May 6, 2026| Simplified and visually separated the three category procedures (Eligibility, COB, Authorization) with clearer headings, spacing, and more direct steps for easier navigation. | Shaine Meister  |
+| 1.4     | May 6, 2026| Simplified and visually separated the three category procedures         | Shaine Meister  |
+| 1.5     | May 6, 2026| Fixed Roles & Responsibilities table formatting. Made Eligibility, COB, and Authorization explicit sub-categories/outcomes under the Triage section for clearer structure. | Shaine Meister  |
