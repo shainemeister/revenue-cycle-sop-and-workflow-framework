@@ -1,6 +1,6 @@
 # Registration Verification & Follow-Up Workflow (Back-End)
 
-**Version**: 1.4  
+**Version**: 1.5  
 **Last Updated**: May 6, 2026  
 **Owner**: Shaine Meister  
 **Status**: Draft
@@ -11,7 +11,7 @@
 
 ## Process Overview
 
-This workflow provides a clear, simplified visual reference for back-end Revenue Cycle teams. It separates **Eligibility**, **Coordination of Benefits (COB)**, and **Authorization** as distinct issue categories with their own resolution paths. Use this alongside the full Registration Verification & Follow-Up SOP.
+This workflow provides a practical visual reference for back-end Revenue Cycle teams. It now includes more granular handling under the **Eligibility** category, including newborn grace periods and patient involvement decisions. Use alongside the full Registration Verification & Follow-Up SOP.
 
 ## Visual Process Flow
 
@@ -22,21 +22,41 @@ flowchart TD
     C -->|No| D[Handoff to Billing,<br/>Coding or Denials Team]
     C -->|Yes| E[Identify Root Cause Category]
     
+    %% === ELIGIBILITY PATH (Granular) ===
     E --> F{Eligibility Issue?}
-    F -->|Yes| G[Re-verify Eligibility<br/>Update Registration]
+    F -->|Yes| G[Eligibility Resolution Path]
+    
+    G --> G1{ Patient Active /<br/>Coverage Issue? }
+    G1 -->|Yes| G1a[Re-verify Eligibility<br/>Update Registration]
+    G1 -->|No| G2{ Demographic /<br/>Registration Error? }
+    
+    G2 -->|Yes| G2a[Correct Demographics<br/>Re-verify Eligibility]
+    G2 -->|No| G3{ Newborn Scenario?<br/>(30-day Grace Period) }
+    
+    G3 -->|Yes| G3a[Send Notification Letter<br/>(Regulatory / Courtesy)]
+    G3 -->|No| G4{ Patient Involvement<br/>Needed? }
+    
+    G4 -->|Yes| G4a[Send Letter to Patient/Guarantor<br/>Move Balance to Self-Pay<br/>(Exception: Medicaid/Medicare)]
+    G4 -->|No| G5[Other Eligibility<br/>Research & Correction]
+    
+    %% === COB PATH ===
     F -->|No| H{COB Issue?}
-    
     H -->|Yes| I[COB Follow-up Path]
-    H -->|No| J{Authorization Issue?}
-    
     I --> I1[Update Registration<br/>and/or Fix Filing Order]
     I --> I2[Contact Payer<br/>to Verify / Reprocess]
     I --> I3[Send Patient/Guarantor<br/>Letter for COB Update]
     
+    %% === AUTHORIZATION PATH ===
+    H -->|No| J{Authorization Issue?}
     J -->|Yes| K[Verify / Obtain<br/>or Update Authorization]
     J -->|No| L[Research & Correct<br/>Other Registration Data]
     
-    G --> M[Document Changes<br/>& Rationale]
+    %% Convergence
+    G1a --> M[Document Changes<br/>& Rationale]
+    G2a --> M
+    G3a --> M
+    G4a --> M
+    G5 --> M
     I1 --> M
     I2 --> M
     I3 --> M
@@ -53,18 +73,19 @@ flowchart TD
 ```
 
 **Key Decision Points**  
-- After reviewing denial/edit: Is this primarily a registration issue?  
-- Root cause category: Separate paths for **Eligibility**, **COB**, and **Authorization**.  
-- COB path has three distinct resolution outcomes based on what action is needed.  
-- Recurring issues → Escalate and report for front-end improvement.
+- Is this a Registration Issue? → Triage for back-end ownership.  
+- Under **Eligibility**: Separate handling for active coverage, demographic errors, newborn grace period, and patient involvement.  
+- **COB** and **Authorization** remain distinct categories with their own paths.  
+- Recurring issues → Escalate for trend analysis and front-end feedback.
 
 **Notes**  
-- **Eligibility**, **COB**, and **Authorization** are now treated as three distinct categories with dedicated resolution paths.  
-- The COB path clearly shows the three common real-world outcomes:  
-  1. Internal update to registration / filing order  
-  2. Contact payer for verification or reprocessing  
-  3. Send letter to patient/guarantor when they need to update COB information  
-- Keep the diagram simple while reflecting real A/R decision-making.
+- **Eligibility** path now includes four common real-world scenarios:  
+  - Patient active / coverage verification  
+  - Wrong demographics causing denial  
+  - Newborn 30-day regulatory or courtesy grace period (notification letter)  
+  - Patient involvement required (letter + possible self-pay move, with Medicaid/Medicare exceptions)  
+- COB and Authorization paths remain separate for clarity.  
+- The diagram balances detail with visual flow.
 
 ## Parent SOP
 
@@ -78,4 +99,5 @@ flowchart TD
 | 1.1     | May 6, 2026| Revised to align with back-end SOP focus                                | Shaine Meister  |
 | 1.2     | May 6, 2026| Denial-driven flow with triage and root cause                           | Shaine Meister  |
 | 1.3     | May 6, 2026| Added COB variability with three resolution outcomes                    | Shaine Meister  |
-| 1.4     | May 6, 2026| Separated Eligibility, COB, and Authorization into three distinct category paths for clearer visual flow and decision-making. | Shaine Meister  |
+| 1.4     | May 6, 2026| Separated Eligibility, COB, and Authorization into distinct categories  | Shaine Meister  |
+| 1.5     | May 6, 2026| Expanded Eligibility path with four granular scenarios: active coverage, demographic errors, newborn grace period, and patient involvement decisions. | Shaine Meister  |
