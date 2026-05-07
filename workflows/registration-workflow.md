@@ -27,12 +27,17 @@ flowchart TD
     B -->|Patient Active / Coverage Issue| B1["Re-verify Eligibility<br>Update Registration"]
     B -->|Demographic / Registration Error| B2["Correct Demographics<br>Re-verify Eligibility"]
     B -->|Newborn Scenario - 30-day Grace Period| B3["Send Notification Letter<br>(Regulatory / Courtesy)"]
-    B -->|Patient Involvement Needed| B4["Send Letter to Patient/Guarantor<br>Move to Self-Pay<br>(Exception: Medicaid/Medicare)"]
+    B -->|Patient Involvement Needed| B4["Send Letter to Patient/Guarantor"]
+    
+    B4 --> B4a{3 Contact Attempts Completed?}
+    B4a -->|Yes| B4b["Move Balance to Self-Pay<br>(Exception: Medicaid/Medicare)"]
+    B4a -->|No| B4c[Continue Outreach Attempts]
     
     B1 --> C["Document Changes<br>& Rationale"]
     B2 --> C
     B3 --> C
-    B4 --> C
+    B4b --> C
+    B4c --> C
     
     C --> D["Resubmit Claim<br>or Continue Follow-up"]
 ```
@@ -58,27 +63,47 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    A[Authorization Issue Identified] --> B{Authorization Action Needed?}
+    A[Authorization Denial Identified] --> Q1{Was Prior Authorization obtained and valid before service?}
     
-    B -->|Yes| B1["Verify / Obtain<br>or Update Authorization"]
-    B -->|No| B2["Research & Correct<br>Other Registration Data"]
+    Q1 -->|Yes| CorrectClaim["Correct claim by adding authorization number/details and resubmit"]
     
-    B1 --> C["Document Changes<br>& Rationale"]
-    B2 --> C
+    Q1 -->|No| Q2{Can retroactive authorization be requested?}
     
-    C --> D["Resubmit Claim<br>or Continue Follow-up"]
+    Q2 -->|Yes| SubmitRetro["Submit retroactive PA request to payer"]
+    Q2 -->|No| PrepareAppeal["Prepare formal appeal for lack of prior authorization"]
+    
+    SubmitRetro --> RetroResult{Retro PA approved?}
+    RetroResult -->|Yes| CorrectClaim
+    RetroResult -->|No| PrepareAppeal
+    
+    CorrectClaim --> Update["Update account and close follow-up"]
+    
+    PrepareAppeal --> Q3{Within timely filing / appeal deadline?}
+    Q3 -->|Yes| FileAppeal["File formal appeal"]
+    Q3 -->|No| PatientResp{Patient Responsibility?}
+    
+    FileAppeal --> Update
+    
+    PatientResp -->|Yes| SelfPay["Complete follow-up note and move balance to self-pay"]
+    PatientResp -->|No| WriteOff["Submit or apply appropriate write-off"]
+    
+    SelfPay --> Update
+    WriteOff --> Update
+    
+    Update --> Prevention["Document root cause and provide feedback to front-end authorization process"]
+    Prevention --> End([Workflow Complete — Revenue Protected or Account Resolved])
 ```
 
 **Key Decision Points**  
-- Under **Eligibility**: Four distinct scenarios (Patient Active/Coverage, Demographic Error, Newborn Grace Period, Patient Involvement).  
-- Under **COB**: Three resolution outcomes based on what action is required.  
-- Under **Authorization**: Clear yes/no decision on whether authorization work is needed.  
-- All paths converge on documentation and resubmission/follow-up.
+- Under **Eligibility**: Four distinct scenarios with clear resolution paths, including patient outreach rules.  
+- Under **COB**: Three resolution outcomes based on required action.  
+- Under **Authorization**: Structured decision tree covering prior auth validity, retroactive requests, appeals, timely filing, and patient responsibility vs. write-off.  
+- All paths lead to documentation and account resolution.
 
 **Notes**  
-- The workflow is now split into three focused diagrams for better readability and maintainability.  
-- Each category (Eligibility, COB, Authorization) can be reviewed independently.  
-- This structure reduces overlap and complexity while preserving real-world decision points.
+- The Eligibility diagram now clearly separates sending the patient letter from the decision to move the balance to self-pay after 3 contact attempts (with Medicaid/Medicare exception noted).  
+- The Authorization diagram follows a logical real-world denial workflow while maintaining visual consistency with the other sections.  
+- Each category remains independently usable.
 
 ## Parent SOP
 
@@ -87,4 +112,4 @@ flowchart TD
 ## Version History
 
 | Version | Date       | Changes                                                                 | Author          |\n|---------|------------|-------------------------------------------------------------------------|-----------------|
-| 1.0     | May 6, 2026| Initial front-end focused version created                               | Shaine Meister  |\n| 1.1     | May 6, 2026| Revised to align with back-end SOP focus                                | Shaine Meister  |\n| 1.2     | May 6, 2026| Denial-driven flow with triage and root cause                           | Shaine Meister  |\n| 1.3     | May 6, 2026| Added COB variability with three resolution outcomes                    | Shaine Meister  |\n| 1.4     | May 6, 2026| Separated Eligibility, COB, and Authorization into distinct categories  | Shaine Meister  |\n| 1.5     | May 6, 2026| Expanded Eligibility with granular scenarios                            | Shaine Meister  |\n| 1.6     | May 6, 2026| Restructured into three separate Visual Process Flow sections. Fixed Mermaid parsing error by properly quoting node labels containing special characters and line breaks. Version maintained at 1.6 per request. | Shaine Meister  |
+| 1.0     | May 6, 2026| Initial front-end focused version created                               | Shaine Meister  |\n| 1.1     | May 6, 2026| Revised to align with back-end SOP focus                                | Shaine Meister  |\n| 1.2     | May 6, 2026| Denial-driven flow with triage and root cause                           | Shaine Meister  |\n| 1.3     | May 6, 2026| Added COB variability with three resolution outcomes                    | Shaine Meister  |\n| 1.4     | May 6, 2026| Separated Eligibility, COB, and Authorization into distinct categories  | Shaine Meister  |\n| 1.5     | May 6, 2026| Expanded Eligibility with granular scenarios                            | Shaine Meister  |\n| 1.6     | May 6, 2026| Refined Eligibility diagram (separated patient letter from self-pay move after 3 contact attempts). Updated Authorization diagram for better real-world flow while maintaining style consistency. Version kept at 1.6. | Shaine Meister  |
