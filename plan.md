@@ -1,7 +1,7 @@
 # Revenue Cycle SOP & Workflow Framework - Plan
 
-**Version**: 1.2  
-**Last Updated**: May 6, 2026  
+**Version**: 1.3  
+**Last Updated**: May 7, 2026  
 **Owner**: Shaine Meister
 
 ## Project Goals
@@ -52,7 +52,7 @@ phases:
 
 ## Current Status
 
-**Overall Status**: In Development — Foundational framework and templates complete. First model SOP + Companion Workflow (Registration) created. Shifting focus to refinement and next high-priority SOPs.
+**Overall Status**: In Development — Foundational framework and templates complete. First model SOP + Companion Workflow (Registration) has been developed, refined through multiple iterations, and passed framework integrity check. Shifting focus to next high-priority SOPs.
 
 ### Framework Documents
 
@@ -74,7 +74,7 @@ phases:
 
 | SOP                       | Status     | Priority | Notes                                      |
 |---------------------------|------------|----------|--------------------------------------------|
-| registration.md           | Draft      | High     | Foundational revenue cycle entry point. **Model SOP + Companion Workflow pair completed May 2026** |
+| registration.md           | Complete   | High     | Foundational revenue cycle entry point. **Model SOP + Companion Workflow pair completed and refined (v1.6)** |
 | visit-filing-order.md     | Planned    | High     | Critical for accurate claims processing    |
 | demand-claims.md          | Planned    | Medium   | Important for denial management and follow-up |
 
@@ -82,15 +82,14 @@ phases:
 
 | Workflow                  | Status     | Priority | Notes                                      |
 |---------------------------|------------|----------|--------------------------------------------|
-| registration-workflow.md  | Draft      | High     | Companion to Registration SOP (visual quick-reference). **Completed as model pair** |
+| registration-workflow.md  | Complete   | High     | Companion to Registration SOP (visual quick-reference). **Completed as model pair (v1.7)** |
 
-> **Note**: Registration SOP and Workflow were created as the first complete model pair to validate the templates and demonstrate the full framework approach (concise language, decision points, companion pairing, embedded regulatory context, and optimization focus).
+> **Note**: Registration SOP and Workflow were developed as the first complete model pair. They have been iteratively refined and passed an integrity check against the core framework documents (Core Principles, Modular Structure, Optimization Standards, and Regulatory Foundations).
 
 ## Next Priorities
 
 ### Immediate Priorities (Next 1–2 Weeks)
-- Review and refine the new Registration SOP + Workflow based on initial feedback.
-- Decide whether to mark Registration as "Active" or make further adjustments.
+- Mark Registration model pair as "Active" once final review is complete.
 - Begin development of the next high-priority item: **Visit Filing Order SOP + Companion Workflow**.
 
 ### Short-Term Priorities (Q2 2026)
@@ -125,7 +124,7 @@ This framework prioritizes **lightweight, actionable measurement** that supports
 
 ## Open Items & Notes
 
-- Review the new Registration model pair and decide on next refinements or activation.
+- Decide whether to mark the Registration model pair as "Active".
 - Populate **Visit Filing Order** as the next high-priority SOP + Workflow.
 - Determine the right balance of detail vs. conciseness for SOPs while staying platform-agnostic.
 - Decide on visual workflow standards (Mermaid diagram depth, styling conventions).
@@ -141,4 +140,5 @@ This framework prioritizes **lightweight, actionable measurement** that supports
 |---------|---------------|-------------------------------------------------------------------------|-------------------------|
 | 1.0     | May 2026      | Initial plan created                                                    | Shaine Meister          |
 | 1.1     | May 6, 2026   | Updated statuses to reflect completed framework and templates; refined priorities and added Metrics section | Shaine Meister (assisted by Grok) |
-| 1.2     | May 6, 2026   | Added Registration SOP + Companion Workflow as completed model pair (status changed to Draft); updated overall status, immediate priorities, and notes to reflect first real content delivery | Shaine Meister (assisted by Grok) |
+| 1.2     | May 6, 2026   | Added Registration SOP + Companion Workflow as completed model pair (status changed to Draft) | Shaine Meister (assisted by Grok) |
+| 1.3     | May 7, 2026   | Updated Registration SOP (v1.6) and Workflow (v1.7) to Complete status after multiple refinements and successful framework integrity check. Updated immediate priorities and notes. | Shaine Meister (assisted by Grok) |
