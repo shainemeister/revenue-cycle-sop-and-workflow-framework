@@ -1,6 +1,6 @@
 # Registration Verification & Follow-Up Workflow (Back-End)
 
-**Version**: 1.1  
+**Version**: 1.2  
 **Last Updated**: May 6, 2026  
 **Owner**: Shaine Meister  
 **Status**: Draft
@@ -11,43 +11,52 @@
 
 ## Process Overview
 
-This workflow provides a simplified visual quick-reference for back-end Revenue Cycle teams performing **post-service registration verification and follow-up**. It focuses on work queue review, discrepancy identification, eligibility re-verification, research & correction, authorization follow-up, documentation, and handoff to billing. Use this as your primary day-to-day tool. Refer to the full Registration Verification & Follow-Up SOP for detailed procedures, regulatory context, quality checks, and troubleshooting.
+This workflow provides a dynamic visual quick-reference for back-end Revenue Cycle teams handling real-world registration issues triggered by claim denials, billing edits, and work queue items. It shows the flow from denial receipt through triage, root cause analysis, research & correction, and resolution — with clear decision points for eligibility vs. authorization issues and escalation paths. Use this alongside the full Registration Verification & Follow-Up SOP.
 
 ## Visual Process Flow
 
 ```mermaid
 flowchart TD
-    A[Review Work Queues<br/>Edits & Denials] --> B[Analyze Discrepancies]
-    B --> C[Re-verify Eligibility<br/>Post-Service]
-    C --> D{Eligibility<br/>Issues?}
-    D -->|Yes| E[Research & Correct<br/>Demographics / Insurance]
-    D -->|No| F[Check Authorization<br/>Status]
-    E --> F
-    F --> G{Authorization<br/>Issues?}
-    G -->|Yes| H[Obtain / Update<br/>Authorization or Escalate]
-    G -->|No| I[Document Changes<br/>& Update Account]
-    H --> I
-    I --> J[Release to Billing<br/>or Escalate]
-    J --> K[Monitor Trends &<br/>Provide Feedback]
+    A[Denial / Edit / Work Queue Item Received] --> B[Review Denial Code<br/>or Edit Reason]
+    B --> C{Is this a<br/>Registration Issue?}
+    C -->|No| D[Handoff to Billing,<br/>Coding or Denials Team]
+    C -->|Yes| E[Analyze Root Cause<br/>& Categorize Issue]
+    E --> F{Eligibility Issue?}
+    F -->|Yes| G[Re-verify Eligibility<br/>Post-Service]
+    F -->|No| H{Authorization Issue?}
+    G --> I[Research & Correct<br/>Registration Data]
+    H -->|Yes| J[Verify / Obtain<br/>Authorization]
+    H -->|No| I
+    I --> K[Document Changes<br/>& Rationale]
+    J --> K
+    K --> L[Release for Reprocessing<br/>or Prepare for Appeal]
+    L --> M{Escalation or<br/>Trend Identified?}
+    M -->|Yes| N[Escalate to Supervisor<br/>or Report to Quality Team]
+    M -->|No| O[Monitor for Recurrence]
+    N --> O
+    D --> P[End]
+    O --> P
 ```
 
 **Key Decision Points**  
-- Eligibility issues or coverage gaps identified after re-verification → Research and correct information before releasing the account.  
-- Authorization problems (missing, expired, or denied) → Attempt resolution or escalate promptly to protect timely filing and revenue.  
-- Recurring issues, high-dollar impact, or complex cases → Escalate to supervisor and document for trend analysis and front-end feedback.
+- After reviewing denial/edit: Is this primarily a registration issue? (Guides handoff vs. in-house resolution)  
+- Eligibility issue identified? → Re-verify and correct before releasing.  
+- Authorization issue present? → Attempt resolution or escalate promptly.  
+- Recurring issues or high-impact cases? → Escalate and feed into trend reporting for front-end improvement.
 
 **Notes**  
-- This diagram represents the primary back-end flow with the most common branches.  
-- Prioritize work based on timely filing deadlines and financial impact.  
-- The full SOP contains detailed research steps, documentation standards, and regulatory considerations.
+- This diagram reflects common real-world A/R registration denial scenarios.  
+- Prioritize based on timely filing deadlines and dollar impact.  
+- Refer to the full SOP for detailed research steps, documentation standards, and regulatory considerations.
 
 ## Parent SOP
 
-- [registration.md](../sops/registration.md) — The authoritative source with full step-by-step procedures, roles & responsibilities, quality checks, optimization guidance, and version history.
+- [registration.md](../sops/registration.md) — Full procedures, roles, quality checks, optimization guidance, and version history for back-end registration follow-up.
 
 ## Version History
 
-| Version | Date       | Changes                                              | Author          |
-|---------|------------|------------------------------------------------------|-----------------|
-| 1.0     | May 6, 2026| Initial front-end focused version created            | Shaine Meister  |
-| 1.1     | May 6, 2026| Revised to align with back-end SOP: post-service work queue management, eligibility re-verification, correction, authorization follow-up, and trend monitoring | Shaine Meister  |
+| Version | Date       | Changes                                                                 | Author          |
+|---------|------------|-------------------------------------------------------------------------|-----------------|
+| 1.0     | May 6, 2026| Initial front-end focused version created                               | Shaine Meister  |
+| 1.1     | May 6, 2026| Revised to align with back-end SOP focus                                | Shaine Meister  |
+| 1.2     | May 6, 2026| Updated Visual Process Flow to be more dynamic: starts from denial/edit receipt, includes explicit triage decision point, root cause categorization, eligibility vs authorization branches, and trend/escalation loop. | Shaine Meister  |
