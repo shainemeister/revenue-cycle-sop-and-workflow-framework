@@ -3,6 +3,7 @@
 **Status**: In Development  
 **Last Updated**: May 2026  
 **Owner**: Shaine Meister
+**Scope**: This framework focuses on revenue cycle management processes and is designed to be adaptable across different healthcare organizations and systems.
 
 ## Overview
 
@@ -42,11 +43,14 @@ This project is organized into four main areas:
 
 ## Current Focus Areas
 
-Initial development is focused on the following revenue cycle functions:
+Initial development of this framework is centered on establishing a strong foundational structure across the following areas:
 
-Refer to existing .md files within the `sops` or `workflows` folders.
+- **Framework** — Defining the core principles, modular design approach, regulatory foundations, and optimization standards that guide all SOP and workflow development.
+- **Templates** — Creating reusable templates for SOPs and workflows to ensure consistency and efficiency when building new documentation.
+- **SOPs** — Developing clear, standardized operating procedures for key revenue cycle functions.
+- **Workflows** — Designing visual process flows and decision frameworks that support the SOPs.
 
-Each area will have its own dedicated SOP documentation while following the standards defined in the Framework section.
+Specific SOPs and workflows under active development, along with their current status, are tracked in the `plan.md` file. This separation keeps the high-level structure clear while allowing detailed progress tracking in one central location.
 
 ## How to Use This Framework
 
