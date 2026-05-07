@@ -65,6 +65,10 @@ To maintain regulatory alignment while preserving usability:
 
 This document provides the **regulatory and compliance foundation** for the framework.
 
-- `core-principles.md` — Establishes Principle 6 (Regulatory Alignment & Risk Awareness) as one of the core philosophical commitments. This document explains how that principle is operationalized.
-- `modular-structure.md` — Describes how regulatory components can be adapted and updated modularly without affecting other parts of the framework.
-- `optimization-standards.md` — Explains how compliance activities can be measured and improved as part of the broader optimization approach (e.g., reducing rework caused
+- `core-principles.md` — Establishes Principle 6 (Regulatory Alignment & Risk Awareness) as one of the core philosophical commitments. This document explains how that principle is operationalized through modular integration and practical guidelines.
+- `modular-structure.md` — Describes how regulatory and compliance requirements can be integrated and updated in a modular way, allowing compliance elements to be adapted without affecting other components of the framework.
+- `optimization-standards.md` — Explains how compliance and risk management activities can be optimized to reduce unnecessary burden and text volume while still maintaining appropriate controls.
+
+## Purpose of This Document
+
+`regulatory-foundations.md` serves as the high-level reference for how regulatory concepts are understood and integrated throughout the framework. It ensures that all SOPs and workflows developed under this system maintain appropriate compliance guardrails while remaining usable and maintainable.
