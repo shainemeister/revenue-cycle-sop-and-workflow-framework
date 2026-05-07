@@ -31,9 +31,9 @@ flowchart TD
     
     B4 --> PayerType{Medicare or Medicaid payer?}
     PayerType -->|Yes| B4a{3 Contact Attempts Completed?}
-    PayerType -->|No| B4d[Document & Proceed]
+    PayerType -->|No| B4d[Move Balance to Self-Pay & Proceed]
     
-    B4a -->|Yes| B4b["Move Balance to Self-Pay<br>(Exception noted for Medicaid/Medicare)"]
+    B4a -->|Yes| B4b["Move Balance to Self-Pay<br>(Conditional for Medicaid/Medicare)"]
     B4a -->|No| B4c[Continue Outreach Attempts]
     
     B1 --> C["Document Changes<br>& Rationale"]
