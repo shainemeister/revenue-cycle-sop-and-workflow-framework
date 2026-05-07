@@ -1,13 +1,13 @@
 # Registration Verification & Follow-Up (Back-End)
 
-**Version**: 1.2  
+**Version**: 1.3  
 **Last Updated**: May 6, 2026  
 **Owner**: Shaine Meister  
 **Status**: Draft
 
 > **Framework Alignment Check**  
 > Before finalizing this SOP, evaluate it against the principles in `core-principles.md` (especially Principles 1–4 and 7). Apply modular structure guidance from `modular-structure.md`, integrate regulatory foundations appropriately from `regulatory-foundations.md`, and optimize for predictable navigation with minimal mental friction per `optimization-standards.md`.  
-> This SOP is paired with a **Companion Workflow** for day-to-day quick reference (see `modular-structure.md` – Recommended Design Patterns: SOP + Companion Workflow Pairing).
+> This SOP is paired with a **Companion Workflow** for day-to-day quick reference (see `modular-structure.md` – Recommended Design Patterns: SOP + Companion Workflow Pairing). The workflow is now organized into three focused sections (Eligibility, COB, and Authorization) for easier reference.
 
 ## Purpose
 
@@ -33,7 +33,8 @@ To systematically review, verify, correct, and update patient registration infor
 
 | Role                              | Responsibilities                                                                 |
 |-----------------------------------|----------------------------------------------------------------------------------|
-| Revenue Cycle Registration Specialist | Review work queues, verify/correct registration data, resolve edits and authorization issues |n| Registration Quality / Denial Prevention Analyst | Analyze trends, perform quality audits, identify systemic issues, provide feedback to front-end teams |
+| Revenue Cycle Registration Specialist | Review work queues, verify/correct registration data, resolve edits and authorization issues |
+| Registration Quality / Denial Prevention Analyst | Analyze trends, perform quality audits, identify systemic issues, provide feedback to front-end teams |
 | Billing Coordinator / Specialist  | Flag registration-related claim edits and coordinate resolution with Registration team |
 | Revenue Cycle Supervisor          | Oversee work queue management, escalation handling, and process improvement initiatives |
 
@@ -48,90 +49,131 @@ To systematically review, verify, correct, and update patient registration infor
 
 Use clear, numbered steps. Keep language concise and focused on the essential action. Include decision points where relevant. This process occurs **after** the patient encounter and point-of-service registration, typically triggered by claim denials, billing edits, or work queue items.
 
+The workflow is organized into three focused categories. The procedures below follow the same structure for easier cross-reference with the companion workflow.
+
+### 1. Triage and Root Cause Analysis (All Categories)
+
 1. **Triage Incoming Denial, Edit, or Work Queue Item**  
    - Review the denial code, edit reason, or work queue item.  
-   - Identify whether the issue appears registration-related (common examples: eligibility issues, subscriber not found, invalid insurance, demographic mismatches, missing guarantor, authorization problems).  
-   - **Decision point**: Is this primarily a registration issue? → If No, hand off to Billing, Coding, or Denials Management team. If Yes, proceed to analysis.  
+   - Identify whether the issue appears registration-related.  
+   - **Decision point**: Is this primarily a registration issue? → If No, hand off to Billing, Coding, or Denials Management team.
 
-2. **Analyze Root Cause and Denial Code**  
-   - Examine the specific denial code and accompanying remarks.  
-   - Determine the likely root cause category (Eligibility, Demographic/Guarantor error, Authorization/Referral issue, Subscriber mismatch, etc.).  
-   - Pull the original registration information and compare against current payer data or claim details.  
+2. **Analyze Root Cause and Identify Category**  
+   - Determine the primary category: **Eligibility**, **Coordination of Benefits (COB)**, or **Authorization**.  
+   - Proceed to the relevant section below.
 
-3. **Research Registration Data**  
-   - Investigate using multiple sources: original insurance card/registration documents, prior accounts, payer portals, patient contact (if appropriate), and third-party databases.  
-   - Verify current vs. date-of-service information.  
+### 2. Eligibility Follow-up Procedures
 
-4. **Perform Post-Service Eligibility Re-Verification**  
-   - Re-run eligibility and benefits verification for the exact date of service.  
-   - Confirm coverage status, subscriber details, and benefit alignment at the time of service.  
-   - **Decision point**: Eligibility issues confirmed → proceed to correction (Step 5). If no eligibility issue found, re-evaluate if root cause is elsewhere (e.g., authorization).  
+3. **Identify Eligibility Issue Type**  
+   - Determine the specific scenario: Patient Active/Coverage Issue, Demographic/Registration Error, Newborn 30-day Grace Period, or Patient Involvement Needed.
 
-5. **Correct Registration Information**  
-   - Update inaccurate or incomplete fields (demographics, guarantor, subscriber ID, group number, relationship to insured, etc.).  
-   - Apply corrections in the system with clear, detailed audit notes explaining what was changed and the source used.  
+4. **Handle Specific Eligibility Scenarios**  
+   - **Patient Active / Coverage Issue**: Re-verify eligibility and update registration data.  
+   - **Demographic / Registration Error**: Correct demographics and re-verify eligibility.  
+   - **Newborn Scenario (30-day Grace Period)**: Send notification letter per regulatory/courtesy requirements.  
+   - **Patient Involvement Needed**: Send letter to patient/guarantor. For Medicare or Medicaid payers, complete 3 contact attempts before moving balance to self-pay (if attempts are exhausted).
 
-6. **Address Related Authorization or Referral Issues**  
-   - Verify authorization status for the services rendered.  
-   - Attempt to obtain retro-authorization or update authorization information when permitted by payer policy.  
-   - Attach supporting documentation.  
-   - **Decision point**: Authorization cannot be resolved → escalate to supervisor or Denials Management for appeal consideration.  
+5. **Document and Resubmit**  
+   - Document all changes and rationale.  
+   - Resubmit claim or continue follow-up as appropriate.
 
-7. **Document All Actions and Rationale**  
-   - Record detailed notes on the account: what was researched, what was corrected, why, and any supporting evidence.  
-   - Flag the account for re-scrubbing or re-submission.  
+### 3. Coordination of Benefits (COB) Follow-up Procedures
 
-8. **Release for Reprocessing or Handoff**  
-   - Release corrected accounts back into the billing/claims workflow for reprocessing.  
-   - For complex or high-impact cases, prepare summary for Denials Management or Appeals team.  
-   - Communicate systemic front-end issues to the appropriate supervisor or Quality team.  
+6. **Execute COB Resolution Path**  
+   - Choose the appropriate action based on the situation:  
+     - Update registration and/or fix filing order (internal correction).  
+     - Contact payer to verify information or request claim reprocessing.  
+     - Send patient/guarantor letter when COB information needs to be updated by the patient.
 
-9. **Monitor Trends and Drive Continuous Improvement**  
-   - Track recurring registration error types, specific payers, or originating locations/departments.  
-   - Summarize findings periodically and provide actionable feedback to front-end Registration teams and leadership.  
-   - Recommend process, training, or system enhancements to reduce future occurrences.
+7. **Document and Resubmit**  
+   - Document all changes and rationale.  
+   - Resubmit claim or continue follow-up.
+
+### 4. Authorization Follow-up Procedures
+
+8. **Evaluate Prior Authorization Status**  
+   - Determine if valid prior authorization was obtained before service.  
+   - **Decision point**: Was prior authorization obtained and valid? → If Yes, correct claim by adding authorization details and resubmit.
+
+9. **Handle Retroactive Authorization or Appeals**  
+   - If no valid prior authorization: Determine if retroactive authorization can be requested.  
+   - If retroactive PA is possible → Submit request to payer.  
+   - If retroactive PA is not possible or denied → Prepare and file formal appeal (if within timely filing/appeal deadline).
+
+10. **Determine Final Account Resolution**  
+    - If appeal is filed or not possible: Assess patient responsibility.  
+    - Move balance to self-pay with proper documentation or apply appropriate write-off.  
+    - Document & apply account note for all actions.
+
+### 5. Documentation, Handoff, and Continuous Improvement (All Categories)
+
+11. **Document All Actions and Rationale**  
+    - Record detailed notes including before/after values, sources used, and rationale.  
+    - Flag account for re-scrubbing or re-submission.
+
+12. **Release or Handoff**  
+    - Release corrected accounts for reprocessing.  
+    - Escalate complex or high-impact cases to supervisor or Denials Management.
+
+13. **Monitor Trends and Drive Improvement**  
+    - Track recurring issues by category, payer, or location.  
+    - Provide feedback to front-end teams and leadership.
 
 **Notes / Tips** (optional)  
-- Always document the "before" state and the source of corrections to maintain a strong audit trail.  
+- Always maintain a clear audit trail by documenting the “before” state and sources used for corrections.  
 - Prioritize work by timely filing deadlines and financial impact.  
-- Use compliant patient and payer communication scripts when outreach is required.
+- Use compliant scripting for all patient and payer outreach.
+
+## Key Decision Points
+
+- Triage: Is this primarily a registration issue?  
+- Root cause category: Eligibility, COB, or Authorization?  
+- **Eligibility**: Specific scenario type (coverage, demographic, newborn, patient involvement) and payer type (Medicare/Medicaid contact rules).  
+- **COB**: Which of the three resolution paths is most appropriate?  
+- **Authorization**: Was valid PA obtained? Can retro be requested? Within timely filing/appeal deadlines? Patient responsibility vs. write-off.  
+- Recurring issues or high-impact cases → Escalate and report trends.
 
 ## Quality Checks & Common Pitfalls
 
-- Always verify that corrections align with the actual date of service and services billed.  
-- Double-check subscriber vs. patient relationship and policy numbers after any update.  
-- Common pitfall: Making corrections without sufficient documentation or source citation → audit risk and downstream confusion.  
-- Common pitfall: Failing to re-verify eligibility after corrections → claim may deny again on re-submission.  
-- Common pitfall: Treating symptoms instead of root cause → recurring work queue volume from the same front-end issues.
+- Verify corrections align with date of service and billed services.  
+- Double-check subscriber vs. patient relationship and policy numbers.  
+- Common pitfall: Insufficient documentation or missing source citation → audit risk.  
+- Common pitfall: Failing to re-verify eligibility after corrections.  
+- Common pitfall: Not following payer-specific rules (e.g., Medicare/Medicaid contact attempts).
 
 ## Optimization Notes (Optional)
 
-- Designed around real-world A/R triggers (denials and edits) with clear decision points to reduce hesitation and rework.  
-- Text volume kept concise while preserving necessary research, documentation, and escalation steps.  
-- Supports predictable navigation through a logical sequence from triage to resolution and feedback.  
-- Enables back-end teams to focus effort on high-impact registration issues that directly affect clean claim rates and timely reimbursement.
+- The SOP and companion workflow are now aligned around three clear categories (Eligibility, COB, Authorization) for faster navigation and decision-making.  
+- Designed around real-world A/R denial triggers with explicit decision points.  
+- Supports predictable navigation while preserving necessary regulatory and documentation standards.
 
 > See `optimization-standards.md` for the optimization approach used across this framework.
 
 ## Regulatory / Compliance Notes
 
-- **Timely Filing**: All corrections and re-submissions must occur within payer timely filing limits.  
-- **Audit Trail**: Every change to registration data must include date/time, user ID, before/after values, and rationale.  
-- **HIPAA**: Protect all PHI during research, correction, and any patient or payer outreach.  
-- **Authorization Compliance**: Retro-authorizations should only be pursued when permitted; document medical necessity and payer-specific rules.  
-- **Billing Integrity**: Accurate registration data is foundational to compliant claims submission.
+- **Timely Filing & Appeals**: All corrections, retro PA requests, and appeals must occur within payer deadlines.  
+- **Audit Trail**: Every change must include date/time, user, before/after values, and rationale.  
+- **HIPAA**: Protect PHI during all research and outreach.  
+- **Authorization Compliance**: Retro-authorizations only when permitted; document thoroughly.  
+- **Newborn Grace Periods & Medicare/Medicaid Rules**: Follow specific regulatory requirements for notification and contact attempts.
 
 > See `regulatory-foundations.md` for the broader regulatory integration approach used in this framework.
 
 ## Related Documents
 
-- **Companion Workflow**: [registration-workflow.md](../workflows/registration-workflow.md) — Dynamic visual flowchart for real-world registration denial and edit scenarios.  
+- **Companion Workflow**: [registration-workflow.md](../workflows/registration-workflow.md) — Now organized into three focused sections:  
+  - Eligibility (with scenario-specific paths including newborn grace period and Medicare/Medicaid contact rules)  
+  - Coordination of Benefits (COB) with three resolution outcomes  
+  - Authorization (detailed decision tree including retro PA, appeals, and final resolution options)  
 - Denial Management SOP (planned)  
 - Visit Filing Order SOP (planned)  
-- Organizational timely filing and authorization policies
+- Organizational timely filing, authorization, and Medicare/Medicaid policies
 
 ## Version History
 
 | Version | Date       | Changes                                                                 | Author          |
 |---------|------------|-------------------------------------------------------------------------|-----------------|
-| 1.0     | May 6, 2026| Initial front-end focused version created as model                      | Shaine Meister  |\n| 1.1     | May 6, 2026| Revised to back-end Revenue Cycle focus (post-service verification and follow-up) | Shaine Meister  |\n| 1.2     | May 6, 2026| Refined Step-by-Step Procedure for real-world A/R follow-up scenarios triggered by claim denials and edits. Added explicit triage, root cause analysis, and decision points aligned with typical denial workflows. | Shaine Meister  |
+| 1.0     | May 6, 2026| Initial front-end focused version created as model                      | Shaine Meister  |
+| 1.1     | May 6, 2026| Revised to back-end Revenue Cycle focus (post-service verification and follow-up) | Shaine Meister  |
+| 1.2     | May 6, 2026| Refined Step-by-Step for real-world A/R denial-driven scenarios         | Shaine Meister  |
+| 1.3     | May 6, 2026| Restructured Step-by-Step Procedure into category-specific sections (Eligibility, COB, Authorization) to mirror the modular structure of the companion workflow. Added granular scenarios (newborn grace period, Medicare/Medicaid 3-contact rule, detailed authorization decision tree). Updated Key Decision Points, Quality Checks, Related Documents, and Version History for alignment. | Shaine Meister  |
