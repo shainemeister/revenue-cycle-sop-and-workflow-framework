@@ -24,22 +24,15 @@ Each section can be referenced independently while still supporting the overall 
 flowchart TD
     A[Eligibility Issue Identified] --> B{Check Eligibility Type}
     
-    B --> B1[Patient Active / Coverage Issue]
-    B1 --> B1a[Re-verify Eligibility<br/>Update Registration]
+    B -->|Patient Active / Coverage Issue| B1[Re-verify Eligibility<br/>Update Registration]
+    B -->|Demographic / Registration Error| B2[Correct Demographics<br/>Re-verify Eligibility]
+    B -->|Newborn Scenario<br/>(30-day Grace Period)| B3[Send Notification Letter<br/>(Regulatory / Courtesy)]
+    B -->|Patient Involvement Needed| B4[Send Letter to Patient/Guarantor<br/>Move to Self-Pay<br/>(Exception: Medicaid/Medicare)]
     
-    B --> B2[Demographic / Registration Error]
-    B2 --> B2a[Correct Demographics<br/>Re-verify Eligibility]
-    
-    B --> B3[Newborn Scenario<br/>(30-day Grace Period)]
-    B3 --> B3a[Send Notification Letter<br/>(Regulatory / Courtesy)]
-    
-    B --> B4[Patient Involvement Needed]
-    B4 --> B4a[Send Letter to Patient/Guarantor<br/>Move to Self-Pay<br/>(Exception: Medicaid/Medicare)]
-    
-    B1a --> C[Document Changes<br/>& Rationale]
-    B2a --> C
-    B3a --> C
-    B4a --> C
+    B1 --> C[Document Changes<br/>& Rationale]
+    B2 --> C
+    B3 --> C
+    B4 --> C
     
     C --> D[Resubmit Claim<br/>or Continue Follow-up]
 ```
