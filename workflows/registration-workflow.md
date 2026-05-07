@@ -21,16 +21,16 @@ flowchart TD
     B --> C{Is this a<br/>Registration Issue?}
     C -->|No| D[Analyze Denial Reason<br />Handoff to Billing,<br/>Coding or Appropriate Team]
     C -->|Yes| E[Identify Root Cause]
-    E --> F{Eligibility Issue?}
+    E --> F{Eligibility Issue?<br/>or<br/>COB Issue?}
     F -->|Yes| G[Verify Eligibility<br/>Fix Registration]
     F -->|No| H{Authorization Issue?}
     G --> I[Research & Correct<br/>Registration Data]
-    H -->|Yes| J[Verify / Obtain<br />or<br/>Update Authorization]
+    H -->|Yes| J[Verify / Obtain<br/>or<br/>Update Authorization]
     H -->|No| I
     I --> K[Activity Note:<br />Document Changes<br/>& Rationale]
     J --> K
-    K --> L[Resubmit claim<br/>or Send Patient Letter]
-    L --> M{Reoccurance or<br/>Trend Identified?}
+    K --> L[Resubmit Claim<br/>or<br/>Send Patient Letter]
+    L --> M{Reccuring Issue<br/>or<br/>Trend Identified?}
     M -->|Yes| N[Report to Supervisor]
     M -->|No| O[Monitor for Recurrence]
     N --> O
