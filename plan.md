@@ -1,6 +1,6 @@
 # Revenue Cycle SOP & Workflow Framework - Plan
 
-**Version**: 1.1  
+**Version**: 1.2  
 **Last Updated**: May 6, 2026  
 **Owner**: Shaine Meister
 
@@ -52,7 +52,7 @@ phases:
 
 ## Current Status
 
-**Overall Status**: In Development — Foundational framework and templates complete; shifting focus to populating SOPs and workflows.
+**Overall Status**: In Development — Foundational framework and templates complete. First model SOP + Companion Workflow (Registration) created. Shifting focus to refinement and next high-priority SOPs.
 
 ### Framework Documents
 
@@ -74,7 +74,7 @@ phases:
 
 | SOP                       | Status     | Priority | Notes                                      |
 |---------------------------|------------|----------|--------------------------------------------|
-| registration.md           | Planned    | High     | Foundational revenue cycle entry point; first model SOP + companion workflow recommended |
+| registration.md           | Draft      | High     | Foundational revenue cycle entry point. **Model SOP + Companion Workflow pair completed May 2026** |
 | visit-filing-order.md     | Planned    | High     | Critical for accurate claims processing    |
 | demand-claims.md          | Planned    | Medium   | Important for denial management and follow-up |
 
@@ -82,28 +82,28 @@ phases:
 
 | Workflow                  | Status     | Priority | Notes                                      |
 |---------------------------|------------|----------|--------------------------------------------|
-| registration-workflow.md  | Planned    | High     | Companion to Registration SOP (visual quick-reference) |
+| registration-workflow.md  | Draft      | High     | Companion to Registration SOP (visual quick-reference). **Completed as model pair** |
 
-> **Note**: All current SOP and workflow files are empty placeholders. Development of the first real content (Registration) will serve as the model for the rest of the framework.
+> **Note**: Registration SOP and Workflow were created as the first complete model pair to validate the templates and demonstrate the full framework approach (concise language, decision points, companion pairing, embedded regulatory context, and optimization focus).
 
 ## Next Priorities
 
-### Immediate Priorities (Next 2–4 Weeks)
-- Create the first complete model: **Registration SOP + Companion Workflow** (use as the gold-standard example for structure, conciseness, cross-referencing, and optimization).
-- Update `readme.md` Status & Roadmap section and framework documents (add light status footer linking to this plan).
-- Finalize any minor polish on framework documents or templates based on initial use.
+### Immediate Priorities (Next 1–2 Weeks)
+- Review and refine the new Registration SOP + Workflow based on initial feedback.
+- Decide whether to mark Registration as "Active" or make further adjustments.
+- Begin development of the next high-priority item: **Visit Filing Order SOP + Companion Workflow**.
 
 ### Short-Term Priorities (Q2 2026)
 - Develop **Visit Filing Order SOP + Companion Workflow**.
 - Populate **Demand Claims** area.
-- Establish lightweight metrics/feedback mechanisms and a simple review cadence (see new Metrics section below).
-- Begin documenting real-world usage notes and friction points from the first SOPs.
+- Establish lightweight metrics/feedback mechanisms and a simple review cadence.
+- Begin documenting real-world usage notes and friction points from the Registration model.
 
 ### Longer-Term Priorities (Q3 2026+)
 - Expand SOP coverage to additional high-impact revenue cycle functions (Billing & Charge Capture, Denials Management & Appeals, Prior Authorization, Coding & Documentation, Patient Access & Financial Counseling, etc.).
 - Develop an "Adoption & Getting Started" guide for implementing the framework in new organizations.
-- Introduce more advanced optimization practices, measurement dashboards (lightweight), and continuous improvement loops.
-- Create variant guidance for high-variability processes (e.g., payer-specific rules).
+- Introduce more advanced optimization practices, measurement, and continuous improvement loops.
+- Create guidance for handling high-variability processes (e.g., payer-specific rules).
 
 ## Metrics, Review Cadence & Continuous Improvement
 
@@ -114,7 +114,7 @@ This framework prioritizes **lightweight, actionable measurement** that supports
   - Leading indicators: Task completion time, error/rework rate, exception frequency, user-reported mental friction (simple 1–5 scale or qualitative notes).
   - Compliance: Audit readiness / pass rate on relevant controls.
 - **Framework Level**: Number of SOPs created, adoption across contexts, reduction in process variation, user feedback on usability.
-- **Feedback Mechanisms**: Built-in "Friction / Improvement Notes" section in each SOP; periodic team huddles or simple surveys; trigger-based reviews (recurring exceptions, regulatory changes, performance drift).
+- **Feedback Mechanisms**: Built-in "Friction / Improvement Notes" section in each SOP; periodic team huddles or simple surveys; trigger-based reviews (recurring exceptions, regulatory changes, or performance drift).
 
 ### Review Cadence
 - **Framework documents & templates**: Quarterly review or triggered by major regulatory/organizational changes.
@@ -125,18 +125,20 @@ This framework prioritizes **lightweight, actionable measurement** that supports
 
 ## Open Items & Notes
 
-- Populate **Registration SOP + Workflow** as the first complete, real-world example to validate the templates and serve as a model.
+- Review the new Registration model pair and decide on next refinements or activation.
+- Populate **Visit Filing Order** as the next high-priority SOP + Workflow.
 - Determine the right balance of detail vs. conciseness for SOPs while staying platform-agnostic.
-- Decide on visual workflow standards (Mermaid diagram depth, styling conventions, when to use more detailed visuals).
+- Decide on visual workflow standards (Mermaid diagram depth, styling conventions).
 - Develop lightweight metrics and simple feedback capture mechanisms that fit naturally into daily work.
-- Create guidance for handling high-variability / payer-specific processes (flexible SOPs vs. variants).
-- Develop a short "Adoption / Getting Started" guide and possibly example metrics templates.
+- Create guidance for handling high-variability / payer-specific processes.
+- Develop a short "Adoption / Getting Started" guide and example metrics templates.
 - Establish a sustainable review cadence and ownership model as the library grows.
-- Consider adding a glossary of key revenue cycle terms for consistency across documents.
+- Consider adding a glossary of key revenue cycle terms for consistency.
 
 ## Version History
 
 | Version | Date          | Changes                                                                 | Author                  |
 |---------|---------------|-------------------------------------------------------------------------|-------------------------|
 | 1.0     | May 2026      | Initial plan created                                                    | Shaine Meister          |
-| 1.1     | May 6, 2026   | Updated all statuses to reflect completed framework documents and templates; marked Phase 1 Complete and Phase 2 In Progress; refined priorities with immediate focus on Registration as model; added Metrics, Review Cadence & Continuous Improvement section; expanded Open Items and future SOP areas; improved formatting and clarity. | Shaine Meister (assisted by Grok review) |
+| 1.1     | May 6, 2026   | Updated statuses to reflect completed framework and templates; refined priorities and added Metrics section | Shaine Meister (assisted by Grok) |
+| 1.2     | May 6, 2026   | Added Registration SOP + Companion Workflow as completed model pair (status changed to Draft); updated overall status, immediate priorities, and notes to reflect first real content delivery | Shaine Meister (assisted by Grok) |
