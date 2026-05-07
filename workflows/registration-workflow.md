@@ -26,7 +26,7 @@ flowchart TD
     
     B -->|Patient Active / Coverage Issue| B1[Re-verify Eligibility<br/>Update Registration]
     B -->|Demographic / Registration Error| B2[Correct Demographics<br/>Re-verify Eligibility]
-    B -->|Newborn Scenario<br/>(30-day Grace Period)| B3[Send Notification Letter<br/>(Regulatory / Courtesy)]
+    B -->|Newborn Scenario (30-day Grace Period)| B3[Send Notification Letter<br/>(Regulatory / Courtesy)]
     B -->|Patient Involvement Needed| B4[Send Letter to Patient/Guarantor<br/>Move to Self-Pay<br/>(Exception: Medicaid/Medicare)]
     
     B1 --> C[Document Changes<br/>& Rationale]
