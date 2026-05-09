@@ -63,5 +63,5 @@ flowchart TD
 
 | Version | Date       | Changes                                                                 | Author          |
 |---------|------------|-------------------------------------------------------------------------|-----------------|
-| 1.0     | May 8, 2026| Initial concise workflow created as extension of Registration COB process | Shaine Meister (with Grok) |
-| 1.2     | May 8, 2026| Major revision to align with simplified decision flow. Added validation gate (VFO Update Required + COB Research Note support), claims-generated branching, Primary Paid + Secondary billing path with Demand Claim handoff, and explicit consequential nature of VFO changes. | Shaine Meister (with Grok) |
+| 1.0     | May 8, 2026| Initial concise workflow created as extension of Registration COB process | Shaine Meister |
+| 1.2     | May 8, 2026| Major revision to align with simplified decision flow. Added validation gate (VFO Update Required + COB Research Note support), claims-generated branching, Primary Paid + Secondary billing path with Demand Claim handoff, and explicit consequential nature of VFO changes. | Shaine Meister |
