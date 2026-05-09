@@ -135,5 +135,5 @@ The note must include:
 
 | Version | Date       | Changes                                                                 | Author          |
 |---------|------------|-------------------------------------------------------------------------|-----------------|
-| 1.0     | May 8, 2026| Initial version created as detailed expansion of COB filing order action from Registration SOP | Shaine Meister (with Grok) |
-| 1.2     | May 8, 2026| Major revision to align Step-by-Step Procedure with simplified decision flow. Added critical validation gate (VFO Update Required + COB Research Note support), claims-generated branching logic, Primary Paid + Secondary billing path with explicit Demand Claim handoff, and stronger emphasis on consequential nature of VFO changes and documentation requirements. | Shaine Meister (with Grok) |
+| 1.0     | May 8, 2026| Initial version created as detailed expansion of COB filing order action from Registration SOP | Shaine Meister |
+| 1.2     | May 8, 2026| Major revision to align Step-by-Step Procedure with simplified decision flow. Added critical validation gate (VFO Update Required + COB Research Note support), claims-generated branching logic, Primary Paid + Secondary billing path with explicit Demand Claim handoff, and stronger emphasis on consequential nature of VFO changes and documentation requirements. | Shaine Meister |
