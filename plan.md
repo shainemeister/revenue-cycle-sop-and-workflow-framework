@@ -1,7 +1,7 @@
 # Revenue Cycle SOP & Workflow Framework - Plan
 
-**Version**: 1.3  
-**Last Updated**: May 7, 2026  
+**Version**: 1.4  
+**Last Updated**: May 8, 2026  
 **Owner**: Shaine Meister
 
 ## Project Goals
@@ -52,7 +52,7 @@ phases:
 
 ## Current Status
 
-**Overall Status**: In Development — Foundational framework and templates complete. First model SOP + Companion Workflow (Registration) has been developed, refined through multiple iterations, and passed framework integrity check. Shifting focus to next high-priority SOPs.
+**Overall Status**: In Development — Foundational framework and templates complete. Registration model pair and Visit Filing Order pair have been developed and refined. Shifting focus to Demand Claims as the next priority.
 
 ### Framework Documents
 
@@ -75,7 +75,7 @@ phases:
 | SOP                       | Status     | Priority | Notes                                      |
 |---------------------------|------------|----------|--------------------------------------------|
 | registration.md           | Complete   | High     | Foundational revenue cycle entry point. **Model SOP + Companion Workflow pair completed and refined (v1.6)** |
-| visit-filing-order.md     | Planned    | High     | Critical for accurate claims processing    |
+| visit-filing-order.md     | Complete   | High     | Critical for accurate claims processing and COB resolution. **Completed as model pair (v1.2)** |
 | demand-claims.md          | Planned    | Medium   | Important for denial management and follow-up |
 
 ### Workflows (Planned / In Development)
@@ -83,20 +83,20 @@ phases:
 | Workflow                  | Status     | Priority | Notes                                      |
 |---------------------------|------------|----------|--------------------------------------------|
 | registration-workflow.md  | Complete   | High     | Companion to Registration SOP (visual quick-reference). **Completed as model pair (v1.7)** |
+| visit-filing-order-workflow.md | Complete | High     | Companion to Visit Filing Order SOP. **Completed (v1.2)** |
 
-> **Note**: Registration SOP and Workflow were developed as the first complete model pair. They have been iteratively refined and passed an integrity check against the core framework documents (Core Principles, Modular Structure, Optimization Standards, and Regulatory Foundations).
+> **Note**: Registration and Visit Filing Order pairs were developed using the established SOP + Companion Workflow pattern. Both have been refined and aligned with the core framework documents.
 
 ## Next Priorities
 
 ### Immediate Priorities (Next 1–2 Weeks)
-- Mark Registration model pair as "Active" once final review is complete.
-- Begin development of the next high-priority item: **Visit Filing Order SOP + Companion Workflow**.
+- Mark Visit Filing Order pair as Complete / Active.
+- Begin development of **Demand Claims SOP + Companion Workflow** (next priority after Visit Filing Order).
 
 ### Short-Term Priorities (Q2 2026)
-- Develop **Visit Filing Order SOP + Companion Workflow**.
-- Populate **Demand Claims** area.
+- Develop **Demand Claims SOP + Companion Workflow**.
 - Establish lightweight metrics/feedback mechanisms and a simple review cadence.
-- Begin documenting real-world usage notes and friction points from the Registration model.
+- Begin documenting real-world usage notes and friction points from the Registration and Visit Filing Order models.
 
 ### Longer-Term Priorities (Q3 2026+)
 - Expand SOP coverage to additional high-impact revenue cycle functions (Billing & Charge Capture, Denials Management & Appeals, Prior Authorization, Coding & Documentation, Patient Access & Financial Counseling, etc.).
@@ -124,9 +124,7 @@ This framework prioritizes **lightweight, actionable measurement** that supports
 
 ## Open Items & Notes
 
-- Decide whether to mark the Registration model pair as "Active".
-- Populate **Visit Filing Order** as the next high-priority SOP + Workflow.
-- Determine the right balance of detail vs. conciseness for SOPs while staying platform-agnostic.
+- Populate **Demand Claims** as the next high-priority SOP + Workflow.
 - Decide on visual workflow standards (Mermaid diagram depth, styling conventions).
 - Develop lightweight metrics and simple feedback capture mechanisms that fit naturally into daily work.
 - Create guidance for handling high-variability / payer-specific processes.
@@ -136,9 +134,10 @@ This framework prioritizes **lightweight, actionable measurement** that supports
 
 ## Version History
 
-| Version | Date          | Changes                                                                 | Author                  |
-|---------|---------------|-------------------------------------------------------------------------|-------------------------|
-| 1.0     | May 2026      | Initial plan created                                                    | Shaine Meister          |
-| 1.1     | May 6, 2026   | Updated statuses to reflect completed framework and templates; refined priorities and added Metrics section | Shaine Meister (assisted by Grok) |
-| 1.2     | May 6, 2026   | Added Registration SOP + Companion Workflow as completed model pair (status changed to Draft) | Shaine Meister (assisted by Grok) |
-| 1.3     | May 7, 2026   | Updated Registration SOP (v1.6) and Workflow (v1.7) to Complete status after multiple refinements and successful framework integrity check. Updated immediate priorities and notes. | Shaine Meister (assisted by Grok) |
+| Version | Date          | Changes                                                                 | Author          |
+|---------|---------------|-------------------------------------------------------------------------|-----------------|
+| 1.0     | May 2026      | Initial plan created                                                    | Shaine Meister  |
+| 1.1     | May 6, 2026   | Updated statuses to reflect completed framework and templates; refined priorities and added Metrics section | Shaine Meister  |
+| 1.2     | May 6, 2026   | Added Registration SOP + Companion Workflow as completed model pair (status changed to Draft) | Shaine Meister  |
+| 1.3     | May 7, 2026   | Updated Registration SOP (v1.6) and Workflow (v1.7) to Complete status after multiple refinements and successful framework integrity check. Updated immediate priorities and notes. | Shaine Meister  |
+| 1.4     | May 8, 2026   | Updated Visit Filing Order SOP (v1.2) and Workflow (v1.2) to Complete status. Added visit-filing-order-workflow.md to tracking. Cleaned author references in Version History. Updated Next Priorities to focus on Demand Claims development. | Shaine Meister  |
