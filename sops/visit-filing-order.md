@@ -35,7 +35,7 @@ This SOP serves as the detailed expansion of the “correct filing order (intern
 
 | Role                                      | Responsibilities                                                                 |
 |-------------------------------------------|----------------------------------------------------------------------------------|
-| Revenue Cycle Registration Specialist     | Review accounts, validate VFO update requirement and COB research support, verify and update filing order, document changes |\n| Registration Quality / Denial Prevention Analyst | Audit VFO accuracy and change documentation, identify trends, provide feedback |\n| Billing Coordinator / Specialist          | Coordinate reprocessing, retro review, and Demand Claim handoffs related to VFO changes |\n| Revenue Cycle Supervisor                  | Oversee complex VFO cases, approve escalations, monitor timely filing and financial impact |\n
+| Revenue Cycle Registration Specialist     | Review accounts, validate VFO update requirement and COB research support, verify and update filing order, document changes |\\n| Registration Quality / Denial Prevention Analyst | Audit VFO accuracy and change documentation, identify trends, provide feedback |\\n| Billing Coordinator / Specialist          | Coordinate reprocessing, retro review, and Demand Claim handoffs related to VFO changes |\\n| Revenue Cycle Supervisor                  | Oversee complex VFO cases, approve escalations, monitor timely filing and financial impact |\\n
 ## Prerequisites
 
 - Access to registration system, eligibility verification tools, payer portals, and work queues.
@@ -135,5 +135,6 @@ The note must include:
 
 | Version | Date       | Changes                                                                 | Author          |
 |---------|------------|-------------------------------------------------------------------------|-----------------|
-| 1.0     | May 8, 2026| Initial version created as detailed expansion of COB filing order action from Registration SOP | Shaine Meister |
-| 1.2     | May 8, 2026| Major revision to align Step-by-Step Procedure with simplified decision flow. Added critical validation gate (VFO Update Required + COB Research Note support), claims-generated branching logic, Primary Paid + Secondary billing path with explicit Demand Claim handoff, and stronger emphasis on consequential nature of VFO changes and documentation requirements. | Shaine Meister |
+| 1.0     | May 8, 2026| Initial version created as detailed expansion of COB filing order action from Registration SOP | Shaine Meister  |
+| 1.1     | May 8, 2026| Refined Purpose, Scope, and Prerequisites for better alignment with Visit Filing Order vs Patient Filing Order concepts and framework principles. Improved documentation requirements | Shaine Meister  |
+| 1.2     | May 8, 2026| Major revision to align Step-by-Step Procedure with simplified decision flow. Added critical validation gate (VFO Update Required + COB Research Note support), claims-generated branching logic, Primary Paid + Secondary billing path with explicit Demand Claim handoff, and stronger emphasis on consequential nature of VFO changes | Shaine Meister  |
