@@ -1,9 +1,22 @@
 # Revenue Cycle SOP & Workflow Framework
 
 **Status**: In Development  
-**Last Updated**: May 2026  
+**Last Updated**: May 2026 (Enhanced for navigation, visual overview, and low-maintenance scaling)  
 **Owner**: Shaine Meister  
 **Scope**: This framework focuses on revenue cycle management processes and is designed to be adaptable across different healthcare organizations and systems.
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Purpose](#purpose)
+- [Core Principles](#core-principles)
+- [Framework Components](#framework-components)
+- [Visual Project Overview](#visual-project-overview)
+- [Current Focus Areas](#current-focus-areas)
+- [How to Use This Framework](#how-to-use-this-framework)
+- [How to Create a New SOP or Workflow (Step-by-Step Process)](#how-to-create-a-new-sop-or-workflow-step-by-step-process)
+- [Collaboration & Maintenance](#collaboration--maintenance)
+- [Status & Roadmap](#status--roadmap)
 
 ## Overview
 
@@ -34,12 +47,57 @@ This framework is built on the following foundational ideas:
 
 This project is organized into four main areas:
 
-| Component     | Purpose                                                                 | Location          |
-|---------------|-------------------------------------------------------------------------|-------------------|
-| **Framework** | Core principles, modular design, regulatory foundations, and optimization standards | `framework/`      |
-| **Templates** | Reusable templates for creating consistent SOPs and workflows           | `templates/`      |
-| **SOPs**      | Detailed Standard Operating Procedures for specific revenue cycle areas | `sops/`           |
-| **Workflows** | Process flows, decision trees, and visual process documentation         | `workflows/`      |
+| Component     | Purpose                                                                 | Location |
+|---------------|-------------------------------------------------------------------------|----------|
+| **Framework** | Core principles, modular design, regulatory foundations, and optimization standards | [`framework/`](./framework) |
+| **Templates** | Reusable templates for creating consistent SOPs and workflows           | [`templates/`](./templates) |
+| **SOPs**      | Detailed Standard Operating Procedures for specific revenue cycle areas | [`sops/`](./sops)<br/>*(All current SOP documents reside here — no direct file links in this README for maximum scalability)* |
+| **Workflows** | Process flows, decision trees, and visual process documentation         | [`workflows/`](./workflows)<br/>*(All current Workflow documents reside here — no direct file links in this README for maximum scalability)* |
+
+## Visual Project Overview
+
+A visual representation of the overall project structure helps quickly convey the modular architecture, relationships between components, and the deliberate design for long-term maintainability. 
+
+The diagram provides a clean, simplified tree view of the project’s top-level structure. It shows the main files and folders branching directly from the root in an easy-to-scan layout. This design prioritizes readability and quick comprehension while highlighting the modular organization—core documentation and principles on one side, operational content on the other—without overwhelming detail.
+
+This diagram is created using **Mermaid** syntax, which GitHub natively renders in README files (interactive pan/zoom on supported views). It is fully text-based, version-controlled, and requires **zero external assets or updates** when new SOPs or Workflows are added.
+
+```mermaid
+flowchart TD
+    Root["<b>revenue-cycle-sop-and-workflow-framework/</b><br/><i>Modular, platform-agnostic SOP &amp; Workflow Framework</i>"]
+
+    README["README.md<br/><i>Outline, Purpose, Principles, and Navigation</i>"]
+    PLAN["plan.md<br/><i>Tracker: Goals, Roadmap,<br/>Status and Priorities</i>"]
+    Framework["framework/<br/><i>core-principles.md<br/>modular-design.md<br/>optimization-standards.md<br/>regulatory-foundations.md</i>"]
+    Templates["templates/<br/><i>sop-template.md<br/>workflow-templates.md</i>"]
+    SOPS["sops/<br/><i>Detailed Standard Operating Procedures</i>"]
+    WORKFLOWS["workflows/<br/><i>Visual Process Flows (decision trees)</i>"]
+
+    Root --> README
+    README --> PLAN
+    PLAN --> Framework
+    Framework --> Templates
+    Templates --> SOPS
+    SOPS --> WORKFLOWS
+
+    %% Simple high-contrast styling for readability
+    style Root fill:#0f172a,stroke:#334155,color:#f1f5f9
+    style README fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
+    style PLAN fill:#fef3c7,stroke:#b45309,color:#78350f
+    style Framework fill:#dcfce7,stroke:#15803d,color:#166534
+    style Templates fill:#ede9fe,stroke:#6d28d9,color:#5b21b6
+    style SOPS fill:#fee2e2,stroke:#dc2626,color:#7f1d1d
+    style WORKFLOWS fill:#e0f2fe,stroke:#0284c7,color:#0c4a6e
+```
+
+**Key takeaways from the visual structure:**
+
+- **Clear separation of concerns** — Strategy (framework + templates) is decoupled from content (sops + workflows).
+- **Centralized tracking** — `plan.md` absorbs all dynamic information (which SOPs exist, their status, priorities, metrics).
+- **Scalability by design** — New SOPs or Workflows are added only to their folders + `plan.md`. The README and this diagram remain unchanged.
+- **Intuitive flow for contributors** — Templates feed both SOPs and Workflows; everything traces back to the core principles.
+
+This visual approach aligns with the framework’s own “Clarity & Consistency” and “Optimization Focus” principles while making the architecture immediately understandable to humans and AI agents alike.
 
 ## Current Focus Areas
 
@@ -50,13 +108,18 @@ Initial development of this framework is centered on establishing a strong found
 - **SOPs** — Developing clear, well-structured operating procedures for key revenue cycle functions.
 - **Workflows** — Designing visual process flows and decision frameworks that support the SOPs.
 
-Specific SOPs and workflows under active development, along with their current status, are tracked in the `plan.md` file. This separation keeps the high-level structure clear while allowing detailed progress tracking in one central location.
+**For the complete, up-to-date picture of which specific SOPs and Workflows are Complete, In Progress, or Planned (including Registration, Visit Filing Order, Demand Claims, and future expansions to Billing, Denials, Prior Auth, Coding, etc.):**
+
+→ Refer to the [plan.md](./plan.md) file.  
+→ Browse the latest documents directly in the [sops/](./sops) directory and [workflows/](./workflows) directory.
+
+This directory-based approach ensures that as new documents are created or refined, they automatically become available without any changes to this README.
 
 ## How to Use This Framework
 
-1. Review the documents in the `framework/` folder to understand the guiding principles and structure.
-2. Use the templates in the `templates/` folder when creating new SOPs or workflows.
-3. Follow the established format and structure when developing content in the `sops/` and `workflows/` folders.
+1. Review the documents in the [framework/](./framework) directory to understand the guiding principles and structure.
+2. Use the templates in the [templates/](./templates) directory when creating new SOPs or workflows.
+3. Follow the established format and structure when developing content in the [sops/](./sops) directory and [workflows/](./workflows) directory.
 4. Maintain version history and clear documentation so processes remain understandable and maintainable over time.
 
 ## How to Create a New SOP or Workflow (Step-by-Step Process)
@@ -64,23 +127,22 @@ Specific SOPs and workflows under active development, along with their current s
 This section provides a clear, repeatable process for creating new content while maintaining full continuity with the framework. Follow these steps in order.
 
 ### Step 1: Review the Framework Documents
-Before creating any new content, review the relevant sections of the framework to ensure alignment:
+Before creating any new content, review the relevant sections of the [framework/](./framework) directory to ensure alignment:
 
-- Read `core-principles.md` (especially Principles 1–4 and 7) to internalize the philosophy of simplicity, intuitive flow, usability over exhaustiveness, and continuous improvement.
-- Review `modular-structure.md` (especially the “Recommended Design Patterns” section) to understand the **SOP + Companion Workflow** pairing approach.
-- Check `regulatory-foundations.md` for how to integrate compliance considerations lightly and appropriately.
-- Review `optimization-standards.md` to understand how to design for predictable navigation with minimal mental friction and reduced text volume.
+- Internalize the philosophy of simplicity, intuitive flow, usability over exhaustiveness, and continuous improvement.
+- Understand the **SOP + Companion Workflow** pairing approach.
+- Learn how to integrate compliance considerations lightly and appropriately.
+- Understand how to design for predictable navigation with minimal mental friction and reduced text volume.
 
 ### Step 2: Decide on the Deliverable(s)
 - Determine whether you need an **SOP**, a **Workflow**, or **both** (recommended pairing).
   - Create an **SOP** when the process requires documented context, roles, regulatory notes, quality checks, or training value.
   - Create a **Workflow** when the process benefits from a simplified, visual quick-reference for day-to-day use.
-  - For most processes, create **both** as companion documents (see `modular-structure.md` – Recommended Design Patterns).
+  - For most processes, create **both** as companion documents.
 
 ### Step 3: Copy the Appropriate Template
-- Go to the `templates/` folder.
-- Copy `sop-template.md` if creating an SOP.
-- Copy `workflow-template.md` if creating a Workflow.
+- Go to the [templates/](./templates) directory.
+- Copy `sop-template.md` if creating an SOP (or `workflow-template.md` if creating a Workflow) from within the templates folder.
 - Paste the copy into the target location (`sops/` or `workflows/`) and rename it appropriately (e.g., `registration.md` or `registration-workflow.md`).
 
 ### Step 4: Fill in the Content
@@ -96,8 +158,8 @@ Before creating any new content, review the relevant sections of the framework t
 - Ensure both documents reference the relevant framework files where appropriate (the templates already include guidance for this).
 
 ### Step 6: Update Supporting Files
-- Add the new SOP/Workflow to the `plan.md` file with its current status and priority.
-- If this is a significant addition, consider updating the “Current Focus Areas” or “Status & Roadmap” sections in this `readme.md`.
+- Add the new SOP/Workflow to the [plan.md](./plan.md) file with its current status and priority.
+- **Important for maintenance scaling**: There is **no need to edit this README.md** when adding or updating SOPs or Workflows. All dynamic tracking lives in `plan.md`, and documents are discovered via the directory links.
 
 ### Step 7: Review for Framework Alignment
 Before finalizing, perform a quick self-check:
@@ -115,7 +177,25 @@ Before finalizing, perform a quick self-check:
 
 This framework is being developed collaboratively. High-level direction, feedback, and new content requests are managed through direct communication and issues. All documentation follows the standards defined in this repository to ensure consistency and long-term usability.
 
-Version history is maintained through Git. When updating existing documents, changes should be clearly described and dated.
+**Version history** is maintained through Git. When updating existing documents, changes should be clearly described and dated.
+
+### Maintenance Scaling Design (Low-Effort by Intent)
+
+To keep maintenance of **this README.md** minimal even as the project grows to dozens or hundreds of SOPs and Workflows:
+
+- **No direct links to individual SOP or Workflow documents** — Only directory links (`sops/`, `workflows/`) are used. New files appear automatically in the GitHub folder view.
+- **Dynamic content lives in `plan.md`** — Status, priorities, metrics, and the living list of which SOPs/Workflows exist or are in progress are tracked in one dedicated file. This README stays high-level and stable.
+- **High-level, evergreen descriptions** — Sections describe philosophy, process, and structure rather than enumerating current files.
+- **Mermaid diagram** — The visual overview is text-based and abstract; it never needs updating when content files are added or renamed.
+- **Relative links only** — All folder links (e.g. `./sops`) work regardless of branch, fork, or clone — no hard-coded repository paths.
+
+**Result**: Contributors and maintainers can focus almost exclusively on creating excellent SOP/Workflow content and updating the single `plan.md` tracker. This README requires changes only for major philosophical, process, or structural shifts.
+
+Edge cases considered:
+- Very large number of SOPs → GitHub folder views and `plan.md` scale gracefully; README does not grow.
+- Frequent renames or refactors of individual documents → Only `plan.md` needs updating.
+- Multiple contributors or external forks → Relative directory links remain valid everywhere.
+- AI agents or automated tooling parsing the README → Clear section structure + Table of Contents + stable high-level text makes reliable navigation and extraction easy.
 
 ## Status & Roadmap
 
@@ -126,4 +206,10 @@ Future phases may include:
 - Refinement of optimization and measurement standards
 - Development of supporting tools and examples
 
-Progress on individual SOPs and workflows is tracked in the `plan.md` file.
+**Detailed, always-current status** (including exactly which SOPs and Workflows are Complete / In Progress / Planned, their versions, and next priorities) is maintained in the [plan.md](./plan.md) file.
+
+This separation keeps the high-level structure in this README clear and low-maintenance while allowing detailed progress tracking in one central, easy-to-update location.
+
+---
+
+*Thank you for using and contributing to this framework. Your feedback helps us continuously improve both the processes and the documentation itself.*
