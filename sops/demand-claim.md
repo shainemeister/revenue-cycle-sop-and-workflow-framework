@@ -1,6 +1,6 @@
 # Demand Claim SOP
 
-**Version**: 1.0  
+**Version**: 1.1  
 **Last Updated**: May 9, 2026  
 **Owner**: Shaine Meister  
 **Status**: Draft
@@ -10,94 +10,81 @@
 
 ## Purpose
 
-To provide a standardized, compliant process for initiating and processing **Demand Claims** to the secondary or tertiary payer after primary adjudication, ensuring correct sequencing in the Visit Filing Order without risking duplicate billing to the primary payer.
+To provide a clear, simplified process for initiating Demand Claims following VFO updates and retro claims, ensuring correct next-payer billing while coordinating with credit review.
 
 ## In Scope
 
-- Validating mandatory conditions for Demand Claim
-- Preparing and forcing demand submission in the system
-- Documentation and audit trail requirements
-- Handoffs to related processes (e.g., retro adjudication)
+- Processing Demand Claims after VFO update and retro claim
+- Insurance payment pending credit review validation
+- System actions for demand initiation and balance movement
 
 ## Out of Scope
 
-- Initial claim submission
-- Primary payer research or COB determination (handled in Registration / Visit Filing Order)
-- Full denial management or appeals
+- Primary payer research / COB determination
+- Complex multi-payer coordination (escalate)
+- Full credit / payment posting
 
 ## Roles & Responsibilities
 
 | Role                  | Responsibility |
 |-----------------------|----------------|
-| Registration / COB Specialist | Validate conditions, prepare demand, document rationale |
-| Billing / Claims Team     | Review complex cases, monitor adjudication, coordinate payer contact if needed |
-| Supervisor / Lead         | Escalate complex or high-risk demands |
+| Registration / COB Specialist | Validate payment pending review, initiate demand, document |
+| Credit / Billing Team     | Handle payment review when pending |
+| Supervisor            | Escalate complex cases |
 
-## Prerequisites – Mandatory Validations
+## Prerequisites
 
-**All three conditions must be confirmed before proceeding:**
-
-1. Primary payer has already adjudicated the claim (payment posted or denial received and worked).
-2. A Demand Claim is required to prevent duplicate submission to the primary (normal resubmit would risk rebilling primary).
-3. Secondary (or next responsible party) has remaining liability per the current Visit Filing Order.
+- VFO has been updated
+- Claim has been retro'd
+- Insurance payment is pending credit review (critical gate)
 
 ## Step-by-Step Procedure
 
-1. **Receive Demand Trigger**  
-   Triggered from Visit Filing Order update or work queue.
+1. **Receive Trigger**  
+   VFO Updated + Claim Retro'd.
 
-2. **Validate 3 Mandatory Conditions**  
-   - Confirm primary adjudication complete.
-   - Confirm demand is necessary to avoid duplicate primary billing.
-   - Confirm next payer has liability.  
-   If any condition fails → Refer back to Visit Filing Order Workflow. Stop.
+2. **Check Insurance Payment Pending Credit Review**  
+   - If **No** → Do Not Proceed. Make note and allow Credit Team to review.
+   - If **Yes** → Proceed.
 
-3. **Verify Visit Filing Order**  
-   Confirm Primary → Secondary → Tertiary sequence supports next-party billing.
+3. **Initiate Demand Claim**  
+   Select appropriate payer if needed.
+   Select Dummy Printer.
 
-4. **Prepare Demand Claim**  
-   In the system, select the appropriate demand/force-next-payer option.
+4. **Distribute Payment & Move Balance**  
+   Apply insurance payment.
+   Move remaining balance to next responsible party.
 
-5. **Document Thoroughly**  
-   Add detailed account note with:  
-   - All three conditions met (with evidence)  
-   - Specific COB / VFO rationale  
-   - Date/time of action
-
-6. **Submit Demand Claim**  
-   Force submission to the next responsible party.
-
-7. **Monitor & Close**  
-   Track acknowledgement and adjudication.  
-   Document outcome and advance balance per NRP rules.
+5. **Document & Close**  
+   Add account notes. Confirm END status.
 
 ## Quality Checks
 
-- All three prerequisites documented before submission
-- Clear audit trail in account notes
-- No duplicate primary billing risk introduced
-- Escalation performed for complex cases
+- Payment pending credit review confirmed before any demand action
+- Proper dummy printer used
+- Clear documentation of actions and rationale
+- No premature balance movement
 
 ## Optimization Notes
 
-- Focus on validation gate to minimize errors and compliance risk.
-- Keep notes concise but sufficient for audit.
-- Use templates for common demand scenarios when available.
+- Keep process extremely lean — single critical decision gate.
+- Strong handoff to Credit Team when needed.
+- Minimize steps to reduce mental friction.
 
 ## Regulatory / Compliance Notes
 
-- Demand claims must align with payer contracts and Coordination of Benefits rules.
-- Maintain records supporting the justification for demand submission.
-- Follow timely filing requirements for secondary payers.
+- Ensure actions maintain correct Coordination of Benefits sequencing.
+- Document justification for demand to support audit readiness.
+- Adhere to payer-specific demand requirements.
 
 ## Related Documents
 
 - **Companion Workflow**: `../workflows/demand-claim-workflow.md`
-- Visit Filing Order SOP & Workflow (primary trigger)
-- Registration SOP (COB section)
+- Visit Filing Order SOP & Workflow
 
 ## Version History
 
 | Version | Date       | Changes | Author |
 |---------|------------|---------|--------|
-| 1.0     | May 9, 2026 | Initial SOP created as companion to Demand Claim Workflow | Shaine Meister |
+| 1.0     | May 9, 2026 | Initial SOP created | Shaine Meister |
+| 1.1     | May 9, 2026 | Simplified Step-by-Step and validation to exactly mirror the updated minimal Mermaid flow. | Shaine Meister |
