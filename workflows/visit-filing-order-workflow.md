@@ -1,7 +1,7 @@
 # Visit Filing Order Workflow
 
-**Version**: 1.2  
-**Last Updated**: May 8, 2026  
+**Version**: 1.3  
+**Last Updated**: May 9, 2026  
 **Owner**: Shaine Meister  
 **Status**: Draft
 
@@ -32,11 +32,11 @@ flowchart TD
 
     H -->|Yes| J{Primary Paid Claim<br>AND<br>Need to Bill Secondary?}
 
-    J -->|No| K
+    J -->|No| K[Add Detailed Account Note Supporting VFO Change]
+
     J -->|Yes| Ja[Add Detailed Account Note<br>Proceed with VFO Update<br>AND<br>Force Retro<br>THEN<br>Follow Demand Claim<br>SOP / Workflow]
 
-    I --> K[Add Detailed Account Note Supporting VFO Change]
-
+    I --> K
     K --> End[Visit Filing Order End]
     Ja --> End
 ```
@@ -57,7 +57,7 @@ flowchart TD
 
 - **Parent SOP**: [visit-filing-order.md](../sops/visit-filing-order.md)
 - **Related Process**: Coordination of Benefits (COB) section in [registration.md](../sops/registration.md)
-- Future: Demand Claim SOP / Workflow (planned)
+- **Demand Claim SOP & Workflow** (implemented): [demand-claim.md](../sops/demand-claim.md) and [demand-claim-workflow.md](../workflows/demand-claim-workflow.md)
 
 ## Version History
 
@@ -66,3 +66,4 @@ flowchart TD
 | 1.0     | May 8, 2026| Initial concise workflow created as extension of Registration COB process | Shaine Meister  |
 | 1.1     | May 8, 2026| Refined Process Overview, added emphasis on consequential nature of VFO changes, improved Key Decision Points and Notes for better usability and validation focus | Shaine Meister  |
 | 1.2     | May 8, 2026| Major revision to align with simplified decision flow provided. Added validation gate (VFO Update Required + COB Research Note support), claims-generated branching, Primary Paid + Secondary billing path with Demand Claim handoff, and explicit handling of retro review | Shaine Meister  |
+| 1.3     | May 9, 2026| Implemented Areas for Improvement and Recommendations: restructured Mermaid diagram for cleaner syntax and explicit paths (removed bare node reference K by defining it once and routing I and J-No branches clearly to it), updated Related Documents to replace outdated Future note with links to the now-implemented Demand Claim pair, updated Version, Last Updated, and added implementation details to Version History. | Shaine Meister  |
