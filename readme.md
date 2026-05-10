@@ -63,25 +63,48 @@ The diagram provides a clean, simplified tree view of the project’s top-level 
 This diagram is created using **Mermaid** syntax, which GitHub natively renders in README files (interactive pan/zoom on supported views). It is fully text-based, version-controlled, and requires **zero external assets or updates** when new SOPs or Workflows are added.
 
 ```mermaid
+%%{init: {
+  "flowchart": {
+    "htmlLabels": true,
+    "nodeSpacing": 40,
+    "rankSpacing": 55,
+    "curve": "basis"
+  }
+}}%%
 flowchart TD
-    Root["<b>revenue-cycle-sop-and-workflow-framework/</b><br/><i>Modular, platform-agnostic SOP &amp; Workflow Framework</i>"]
+    Root["<b>revenue-cycle-sop-and-workflow-framework/</b><br/><i>Modular, platform-agnostic SOP & Workflow Framework</i>"]
 
-    README["README.md<br/><i>Outline, Purpose, Principles, and Navigation</i>"]
-    PLAN["plan.md<br/><i>Tracker: Goals, Roadmap,<br/>Status and Priorities</i>"]
-    Framework["framework/<br/><i>core-principles.md<br/>modular-design.md<br/>optimization-standards.md<br/>regulatory-foundations.md</i>"]
-    Templates["templates/<br/><i>sop-template.md<br/>workflow-templates.md</i>"]
-    SOPS["sops/<br/><i>Detailed Standard Operating Procedures</i>"]
-    WORKFLOWS["workflows/<br/><i>Visual Process Flows (decision trees)</i>"]
+    subgraph Core ["🗂️ Core Documentation Layer"]
+        direction TB
+        coreDesc["<b>Foundational files — always present, actively maintained & cross-referenced</b><br/><br/>These files form the backbone of every project. They are the first things anyone (including future you or AI collaborators) should read to understand scope, goals, and how to contribute or navigate the work."]:::descBox
+        README["readme.md<br/><i>Outline, Purpose, Principles, Navigation, Visual Overview</i>"]
+        PLAN["plan.md<br/><i>Tracker: Goals, Roadmap,<br/>Status and Priorities (Living Document)</i>"]
+    end
 
-    Root --> README
-    README --> PLAN
-    PLAN --> Framework
-    Framework --> Templates
-    Templates --> SOPS
-    SOPS --> WORKFLOWS
+    subgraph Static ["📁 Static / Foundational Directories"]
+        direction TB
+        staticDesc["<b>Reusable, stable resources — change infrequently</b><br/><br/>These directories hold the reusable assets, principles, and templates that give the project its consistent structure and long-term maintainability across iterations."]:::descBox
+        Framework["framework/<br/><i>core-principles.md<br/>modular-design.md<br/>optimization-standards.md<br/>regulatory-foundations.md</i>"]
+        Templates["templates/<br/><i>sop-template.md<br/>workflow-templates.md</i>"]
+    end
 
-    %% Simple high-contrast styling for readability
+    subgraph Content ["📋 Operational Content Layer"]
+        direction TB
+        contentDesc["<b>Domain-specific SOPs and Workflows — the living deliverables</b><br/><br/>These contain the actual procedures and visual flows. New items are added here + tracked in plan.md without changing higher-level docs or the README diagram."]:::descBox
+        SOPS["sops/<br/><i>Detailed Standard Operating Procedures</i>"]
+        WORKFLOWS["workflows/<br/><i>Visual Process Flows (decision trees)</i>"]
+    end
+
+    Root --> Core
+    Core --> Static
+    Static --> Content
+
+    %% High-contrast dark theme styling + vertical layout optimizations for narrow screens
     style Root fill:#0f172a,stroke:#334155,color:#f1f5f9
+    style Core fill:#1e3a8a,stroke:#3b82f6,color:#dbeafe
+    style Static fill:#14532d,stroke:#4ade80,color:#dcfce7
+    style Content fill:#7c3aed,stroke:#a78bfa,color:#ede9fe
+    classDef descBox fill:#f0f9ff,stroke:#0369a1,color:#0c4a6e,stroke-dasharray:5 5,rx:8,ry:8
 ```
 
 **Key takeaways from the visual structure:**
