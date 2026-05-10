@@ -19,32 +19,17 @@ Demand Claims are used when normal claim submission or resubmit would incorrectl
 
 ```mermaid
 flowchart TD
-    A[Demand Claim Triggered<br>from VFO Update or Work Queue] --> B{Confirm 3 Mandatory Conditions}
+    A[VFO Updated<br>Claim Retro'd]
 
-    B --> C{1. Primary Adjudicated?<br>Payment or Denial Posted}
-    C -->|No| End1[Do Not Proceed<br>Refer to Visit Filing Order Workflow]
+    A --> B{Insurance Payment Pending Credit Review?}
 
-    B --> D{2. Demand Needed to Prevent<br>Duplicate Primary Billing?}
-    D -->|No| End1
+    B -->|No| End1[DO NOT PROCEED<br>Make Note<br>Allow Credit Team Review]
 
-    B --> E{3. Secondary / Next Payer<br>Has Remaining Liability?}
-    E -->|No| End1
+    B -->|Yes| C[Initiate Demand Claim<br>AND<br>Select Payer If Appropriate<br>THEN<br>Select Dummy Printer]
 
-    C & D & E -->|All Yes| F[Verify Visit Filing Order<br>Primary → Secondary → Tertiary]
+    C --> D[Distribute Insurance Payment<br>AND<br>Move Balance to Next Responsible Party]
 
-    F --> G[Prepare Demand Claim<br>in System]
-
-    G --> H{Primary Paid Claim?<br>AND Need to Bill Secondary?}
-    H -->|Yes| I[Add Detailed Account Note<br>Supporting Demand Rationale]
-
-    I --> J[Force Demand Claim Submission<br>to Next Responsible Party]
-
-    J --> K[Monitor for Acknowledgement<br>& Adjudication]
-
-    K --> L[Document Outcome
-& Update Account Status]
-
-    L --> End2[Demand Claim Processed<br>Balance Advanced]
+    D --> End2[END]
 ```
 
 **Key Decision Points**
