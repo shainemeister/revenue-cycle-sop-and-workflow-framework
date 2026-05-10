@@ -1,7 +1,7 @@
 # Visit Filing Order
 
-**Version**: 1.2  
-**Last Updated**: May 8, 2026  
+**Version**: 1.3  
+**Last Updated**: May 9, 2026  
 **Owner**: Shaine Meister  
 **Status**: Draft
 
@@ -35,7 +35,11 @@ This SOP serves as the detailed expansion of the “correct filing order (intern
 
 | Role                                      | Responsibilities                                                                 |
 |-------------------------------------------|----------------------------------------------------------------------------------|
-| Revenue Cycle Registration Specialist     | Review accounts, validate VFO update requirement and COB research support, verify and update filing order, document changes |\\n| Registration Quality / Denial Prevention Analyst | Audit VFO accuracy and change documentation, identify trends, provide feedback |\\n| Billing Coordinator / Specialist          | Coordinate reprocessing, retro review, and Demand Claim handoffs related to VFO changes |\\n| Revenue Cycle Supervisor                  | Oversee complex VFO cases, approve escalations, monitor timely filing and financial impact |\\n
+| Revenue Cycle Registration Specialist     | Review accounts, validate VFO update requirement and COB research support, verify and update filing order, document changes |
+| Registration Quality / Denial Prevention Analyst | Audit VFO accuracy and change documentation, identify trends, provide feedback |
+| Billing Coordinator / Specialist          | Coordinate reprocessing, retro review, and Demand Claim handoffs related to VFO changes |
+| Revenue Cycle Supervisor                  | Oversee complex VFO cases, approve escalations, monitor timely filing and financial impact |
+
 ## Prerequisites
 
 - Access to registration system, eligibility verification tools, payer portals, and work queues.
@@ -128,7 +132,7 @@ The note must include:
 
 - **Companion Workflow**: [visit-filing-order-workflow.md](../workflows/visit-filing-order-workflow.md)
 - **Registration Verification & Follow-Up SOP**: [registration.md](../sops/registration.md) — COB section
-- Future: Demand Claim SOP / Workflow (planned)
+- **Demand Claim SOP & Workflow** (implemented): [demand-claim.md](../sops/demand-claim.md) and [demand-claim-workflow.md](../workflows/demand-claim-workflow.md)
 - Organizational policies on Coordination of Benefits, timely filing, and retro adjudication
 
 ## Version History
@@ -138,3 +142,4 @@ The note must include:
 | 1.0     | May 8, 2026| Initial version created as detailed expansion of COB filing order action from Registration SOP | Shaine Meister  |
 | 1.1     | May 8, 2026| Refined Purpose, Scope, and Prerequisites for better alignment with Visit Filing Order vs Patient Filing Order concepts and framework principles. Improved documentation requirements | Shaine Meister  |
 | 1.2     | May 8, 2026| Major revision to align Step-by-Step Procedure with simplified decision flow. Added critical validation gate (VFO Update Required + COB Research Note support), claims-generated branching logic, Primary Paid + Secondary billing path with explicit Demand Claim handoff, and stronger emphasis on consequential nature of VFO changes | Shaine Meister  |
+| 1.3     | May 9, 2026| Implemented Areas for Improvement and Recommendations: fixed Roles & Responsibilities table formatting artifacts, cleaned and restructured Mermaid diagram in companion workflow for clarity (no bare node references), updated Related Documents to link to implemented Demand Claim pair instead of outdated Future note, updated Version, Last Updated, and added detailed change entry to Version History. | Shaine Meister  |
