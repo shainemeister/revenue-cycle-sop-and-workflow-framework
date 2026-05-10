@@ -1,6 +1,6 @@
 # Demand Claim Workflow
 
-**Version**: 1.0  
+**Version**: 1.1  
 **Last Updated**: May 9, 2026  
 **Owner**: Shaine Meister  
 **Status**: Draft
@@ -11,9 +11,7 @@
 
 ## Process Overview
 
-This workflow guides staff through validating and processing a **Demand Claim** to bill the secondary (or next responsible) payer after primary adjudication, without risking duplicate submission to the primary.
-
-Demand Claims are used when normal claim submission or resubmit would incorrectly target the primary payer.
+This workflow provides a streamlined process for handling **Demand Claims** triggered by VFO updates and retro claims. It emphasizes the critical insurance payment pending credit review gate to prevent improper actions.
 
 ## Visual Process Flow
 
@@ -33,28 +31,26 @@ flowchart TD
 ```
 
 **Key Decision Points**
-- Are **all three mandatory conditions** met? (Primary adjudicated + Demand required to avoid duplicate + Next payer liability exists)
-- Does the current Visit Filing Order support billing the next party?
-- Has the primary truly finished processing (payment posted or denial worked)?
+- Is there an Insurance Payment Pending Credit Review?
+- Has the VFO been updated and claim retro'd?
 
 **Critical Validation Notes**
-- Never initiate a Demand Claim without clear supporting notes from COB / VFO research.
-- Demand Claims are consequential — improper use can lead to compliance issues or delayed reimbursement.
+- Only proceed if payment is pending credit review.
+- Demand Claims are high-impact actions — always ensure proper sequencing.
 
 **Notes / Tips**
-- Always document the specific reason the demand is required.
-- Use this workflow when referred from the Visit Filing Order process (Primary Paid + Need to Bill Secondary branch).
-- For complex cases (multiple payers, coordination with billing team, etc.), escalate before submission.
+- Use this workflow immediately after VFO updates that trigger retro claims.
+- Coordinate with Credit Team when payment review is pending.
+- Document all actions thoroughly.
 
 ## Parent / Related Documents
 
-- **Parent SOP**: `demand-claim.md` (to be created)
-- **Related Processes**: 
-  - Visit Filing Order SOP & Workflow (trigger point)
-  - Registration COB section
+- **Parent SOP**: `../sops/demand-claim.md`
+- **Related Processes**: Visit Filing Order SOP & Workflow (main trigger)
 
 ## Version History
 
 | Version | Date       | Changes                                      | Author         |
 |---------|------------|----------------------------------------------|----------------|
 | 1.0     | May 9, 2026| Initial concise workflow created             | Shaine Meister |
+| 1.1     | May 9, 2026| Simplified to match updated minimal Mermaid flow. Removed complex conditions gate for streamlined decision process. | Shaine Meister |
