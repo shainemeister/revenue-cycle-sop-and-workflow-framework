@@ -1,7 +1,7 @@
 # Revenue Cycle SOP & Workflow Framework - Plan
 
-**Version**: 1.4  
-**Last Updated**: May 8, 2026  
+**Version**: 1.5  
+**Last Updated**: May 9, 2026  
 **Owner**: Shaine Meister
 
 ## Project Goals
@@ -52,7 +52,7 @@ phases:
 
 ## Current Status
 
-**Overall Status**: In Development — Foundational framework and templates complete. Registration model pair and Visit Filing Order pair have been developed and refined. Shifting focus to Demand Claims as the next priority.
+**Overall Status**: In Development — Foundational framework and templates complete. Registration model pair, Visit Filing Order pair, and Demand Claims pair have been developed and refined. All three model pairs now follow the SOP + Companion Workflow pattern with recent improvements applied.
 
 ### Framework Documents
 
@@ -75,28 +75,30 @@ phases:
 | SOP                       | Status     | Priority | Notes                                      |
 |---------------------------|------------|----------|--------------------------------------------|
 | registration.md           | Complete   | High     | Foundational revenue cycle entry point. **Model SOP + Companion Workflow pair completed and refined (v1.6)** |
-| visit-filing-order.md     | Complete   | High     | Critical for accurate claims processing and COB resolution. **Completed as model pair (v1.2)** |
-| demand-claims.md          | Planned    | Medium   | Important for denial management and follow-up |
+| visit-filing-order.md     | Complete   | High     | Critical for accurate claims processing and COB resolution. **Completed as model pair (v1.3)** |
+| demand-claim.md           | Complete   | High     | Important for denial management, secondary billing, and follow-up after VFO/retro. **Completed as model pair (v1.2)** |
 
 ### Workflows (Planned / In Development)
 
 | Workflow                  | Status     | Priority | Notes                                      |
 |---------------------------|------------|----------|--------------------------------------------|
 | registration-workflow.md  | Complete   | High     | Companion to Registration SOP (visual quick-reference). **Completed as model pair (v1.7)** |
-| visit-filing-order-workflow.md | Complete | High     | Companion to Visit Filing Order SOP. **Completed (v1.2)** |
+| visit-filing-order-workflow.md | Complete | High     | Companion to Visit Filing Order SOP. **Completed (v1.3)** |
+| demand-claim-workflow.md  | Complete   | High     | Companion to Demand Claim SOP. **Completed (v1.2)** |
 
-> **Note**: Registration and Visit Filing Order pairs were developed using the established SOP + Companion Workflow pattern. Both have been refined and aligned with the core framework documents.
+> **Note**: All model pairs (Registration, Visit Filing Order, Demand Claims) were developed using the established SOP + Companion Workflow pattern. Recent refinements include standardized structures, improved cross-referencing, cleaned Mermaid diagrams, added Notes/Tips sections, and better handling of system-specific elements while maintaining portability.
 
 ## Next Priorities
 
 ### Immediate Priorities (Next 1–2 Weeks)
-- Mark Visit Filing Order pair as Complete / Active.
-- Begin development of **Demand Claims SOP + Companion Workflow** (next priority after Visit Filing Order).
+- Monitor real-world usage and gather feedback on the Demand Claims pair (now complete).
+- Mark all current model pairs as Active / In Use where appropriate.
+- Begin documenting real-world usage notes and friction points from the Registration, Visit Filing Order, and Demand Claims models.
 
 ### Short-Term Priorities (Q2 2026)
-- Develop **Demand Claims SOP + Companion Workflow**.
-- Establish lightweight metrics/feedback mechanisms and a simple review cadence.
-- Begin documenting real-world usage notes and friction points from the Registration and Visit Filing Order models.
+- Establish lightweight metrics/feedback mechanisms and a simple review cadence across implemented pairs.
+- Refine any identified friction points from initial usage.
+- Continue testing templates in real operational contexts.
 
 ### Longer-Term Priorities (Q3 2026+)
 - Expand SOP coverage to additional high-impact revenue cycle functions (Billing & Charge Capture, Denials Management & Appeals, Prior Authorization, Coding & Documentation, Patient Access & Financial Counseling, etc.).
@@ -124,8 +126,7 @@ This framework prioritizes **lightweight, actionable measurement** that supports
 
 ## Open Items & Notes
 
-- Populate **Demand Claims** as the next high-priority SOP + Workflow.
-- Decide on visual workflow standards (Mermaid diagram depth, styling conventions).
+- Decide on visual workflow standards (Mermaid diagram depth, styling conventions) — partially addressed with recent Mermaid cleanups.
 - Develop lightweight metrics and simple feedback capture mechanisms that fit naturally into daily work.
 - Create guidance for handling high-variability / payer-specific processes.
 - Develop a short "Adoption / Getting Started" guide and example metrics templates.
@@ -141,3 +142,4 @@ This framework prioritizes **lightweight, actionable measurement** that supports
 | 1.2     | May 6, 2026   | Added Registration SOP + Companion Workflow as completed model pair (status changed to Draft) | Shaine Meister  |
 | 1.3     | May 7, 2026   | Updated Registration SOP (v1.6) and Workflow (v1.7) to Complete status after multiple refinements and successful framework integrity check. Updated immediate priorities and notes. | Shaine Meister  |
 | 1.4     | May 8, 2026   | Updated Visit Filing Order SOP (v1.2) and Workflow (v1.2) to Complete status. Added visit-filing-order-workflow.md to tracking. Updated Next Priorities to focus on Demand Claims development. | Shaine Meister  |
+| 1.5     | May 9, 2026   | Updated to reflect completion of Demand Claims (demand-claim.md + demand-claim-workflow.md) as model pair. Fixed SOP table filename reference (demand-claims.md → demand-claim.md). Updated Current Status, Next Priorities, Open Items, and added new workflow to tracking. Incorporated outcomes from implementing Areas for Improvement and Recommendations across all model files (standardized structures, improved links/cross-references, cleaned diagrams, added Notes/Tips, generalized system-specific guidance). Updated Version and Last Updated. | Shaine Meister  |
