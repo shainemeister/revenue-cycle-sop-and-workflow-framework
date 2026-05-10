@@ -82,12 +82,6 @@ flowchart TD
 
     %% Simple high-contrast styling for readability
     style Root fill:#0f172a,stroke:#334155,color:#f1f5f9
-    style README fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
-    style PLAN fill:#fef3c7,stroke:#b45309,color:#78350f
-    style Framework fill:#dcfce7,stroke:#15803d,color:#166534
-    style Templates fill:#ede9fe,stroke:#6d28d9,color:#5b21b6
-    style SOPS fill:#fee2e2,stroke:#dc2626,color:#7f1d1d
-    style WORKFLOWS fill:#e0f2fe,stroke:#0284c7,color:#0c4a6e
 ```
 
 **Key takeaways from the visual structure:**
