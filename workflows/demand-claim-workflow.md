@@ -1,6 +1,6 @@
 # Demand Claim Workflow
 
-**Version**: 1.1  
+**Version**: 1.2  
 **Last Updated**: May 9, 2026  
 **Owner**: Shaine Meister  
 **Status**: Draft
@@ -23,7 +23,7 @@ flowchart TD
 
     B -->|No| End1[DO NOT PROCEED<br>Make Note<br>Allow Credit Team Review]
 
-    B -->|Yes| C[Initiate Demand Claim<br>AND<br>Select Payer If Appropriate<br>THEN<br>Select Dummy Printer]
+    B -->|Yes| C[Initiate Demand Claim<br>AND<br>Select Payer If Appropriate<br>THEN<br>Select Dummy Printer or Test Mode]
 
     C --> D[Distribute Insurance Payment<br>AND<br>Move Balance to Next Responsible Party]
 
@@ -42,11 +42,12 @@ flowchart TD
 - Use this workflow immediately after VFO updates that trigger retro claims.
 - Coordinate with Credit Team when payment review is pending.
 - Document all actions thoroughly.
+- Adapt system-specific steps (e.g. Dummy Printer) to your organization's equivalent process or tool.
 
 ## Parent / Related Documents
 
-- **Parent SOP**: `../sops/demand-claim.md`
-- **Related Processes**: Visit Filing Order SOP & Workflow (main trigger)
+- **Parent SOP**: [demand-claim.md](../sops/demand-claim.md)
+- **Related Processes**: [Visit Filing Order SOP & Workflow](../sops/visit-filing-order.md) (main trigger) and [visit-filing-order-workflow.md](../workflows/visit-filing-order-workflow.md)
 
 ## Version History
 
@@ -54,3 +55,4 @@ flowchart TD
 |---------|------------|----------------------------------------------|----------------|
 | 1.0     | May 9, 2026| Initial concise workflow created             | Shaine Meister |
 | 1.1     | May 9, 2026| Simplified to match updated minimal Mermaid flow. Removed complex conditions gate for streamlined decision process. | Shaine Meister |
+| 1.2     | May 9, 2026| Implemented Areas for Improvement and Recommendations: added full markdown links to Parent SOP and Related Processes (including Visit Filing Order pair), updated Mermaid node text for clarity on output method, added system adaptation note in Notes/Tips, updated Version, Last Updated, and Version History with implementation details. | Shaine Meister |
