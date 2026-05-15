@@ -1,7 +1,30 @@
+---
+title: "Demand Claim SOP"
+short_title: "Demand Claim"
+version: "2.0"
+status: "Draft"
+owner: "Shaine Meister"
+last_updated: "2026-05-14"
+category: "Back-End"
+matrix_position: "3.2"
+related_sops:
+  - "visit-filing-order.md"
+  - "registration.md"
+related_workflows:
+  - "demand-claim-workflow.md"
+feedback_layer: "v1.0"
+tags:
+  - demand_claim
+  - retro
+  - cob
+  - back_end
+  - billing
+---
+
 # Demand Claim SOP
 
-**Version**: 1.2  
-**Last Updated**: May 9, 2026  
+**Version**: 2.0  
+**Last Updated**: 2026-05-14  
 **Owner**: Shaine Meister  
 **Status**: Draft
 
@@ -96,3 +119,31 @@ To provide a clear, simplified process for initiating Demand Claims following VF
 | 1.0     | May 9, 2026 | Initial SOP created | Shaine Meister |
 | 1.1     | May 9, 2026 | Simplified Step-by-Step and validation to exactly mirror the updated minimal Mermaid flow. | Shaine Meister |
 | 1.2     | May 9, 2026 | Implemented Areas for Improvement and Recommendations: standardized Scope section with subheadings for template consistency, added Notes / Tips subsection with system-specific guidance, added full markdown links to related documents, updated Quality Checks and procedure for clarity, standardized Framework Alignment Check phrasing, updated Version and Last Updated. | Shaine Meister |
+| 2.0     | 2026-05-14 | Migrated to v2 structure: Added YAML front matter and standalone Feedback Loop & Data Collection Framework section. Preserved 100% of original operational content. | Shaine Meister |
+
+## Feedback Loop & Data Collection Framework
+
+> **Purpose of This Section**  
+> This section is intentionally separated from operational steps. It serves as the standardized interface and data mapping layer for future autonomous Revenue Cycle Management systems, analytics platforms, RPA tools, and AI-driven decision engines. It enables clean integration without altering core clinical or administrative workflows.
+
+### Data Capture Points (Structured Fields)
+- `demand_trigger` (string, required) — VFO update + retro claim confirmation
+- `payment_pending_review` (boolean, required) — Critical gate status before demand initiation
+- `payer_selected` (string, optional) — Chosen next payer for demand
+- `balance_movement` (object, required) — Details of payment application and remaining balance transfer
+
+### Handoff Triggers & Destinations
+- **Trigger**: Demand Claim completed successfully
+  - **Destination**: `feedback-loop-contract-intelligence.md` (for contract performance tracking)
+- **Trigger**: Payment review pending for extended period
+  - **Destination**: Credit team escalation queue
+
+### Contract Intelligence Mapping
+- Demand Claim volume and success rate by contract/payer
+- Cases where payment pending review gate prevented improper actions
+- Secondary billing patterns following VFO corrections
+
+### Automation Readiness Notes
+- Simple, high-frequency process ideal for RPA automation
+- Structured logging of demand triggers for analytics
+- Portable across billing systems (adapt "Dummy Printer" step as noted)
