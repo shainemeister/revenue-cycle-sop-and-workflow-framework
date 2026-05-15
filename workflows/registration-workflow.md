@@ -1,7 +1,30 @@
+---
+title: "Registration Verification & Follow-Up Workflow (Back-End)"
+short_title: "Registration Workflow"
+version: "2.0"
+status: "Draft"
+owner: "Shaine Meister"
+last_updated: "2026-05-14"
+category: "Front-End"
+matrix_position: "1.3"
+related_sops:
+  - "registration.md"
+related_workflows: []
+feedback_layer: "v1.0"
+tags:
+  - registration
+  - eligibility
+  - cob
+  - authorization
+  - denial_prevention
+  - back_end
+  - mermaid
+---
+
 # Registration Verification & Follow-Up Workflow (Back-End)
 
-**Version**: 1.7  
-**Last Updated**: May 6, 2026  
+**Version**: 2.0  
+**Last Updated**: 2026-05-14  
 **Owner**: Shaine Meister  
 **Status**: Draft
 
@@ -123,4 +146,32 @@ flowchart TD
 | 1.4     | May 6, 2026| Separated Eligibility, COB, and Authorization into distinct categories  | Shaine Meister  |
 | 1.5     | May 6, 2026| Expanded Eligibility with granular scenarios                            | Shaine Meister  |
 | 1.6     | May 6, 2026| Refined Eligibility diagram (separated patient letter from self-pay move after 3 contact attempts). Updated Authorization diagram for better real-world flow. |
-| 1.7     | May 6, 2026| Made 3-contact attempt rule specific to Medicare/Medicaid payers in Eligibility. Changed Authorization node to "Document & Apply Account Note". Removed root cause feedback and final workflow complete nodes. Updated version and history. | Shaine Meister  |
+| 1.7     | May 6, 2026| Made 3-contact attempt rule specific to Medicare/Medicaid payers in Eligibility. Changed Authorization node to "Document & Apply Account Note". Removed root cause feedback and final workflow complete nodes. Updated version and history. |
+| 2.0     | 2026-05-14 | Migrated to v2 structure: Added YAML front matter and standalone Feedback Loop & Data Collection Framework section. Preserved 100% of original operational content and Mermaid diagrams. | Shaine Meister  |
+
+## Feedback Loop & Data Collection Framework
+
+> **Purpose of This Section**  
+> This section is intentionally separated from operational steps. It serves as the standardized interface and data mapping layer for future autonomous Revenue Cycle Management systems, analytics platforms, RPA tools, and AI-driven decision engines. It enables clean integration without altering core clinical or administrative workflows.
+
+### Data Capture Points (Structured Fields)
+- `workflow_execution_path` (string, required) — Which of the three sections (Eligibility / COB / Authorization) was followed
+- `decision_outcomes` (object, required) — Key decision points reached and final resolution (e.g., self-pay, appeal filed, claim resubmitted)
+- `payer_type_flags` (array, optional) — Medicare/Medicaid indicators that triggered special rules
+- `handoff_data` (object, optional) — Structured summary prepared for provider-service or contract intelligence
+
+### Handoff Triggers & Destinations
+- **Trigger**: Workflow completion with documented changes
+  - **Destination**: `registration.md` (parent SOP) + `provider-service.md` (structured handoff)
+- **Trigger**: Pattern of repeated eligibility or authorization issues
+  - **Destination**: `feedback-loop-contract-intelligence.md`
+
+### Contract Intelligence Mapping
+- Frequency of 3-contact attempt rule invocations by payer/contract
+- Retroactive authorization success/failure rates linked to specific contracts
+- Common registration workflow paths that correlate with downstream denial clusters
+
+### Automation Readiness Notes
+- Batch export of workflow execution logs recommended for analytics
+- JSON schema alignment with SOP Feedback Loop section
+- Real-time triggers for high-priority accounts (dollar threshold configurable)
