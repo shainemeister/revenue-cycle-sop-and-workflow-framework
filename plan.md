@@ -1,6 +1,6 @@
 # Revenue Cycle SOP & Workflow Framework - Plan
 
-**Version**: 1.6  
+**Version**: 1.7  
 **Last Updated**: May 14, 2026  
 **Owner**: Shaine Meister
 
@@ -12,6 +12,57 @@ The primary objectives of this framework are to:
 - Create portable intellectual property that can be adapted across different organizations and systems.
 - Maintain strong alignment with industry standards and regulatory requirements.
 - Support ongoing process optimization and continuous improvement with a strong focus on usability and reduced mental friction.
+- **New in v2**: Enable autonomous feedback loops and structured data collection for future RCM system integration and contract intelligence.
+
+## 3×3 Matrix v2 Vision (Core Concept)
+
+The framework is built around a **3×3 Revenue Cycle Matrix** that organizes all SOPs and Workflows into three categories with exactly three items each (Rule of 3 for low mental load):
+
+**Category 1 – Front-End**
+1. Patient Intake
+2. Scheduling
+3. Registration
+
+**Category 2 – Provider**
+1. Service
+2. Diagnosis / Notation (Charting)
+3. Coding
+
+**Category 3 – Back-End**
+1. Billing (including patient billing)
+2. Follow-up (Insurance AR + Denials)
+3. Payment Posting / Collections
+
+**Key v2 Enhancement**: A **Cross-Cutting Feedback Loop Orchestration Layer** that makes the matrix self-improving.
+
+### Feedback Loop Orchestration Layer (`feedback-loop-framework.md`)
+
+This new top-level document defines the standardized interface for autonomous feedback. It has three core responsibilities:
+
+**A. Standardized Feedback Data Capture**  
+Every SOP (especially the critical Registration → Provider Service → Notation/Charting → Coding chain) includes a dedicated `## Feedback Loop & Data Collection Framework` section at the bottom. This section is **completely separate** from operational steps and serves as the mapping layer for future RCM platforms.
+
+**B. Closed-Loop Handoff Protocol** (Critical Chain)
+
+- **Registration** captures insurance, demographics, and authorization data → sends structured summary to Provider Service.
+- **Provider Service** captures encounter details and clinical notes → sends to Notation/Charting with required elements checklist.
+- **Notation/Charting** enforces documentation completeness → sends structured data package to Coding.
+- **Coding** validates against documentation and payer rules → sends discrepancy report + denial pattern data back to Notation + Registration (and ultimately to Contract Intelligence).
+
+**C. Contract Intelligence Module** (New Model Pair)
+
+A dedicated SOP + Workflow pair (`feedback-loop-contract-intelligence.md` + workflow) that aggregates data from the entire matrix and produces clean, actionable reports for legal/contract teams. Key data points include:
+
+- Payer-specific denial rates and CARC/RARC codes by contract
+- Reimbursement rate variances vs. contracted terms
+- Documentation/coding patterns that trigger downcoding or bundling denials
+- Timely filing and authorization failures linked to contract language
+- High-volume services with poor payment performance
+
+This turns every denial and payment into **contract negotiation intelligence**.
+
+**3×3 Matrix Overview Diagram**  
+A single Mermaid diagram (to be maintained in `structure-enhancement-implementation-guide.md` or a dedicated overview file) showing the full 3×3 grid with **bidirectional feedback arrows** looping from Back-End back to Front-End and Mid-Cycle.
 
 ## Development Roadmap
 
@@ -27,175 +78,172 @@ phases:
     status: Complete
     completed: May 2026
     target: Q2 2026
-    notes: All four core framework documents and both templates have been created with substantial content aligned to the principles.
 
   - phase: 2
     name: Initial SOP & Workflow Development
     focus:
-      - Develop foundational SOPs for key revenue cycle areas (starting with Registration as the model/example)
-      - Create supporting companion workflows using the established pairing pattern
+      - Develop foundational SOPs for key revenue cycle areas (Registration, Visit Filing Order, Demand Claim as model pairs)
+      - Create supporting companion workflows
       - Test and refine templates in real use
-      - Establish lightweight metrics, feedback mechanisms, and review cadence
     status: In Progress
     target: Q2 - Q3 2026
 
   - phase: 3
     name: Structure Enhancement & Feedback Layer Rollout (v2)
     focus:
-      - Introduce modern YAML front matter for metadata and dependency mapping
+      - Introduce modern YAML front matter
       - Add completely separate Feedback Loop & Data Collection Framework section to every SOP and Workflow
-      - Create governing implementation guide and data standards
-      - Apply v2 structure to all existing model pairs
-      - Enable future autonomous RCM system integration and contract intelligence
+      - Create `feedback-loop-framework.md` (governing document)
+      - Create Contract Intelligence model pair
+      - Migrate all existing model pairs to v2
+      - Update 3×3 Matrix Overview with bidirectional feedback arrows
     status: In Progress
     target: May - June 2026
-    notes: This phase addresses the critical gap in autonomous feedback loops (especially Registration → Notation → Coding) and prepares the framework for future RCM platform mapping.
 
   - phase: 4
     name: Expansion & Optimization
     focus:
-      - Expand into additional revenue cycle functions (Billing, Denials, Appeals, Prior Auth, Coding, Patient Financial Services, etc.)
-      - Refine optimization, measurement, and continuous improvement practices
-      - Develop adoption guides and examples for new organizations
-      - Improve documentation quality, usability, and cross-referencing
+      - Expand into Billing, Denials, Appeals, Prior Auth, Coding, Patient Financial Services, etc.
+      - Refine optimization and continuous improvement
+      - Develop adoption guides
     status: Future
     target: Q3 2026 onward
 ```
 
 ## Current Status
 
-**Overall Status**: In Development — Foundational framework and templates complete. Registration model pair, Visit Filing Order pair, and Demand Claims pair have been developed and refined. All three model pairs now follow the SOP + Companion Workflow pattern with recent improvements applied.
+**Overall Status**: In Development — Foundational framework complete. Three model pairs (Registration, Visit Filing Order, Demand Claim) developed. **Phase 3 (v2) now active** — introducing YAML front matter, standalone Feedback Loop sections, and the Feedback Layer Orchestration Layer.
 
 ### Framework Documents
 
-| Document                  | Status     | Notes                                      |
-|---------------------------|------------|--------------------------------------------|
-| core-principles.md        | Complete   | Strong philosophical foundation            |
-| modular-structure.md      | Complete   | Excellent modularity and pairing guidance  |
-| regulatory-foundations.md | Complete   | Well-balanced, risk-based integration      |
-| optimization-standards.md | Complete   | Practical focus on mental friction & flow  |
-| structure-enhancement-implementation-guide.md | Active | New v2 instructional extension (May 2026) |
+| Document                                      | Status     | Version | Notes / Priority                                      |
+|-----------------------------------------------|------------|---------|-------------------------------------------------------|
+| core-principles.md                            | Complete   | 1.0     | Strong philosophical foundation                       |
+| modular-structure.md                          | Complete   | 1.0     | Excellent modularity and pairing guidance             |
+| regulatory-foundations.md                     | Complete   | 1.0     | Well-balanced, risk-based integration                 |
+| optimization-standards.md                     | Complete   | 1.0     | Practical focus on mental friction & flow             |
+| structure-enhancement-implementation-guide.md | Active     | 1.0     | Authoritative v2 rollout guide (new May 2026)         |
+| feedback-loop-framework.md                    | Planned    | 1.0     | **High Priority** – Governing document for data standards, JSON schemas, handoff protocols, and contract intelligence mapping |
 
-### Templates
+### Templates (v2 – In Progress)
 
-| Template                  | Status     | Notes                                      |
-|---------------------------|------------|--------------------------------------------|
-| sop-template.md           | Complete   | To be updated to v2 (YAML + Feedback section) |
-| workflow-template.md      | Complete   | To be updated to v2 (YAML + Feedback section) |
+| Template                  | Status          | Notes                                                                 |
+|---------------------------|-----------------|-----------------------------------------------------------------------|
+| sop-template.md           | Needs Update    | Must add YAML front matter + standalone `## Feedback Loop & Data Collection Framework` section at bottom |
+| workflow-template.md      | Needs Update    | Must add YAML front matter + standalone `## Feedback Loop & Data Collection Framework` section at bottom |
 
-### SOPs (Planned / In Development)
+### SOPs (Planned / In Development) – 3×3 Matrix v2
 
-| SOP                       | Status     | Priority | Notes                                      |
-|---------------------------|------------|----------|--------------------------------------------|
-| registration.md           | Complete   | High     | Foundational revenue cycle entry point. **Model SOP + Companion Workflow pair completed and refined (v1.6)** — To be migrated to v2 structure |
-| visit-filing-order.md     | Complete   | High     | Critical for accurate claims processing and COB resolution. **Completed as model pair (v1.3)** — To be migrated to v2 |
-| demand-claim.md           | Complete   | High     | Important for denial management, secondary billing, and follow-up after VFO/retro. **Completed as model pair (v1.2)** — To be migrated to v2 |
+| SOP                                      | Status          | Priority | Category     | Matrix Pos | Notes / v2 Migration Required                                      |
+|------------------------------------------|-----------------|----------|--------------|------------|--------------------------------------------------------------------|
+| front-end-patient-intake.md              | Planned         | Medium   | Front-End    | 1.1        | New – to follow v2 template                                        |
+| front-end-scheduling.md                  | Planned         | Medium   | Front-End    | 1.2        | New – to follow v2 template                                        |
+| registration.md                          | Complete        | High     | Front-End    | 1.3        | **Model** – Migrate to v2 (add YAML + Feedback section)            |
+| provider-service.md                      | Planned         | High     | Provider     | 2.1        | New – Critical for closed-loop handoff                             |
+| provider-diagnosis-notation.md           | Planned         | High     | Provider     | 2.2        | New – Critical for closed-loop handoff                             |
+| provider-coding.md                       | Planned         | High     | Provider     | 2.3        | New – Critical for closed-loop handoff                             |
+| back-end-billing.md                      | Planned         | High     | Back-End     | 3.1        | New – Includes patient billing                                     |
+| back-end-insurance-denial-follow-up.md   | Planned         | High     | Back-End     | 3.2        | New – Aligns with Contract Intelligence module                     |
+| back-end-payment-posting-collections.md  | Planned         | Medium   | Back-End     | 3.3        | New                                                            |
+| feedback-loop-contract-intelligence.md   | Planned         | **Critical** | Cross-Cutting | 0.0      | **New Model Pair** – Aggregates data for legal/contract teams      |
 
-### Workflows (Planned / In Development)
+### Workflows (Planned / In Development) – 3×3 Matrix v2
 
-| Workflow                  | Status     | Priority | Notes                                      |
-|---------------------------|------------|----------|--------------------------------------------|
-| registration-workflow.md  | Complete   | High     | Companion to Registration SOP (visual quick-reference). **Completed as model pair (v1.7)** — To be migrated to v2 |
-| visit-filing-order-workflow.md | Complete | High     | Companion to Visit Filing Order SOP. **Completed (v1.3)** — To be migrated to v2 |
-| demand-claim-workflow.md  | Complete   | High     | Companion to Demand Claim SOP. **Completed (v1.2)** — To be migrated to v2 |
+| Workflow                                      | Status          | Priority | Category     | Matrix Pos | Notes / v2 Migration Required                                      |
+|-----------------------------------------------|-----------------|----------|--------------|------------|--------------------------------------------------------------------|
+| front-end-patient-intake-workflow.md          | Planned         | Medium   | Front-End    | 1.1        | New – Mermaid decision trees                                       |
+| front-end-scheduling-workflow.md              | Planned         | Medium   | Front-End    | 1.2        | New                                                            |
+| registration-workflow.md                      | Complete        | High     | Front-End    | 1.3        | **Model** – Migrate to v2                                          |
+| provider-service-workflow.md                  | Planned         | High     | Provider     | 2.1        | New – Must show closed-loop handoffs                               |
+| provider-diagnosis-notation-workflow.md       | Planned         | High     | Provider     | 2.2        | New                                                            |
+| provider-coding-workflow.md                   | Planned         | High     | Provider     | 2.3        | New                                                            |
+| back-end-billing-workflow.md                  | Planned         | High     | Back-End     | 3.1        | New                                                            |
+| back-end-insurance-denial-follow-up-workflow.md | Planned       | High     | Back-End     | 3.2        | New                                                            |
+| back-end-payment-posting-collections-workflow.md | Planned      | Medium   | Back-End     | 3.3        | New                                                            |
+| feedback-loop-contract-intelligence-workflow.md | Planned       | **Critical** | Cross-Cutting | 0.0      | **New** – Visual contract intelligence reports                     |
 
-> **Note**: All model pairs (Registration, Visit Filing Order, Demand Claims) were developed using the established SOP + Companion Workflow pattern. Recent refinements include standardized structures, improved cross-referencing, cleaned Mermaid diagrams, added Notes/Tips sections, and better handling of system-specific elements while maintaining portability. **Phase 3 (v2) will migrate all existing pairs to the new YAML + Feedback Layer structure.**
+> **Note**: All new SOPs and Workflows created after May 14, 2026 must use the v2 template (YAML front matter + standalone Feedback Loop section). Existing model pairs (Registration, Visit Filing Order, Demand Claim) will be migrated as part of Phase 3.
 
-## Phase 3: Structure Enhancement & Feedback Layer Rollout (v2) – Step-by-Step Implementation Plan
+## Phase 3: Structure Enhancement & Feedback Layer Rollout (v2) – Detailed Implementation Plan
 
-This phase introduces the modern v2 structure to address the critical feedback loop gap and prepare the framework for future autonomous RCM systems and contract intelligence. All changes are documented in detail in the new `structure-enhancement-implementation-guide.md` file.
+This phase directly addresses the #1 revenue cycle failure point (lack of autonomous feedback from Registration → Notation → Coding) and prepares the framework for future RCM system integration and contract optimization.
 
 ### Step-by-Step Process
 
-1. **Create v2 Implementation Guide**  
-   Create `structure-enhancement-implementation-guide.md` as the authoritative reference for YAML front matter, the new Feedback Loop section format, and rationale. *(Completed – May 14, 2026)*
+1. **Finalize v2 Structure & Documentation** (Completed)
+   - Created `structure-enhancement-implementation-guide.md` (authoritative reference)
+   - Updated this `plan.md` to v1.7 with full 3×3 Matrix v2 vision, tables, and Closed-Loop Handoff Protocol
 
-2. **Update Core Templates to v2**  
-   Modify `sop-template.md` and `workflow-template.md` to include:
-   - Modern YAML front matter block at the top
-   - New standalone `## Feedback Loop & Data Collection Framework` section at the very bottom (completely separate from operational content)
-   - Updated cross-reference and matrix_position fields
+2. **Update Core Templates to v2 Format**
+   - Add modern YAML front matter to `sop-template.md` and `workflow-template.md`
+   - Add the standalone `## Feedback Loop & Data Collection Framework` section at the very bottom of both templates (completely separate from operational content)
 
-3. **Migrate Existing Model Pairs to v2**  
-   Apply the new v2 structure to all six existing files:
-   - `registration.md` + `registration-workflow.md`
-   - `visit-filing-order.md` + `visit-filing-order-workflow.md`
-   - `demand-claim.md` + `demand-claim-workflow.md`
-   - Preserve all original operational content while adding YAML metadata and the new Feedback section
+3. **Migrate Existing Model Pairs to v2**
+   - Apply v2 structure to: `registration.md`, `registration-workflow.md`, `visit-filing-order.md`, `visit-filing-order-workflow.md`, `demand-claim.md`, `demand-claim-workflow.md`
+   - Preserve 100% of original operational content
+   - Add YAML metadata + Feedback Loop section with initial data capture points
 
-4. **Create Feedback Layer Governing Document**  
-   Develop `feedback-loop-framework.md` to define:
-   - Standardized data capture fields and JSON schemas
-   - Handoff protocols and trigger conditions
-   - Contract intelligence data mapping
-   - Automation readiness guidelines (generic, no vendor IP)
+4. **Create Feedback Layer Governing Document**
+   - Develop `feedback-loop-framework.md`
+   - Define standardized data fields, JSON schemas, handoff triggers, and contract intelligence mapping
+   - Include the Closed-Loop Handoff Protocol for the critical four processes
 
-5. **Update All Future Development**  
-   From this point forward, every new SOP and Workflow must be created using the v2 templates only. All new files must include the Feedback Loop section and proper YAML front matter.
+5. **Create Contract Intelligence Model Pair**
+   - Create `feedback-loop-contract-intelligence.md` + companion workflow
+   - Focus on aggregating denial, payment variance, and documentation pattern data for legal/contract teams
 
-6. **Team Onboarding & Documentation**  
-   Update team on the new structure, purpose of the Feedback Layer (future RCM system mapping + contract intelligence), and how to maintain the separation between operational content and data collection sections.
+6. **Update 3×3 Matrix Overview Diagram**
+   - Create or update the master Mermaid diagram showing the full 3×3 grid with bidirectional feedback arrows
+   - Reference it from `structure-enhancement-implementation-guide.md` and this plan
 
-7. **Validation & Continuous Improvement**  
-   After migration, review all v2 files for consistency. Add any refinements to the `structure-enhancement-implementation-guide.md` based on real usage.
+7. **Team Onboarding & Validation**
+   - Brief team on v2 structure, purpose of Feedback Layer, and how to maintain separation between operational content and data collection sections
+   - Review all migrated files for consistency
 
-**Target Completion**: End of May 2026 (parallel with ongoing Phase 2 usage and feedback collection).
+**Target Completion for Phase 3**: End of May 2026
 
 ## Next Priorities
 
-### Immediate Priorities (Next 1–2 Weeks)
-- Complete Phase 3 v2 migration of all existing model pairs.
-- Monitor real-world usage and gather feedback on the Demand Claims pair (now complete).
-- Mark all current model pairs as Active / In Use where appropriate.
-- Begin documenting real-world usage notes and friction points from the Registration, Visit Filing Order, and Demand Claims models.
+### Immediate (Next 7 Days)
+- Complete Steps 2–4 above (templates + migration of 6 model files + `feedback-loop-framework.md`)
+- Create the Contract Intelligence model pair
 
-### Short-Term Priorities (Q2 2026)
-- Establish lightweight metrics/feedback mechanisms and a simple review cadence across implemented pairs.
-- Refine any identified friction points from initial usage.
-- Continue testing templates in real operational contexts.
+### Short-Term (Q2 2026)
+- Update the 3×3 Matrix Overview diagram with bidirectional feedback arrows
+- Begin real-world testing of v2 files
+- Gather feedback on the new Feedback Loop sections
 
-### Longer-Term Priorities (Q3 2026+)
-- Expand SOP coverage to additional high-impact revenue cycle functions (Billing & Charge Capture, Denials Management & Appeals, Prior Authorization, Coding & Documentation, Patient Access & Financial Counseling, etc.).
-- Develop an "Adoption & Getting Started" guide for implementing the framework in new organizations.
-- Introduce more advanced optimization practices, measurement, and continuous improvement loops.
-- Create guidance for handling high-variability processes (e.g., payer-specific rules).
+### Longer-Term (Q3 2026+)
+- Expand to remaining 3×3 cells (Patient Intake, Scheduling, Billing, Payment Posting, etc.)
+- Develop adoption guide for new organizations
 
 ## Metrics, Review Cadence & Continuous Improvement
 
-This framework prioritizes **lightweight, actionable measurement** that supports improvement without adding mental friction (per `optimization-standards.md`).
+This framework prioritizes **lightweight, actionable measurement** that supports improvement without adding mental friction.
 
 ### Recommended Approach
-- **Per SOP/Workflow**: 
-  - Leading indicators: Task completion time, error/rework rate, exception frequency, user-reported mental friction (simple 1–5 scale or qualitative notes).
-  - Compliance: Audit readiness / pass rate on relevant controls.
-- **Framework Level**: Number of SOPs created, adoption across contexts, reduction in process variation, user feedback on usability.
-- **Feedback Mechanisms**: Built-in "Friction / Improvement Notes" section in each SOP; periodic team huddles or simple surveys; trigger-based reviews (recurring exceptions, regulatory changes, or performance drift).
+- Per SOP/Workflow: Task completion time, error/rework rate, exception frequency, user-reported mental friction (1–5 scale)
+- Framework Level: Number of SOPs created, adoption, reduction in process variation
+- Feedback Mechanisms: Built-in “Friction / Improvement Notes” section + trigger-based reviews
 
 ### Review Cadence
-- **Framework documents & templates**: Quarterly review or triggered by major regulatory/organizational changes.
-- **Individual SOPs**: Initial review after 30–60 days of use; then annually or on trigger.
-- **Workflows**: More frequent informal review (as they are day-to-day tools).
-
-> See `optimization-standards.md` for the guiding philosophy on measurement and continuous small improvements.
+- Framework documents & templates: Quarterly or on major change
+- Individual SOPs: 30–60 days after use, then annually
+- Workflows: More frequent informal review
 
 ## Open Items & Notes
 
-- Decide on visual workflow standards (Mermaid diagram depth, styling conventions) — partially addressed with recent Mermaid cleanups.
-- Develop lightweight metrics and simple feedback capture mechanisms that fit naturally into daily work.
-- Create guidance for handling high-variability / payer-specific processes.
-- Develop a short "Adoption / Getting Started" guide and example metrics templates.
-- Establish a sustainable review cadence and ownership model as the library grows.
-- Consider adding a glossary of key revenue cycle terms for consistency.
-- **Phase 3 v2 items**: Complete template updates, migrate 6 existing files, create `feedback-loop-framework.md`.
+- Visual workflow standards (Mermaid depth, styling)
+- Lightweight metrics that fit naturally into daily work
+- Guidance for high-variability / payer-specific processes
+- Glossary of key revenue cycle terms
+- **Phase 3 v2 items**: Templates update, 6 model pair migrations, `feedback-loop-framework.md`, Contract Intelligence pair, 3×3 Matrix Overview diagram with feedback arrows
 
 ## Version History
 
 | Version | Date          | Changes                                                                 | Author          |
 |---------|---------------|-------------------------------------------------------------------------|-----------------|
 | 1.0     | May 2026      | Initial plan created                                                    | Shaine Meister  |
-| 1.1     | May 6, 2026   | Updated statuses to reflect completed framework and templates; refined priorities and added Metrics section | Shaine Meister  |
-| 1.2     | May 6, 2026   | Added Registration SOP + Companion Workflow as completed model pair (status changed to Draft) | Shaine Meister  |
-| 1.3     | May 7, 2026   | Updated Registration SOP (v1.6) and Workflow (v1.7) to Complete status after multiple refinements and successful framework integrity check. Updated immediate priorities and notes. | Shaine Meister  |
-| 1.4     | May 8, 2026   | Updated Visit Filing Order SOP (v1.2) and Workflow (v1.2) to Complete status. Added visit-filing-order-workflow.md to tracking. Updated Next Priorities to focus on Demand Claims development. | Shaine Meister  |
-| 1.5     | May 9, 2026   | Updated to reflect completion of Demand Claims (demand-claim.md + demand-claim-workflow.md) as model pair. Fixed SOP table filename reference (demand-claims.md → demand-claim.md). Updated Current Status, Next Priorities, Open Items, and added new workflow to tracking. Incorporated outcomes from implementing Areas for Improvement and Recommendations across all model files (standardized structures, improved links/cross-references, cleaned diagrams, added Notes/Tips, generalized system-specific guidance). Updated Version and Last Updated. | Shaine Meister  |
-| 1.6     | May 14, 2026  | Added Phase 3: Structure Enhancement & Feedback Layer Rollout (v2) with detailed 7-step implementation plan. Created new `structure-enhancement-implementation-guide.md` as the authoritative extension document. Updated roadmap YAML, tables, and Version History. This phase directly addresses the critical feedback loop gap in the Registration → Notation → Coding chain and prepares the framework for future autonomous RCM system integration and contract intelligence. | Shaine Meister  |
+| 1.1–1.5 | May 6–9, 2026 | Multiple refinements to model pairs and priorities                      | Shaine Meister  |
+| 1.6     | May 14, 2026  | Added Phase 3 v2 with 7-step plan and created `structure-enhancement-implementation-guide.md` | Shaine Meister  |
+| 1.7     | May 14, 2026  | **Major expansion**: Added full 3×3 Matrix v2 vision, Feedback Loop Orchestration Layer, Closed-Loop Handoff Protocol, Contract Intelligence Module, detailed tables for all SOPs/Workflows, and comprehensive Phase 3 implementation plan. This version serves as the single source of truth for the entire v2 initiative. | Shaine Meister  |
