@@ -1,7 +1,29 @@
+---
+title: "Visit Filing Order Workflow"
+short_title: "Visit Filing Order Workflow"
+version: "2.0"
+status: "Draft"
+owner: "Shaine Meister"
+last_updated: "2026-05-14"
+category: "Front-End"
+matrix_position: "1.3"
+related_sops:
+  - "visit-filing-order.md"
+related_workflows: []
+feedback_layer: "v1.0"
+tags:
+  - visit_filing_order
+  - cob
+  - retro
+  - denial_prevention
+  - front_end
+  - mermaid
+---
+
 # Visit Filing Order Workflow
 
-**Version**: 1.3  
-**Last Updated**: May 9, 2026  
+**Version**: 2.0  
+**Last Updated**: 2026-05-14  
 **Owner**: Shaine Meister  
 **Status**: Draft
 
@@ -67,3 +89,31 @@ flowchart TD
 | 1.1     | May 8, 2026| Refined Process Overview, added emphasis on consequential nature of VFO changes, improved Key Decision Points and Notes for better usability and validation focus | Shaine Meister  |
 | 1.2     | May 8, 2026| Major revision to align with simplified decision flow provided. Added validation gate (VFO Update Required + COB Research Note support), claims-generated branching, Primary Paid + Secondary billing path with Demand Claim handoff, and explicit handling of retro review | Shaine Meister  |
 | 1.3     | May 9, 2026| Implemented Areas for Improvement and Recommendations: restructured Mermaid diagram for cleaner syntax and explicit paths (removed bare node reference K by defining it once and routing I and J-No branches clearly to it), updated Related Documents to replace outdated Future note with links to the now-implemented Demand Claim pair, updated Version, Last Updated, and added implementation details to Version History. | Shaine Meister  |
+| 2.0     | 2026-05-14 | Migrated to v2 structure: Added YAML front matter and standalone Feedback Loop & Data Collection Framework section. Preserved 100% of original operational content and Mermaid diagram. | Shaine Meister  |
+
+## Feedback Loop & Data Collection Framework
+
+> **Purpose of This Section**  
+> This section is intentionally separated from operational steps. It serves as the standardized interface and data mapping layer for future autonomous Revenue Cycle Management systems, analytics platforms, RPA tools, and AI-driven decision engines. It enables clean integration without altering core clinical or administrative workflows.
+
+### Data Capture Points (Structured Fields)
+- `vfo_validation_passed` (boolean, required) — Whether COB Research Note support was confirmed before update
+- `claims_generated_flag` (boolean, required) — Whether claims existed at time of VFO change
+- `retro_forced` (boolean, required) — Whether retro review was triggered
+- `demand_claim_handoff` (boolean, required) — Whether handoff to Demand Claim process occurred
+
+### Handoff Triggers & Destinations
+- **Trigger**: VFO update with primary paid + secondary billing need
+  - **Destination**: `demand-claim.md` + workflow
+- **Trigger**: VFO pattern indicating contract-level COB issues
+  - **Destination**: `feedback-loop-contract-intelligence.md`
+
+### Contract Intelligence Mapping
+- Volume of VFO corrections requiring retro + Demand Claim by contract
+- Frequency of COB Research Note validation failures
+- Payer-specific patterns in VFO-related denials or overpayments
+
+### Automation Readiness Notes
+- Structured export of VFO decision paths for analytics
+- Real-time trigger for Demand Claim handoff when primary has paid
+- Portable data model independent of specific EHR or billing system
