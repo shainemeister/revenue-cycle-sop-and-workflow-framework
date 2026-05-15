@@ -1,7 +1,31 @@
+---
+title: "Registration Verification & Follow-Up (Back-End)"
+short_title: "Registration Verification"
+version: "2.0"
+status: "Draft"
+owner: "Shaine Meister"
+last_updated: "2026-05-14"
+category: "Front-End"
+matrix_position: "1.3"
+related_sops:
+  - "visit-filing-order.md"
+  - "demand-claim.md"
+related_workflows:
+  - "registration-workflow.md"
+feedback_layer: "v1.0"
+tags:
+  - registration
+  - eligibility
+  - cob
+  - authorization
+  - denial_prevention
+  - back_end
+---
+
 # Registration Verification & Follow-Up (Back-End)
 
-**Version**: 1.6  
-**Last Updated**: May 6, 2026  
+**Version**: 2.0  
+**Last Updated**: 2026-05-14  
 **Owner**: Shaine Meister  
 **Status**: Draft
 
@@ -198,3 +222,33 @@ This section follows the structure of the companion workflow. After initial tria
 | 1.4     | May 6, 2026| Simplified and visually separated the three category procedures         | Shaine Meister  |
 | 1.5     | May 6, 2026| Fixed Roles & Responsibilities table. Made Eligibility, COB, and Authorization explicit sub-categories under Triage. | Shaine Meister  |
 | 1.6     | May 6, 2026| Added linking sentences at the top of each category section to reinforce Triage as the parent process. Lightly tightened Authorization section for improved usability while preserving all key decision logic. | Shaine Meister  |
+| 2.0     | 2026-05-14 | Migrated to v2 structure: Added YAML front matter and standalone Feedback Loop & Data Collection Framework section. Preserved 100% of original operational content. | Shaine Meister  |
+
+## Feedback Loop & Data Collection Framework
+
+> **Purpose of This Section**  
+> This section is intentionally separated from operational steps. It serves as the standardized interface and data mapping layer for future autonomous Revenue Cycle Management systems, analytics platforms, RPA tools, and AI-driven decision engines. It enables clean integration without altering core clinical or administrative workflows.
+
+### Data Capture Points (Structured Fields)
+- `registration_data` (object, required) — Full updated patient demographics, insurance, guarantor, and subscriber details after correction
+- `eligibility_response` (object, optional) — Payer eligibility verification result including coverage status, benefits, and effective dates
+- `authorization_details` (object, optional) — Prior authorization number, status, and retroactive request outcome
+- `cob_status` (string, optional) — Coordination of Benefits determination and primary/secondary payer order
+- `change_log` (array, required) — Before/after values for every field modified with source reference and rationale
+
+### Handoff Triggers & Destinations
+- **Trigger**: Registration correction completed and documented
+  - **Destination**: `provider-service.md` (via structured summary for encounter context)
+- **Trigger**: Recurring registration issue pattern identified (3+ occurrences in 30 days)
+  - **Destination**: `feedback-loop-contract-intelligence.md` + front-end team review
+
+### Contract Intelligence Mapping
+- Payer-specific registration error rates linked to denial volume and CARC/RARC codes
+- Timely filing failures caused by registration discrepancies
+- High-volume services with frequent eligibility or authorization issues by contract
+
+### Automation Readiness Notes
+- Real-time handoff recommended for high-volume accounts
+- Export format: JSON schema (to be defined in `feedback-loop-framework.md`)
+- Error handling: Retry logic for failed handoffs with logging to central queue
+- Avoid vendor-specific fields; use only standardized RCM data elements
