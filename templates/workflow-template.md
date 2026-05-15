@@ -1,7 +1,27 @@
+---
+title: "[Full Workflow Title]"
+short_title: "[Concise Name]"
+version: "2.0"
+status: "Draft"                    # Draft | In Review | Active | Deprecated
+owner: "Shaine Meister"
+last_updated: "2026-05-14"
+category: "Front-End"              # Front-End | Provider | Back-End | Cross-Cutting
+matrix_position: "1.3"             # e.g., 1.1, 1.2, 1.3, 2.1, etc.
+related_sops:
+  - "parent-sop.md"
+related_workflows:
+  - "related-workflow.md"
+feedback_layer: "v1.0"             # Version of the Feedback Layer this file participates in
+tags:
+  - denial_prevention
+  - eligibility
+  - front_end
+---
+
 # [Workflow Title]
 
-**Version**: 1.0  
-**Last Updated**: [Date]  
+**Version**: 2.0  
+**Last Updated**: 2026-05-14  
 **Owner**: Shaine Meister  
 **Status**: Draft / In Review / Active
 
@@ -25,3 +45,34 @@ flowchart TD
     C -->|No| E[Step 3]
     D --> F[End]
     E --> F
+```
+
+## Version History
+
+| Version | Date       | Changes                     | Author          |
+|---------|------------|-----------------------------|-----------------|
+| 1.0     | [Date]     | Initial version created     | Shaine Meister  |
+| 2.0     | 2026-05-14 | Converted to v2 structure: Added YAML front matter and standalone Feedback Loop & Data Collection Framework section | Shaine Meister  |
+
+## Feedback Loop & Data Collection Framework
+
+> **Purpose of This Section**  
+> This section is intentionally separated from operational steps. It serves as the standardized interface and data mapping layer for future autonomous Revenue Cycle Management systems, analytics platforms, RPA tools, and AI-driven decision engines. It enables clean integration without altering core clinical or administrative workflows.
+
+### Data Capture Points (Structured Fields)
+- Field 1: `field_name` (type, required/optional) — Description and business rule
+- Field 2: ...
+
+### Handoff Triggers & Destinations
+- **Trigger**: [Specific condition or event]
+  - **Destination**: `target-file.md` + Feedback Layer repository
+- **Trigger**: ...
+
+### Contract Intelligence Mapping
+- Specific data points useful for legal/contract teams (payer patterns, reimbursement variances, denial root causes linked to contract terms)
+
+### Automation Readiness Notes
+- Recommended integration patterns (real-time vs batch)
+- Suggested data export format (JSON schema reference)
+- Error handling and retry considerations
+- Notes on avoiding vendor-specific implementations
