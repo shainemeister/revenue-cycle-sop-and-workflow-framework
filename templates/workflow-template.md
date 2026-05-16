@@ -54,10 +54,12 @@ flowchart TD
 | 1.0     | [Date]     | Initial version created                                                 | Shaine Meister  |
 | 2.0     | 2026-05-15 | Converted to v2 structure: Added YAML front matter and standalone Feedback Loop & Data Collection Framework section at the very bottom after Version History | Shaine Meister  |
 
+---
+
 ## Feedback Loop & Data Collection Framework
 
 > **Purpose of This Section**  
-> This section is **intentionally separated** from all operational steps and content above (including Version History). It serves as the standardized interface and data mapping layer for future autonomous Revenue Cycle Management systems, analytics platforms, RPA tools, and AI-driven decision engines. It enables clean integration without altering core clinical or administrative workflows.
+> This section is **intentionally and completely separated** from all operational content above (including the Version History table). It is the standardized interface and data mapping layer for future autonomous Revenue Cycle Management systems, analytics platforms, RPA tools, and AI-driven decision engines. It enables clean integration without altering core clinical or administrative workflows.
 
 ### Data Capture Points (Structured Fields)
 - Field 1: `field_name` (type, required/optional) — Description and business rule
