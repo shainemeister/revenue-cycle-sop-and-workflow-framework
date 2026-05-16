@@ -4,7 +4,7 @@ short_title: "[Concise Name]"
 version: "2.0"
 status: "Draft"                    # Draft | In Review | Active | Deprecated
 owner: "Shaine Meister"
-last_updated: "2026-05-15"
+last_updated: "2026-05-16"
 category: "Front-End"              # Front-End | Provider | Back-End | Cross-Cutting
 matrix_position: "1.3"             # e.g., 1.1, 1.2, 1.3, 2.1, etc.
 related_sops:
@@ -21,7 +21,7 @@ tags:
 # [Workflow Title]
 
 **Version**: 2.0  
-**Last Updated**: 2026-05-15  
+**Last Updated**: 2026-05-16  
 **Owner**: Shaine Meister  
 **Status**: Draft / In Review / Active
 
@@ -46,6 +46,14 @@ flowchart TD
     D --> F[End]
     E --> F
 ```
+
+## Related Documents
+
+- **Parent SOP**: [Link to the corresponding SOP file in `sops/`] — This workflow serves as the simplified visual quick-reference companion to the full authoritative SOP.
+- Related Workflows or other supporting documents (if applicable).
+
+**Note**: The companion Workflow is designed for rapid day-to-day use, while the parent SOP remains the detailed procedural authority.
+
 ---
 
 ## Feedback Loop & Data Collection Framework
@@ -78,4 +86,4 @@ flowchart TD
 | Version | Date       | Changes                                                                 | Author          |
 |---------|------------|-------------------------------------------------------------------------|-----------------|
 | 1.0     | [Date]     | Initial version created                                                 | Shaine Meister  |
-| 2.0     | 2026-05-15 | Converted to v2 structure: Added YAML front matter and standalone Feedback Loop & Data Collection Framework section. Preserved 100% of original operational content. | Shaine Meister  |
+| 2.0     | 2026-05-16 | Converted to v2 structure with Version History moved to bottom. Added Related Documents section after Visual Process Flow to mirror sop-template.md for consistent cross-referencing and companion relationship clarity. | Shaine Meister  |
