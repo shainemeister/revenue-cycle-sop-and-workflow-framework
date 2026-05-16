@@ -20,7 +20,7 @@ tags:
 
 # Structure Enhancement & Feedback Layer Implementation Guide (v2)
 
-**Purpose**: This document serves as the detailed instructional extension to `plan.md`. It provides the complete technical specifications, templates, and rationale for the v2 structure enhancement, including YAML front matter and the new standalone **Feedback Loop & Data Collection Framework** section.
+**Purpose**: This document serves as the detailed instructional extension to `PLAN.md`. It provides the complete technical specifications, templates, and rationale for the v2 structure enhancement, including YAML front matter and the new standalone **Feedback Loop & Data Collection Framework** section.
 
 This is a **roadmap and framework for future implementation** — not a plug-and-play solution. All designs are generic, modular, and free of third-party IP.
 
@@ -123,7 +123,7 @@ This section must appear at the **very bottom** of every SOP and Workflow file, 
 
 1. Update `sop-template.md` and `workflow-template.md` to v2 format (YAML + new Feedback section).
 2. Create this `structure-enhancement-implementation-guide.md` (done).
-3. Update `plan.md` with Phase 3 details and reference this guide.
+3. Update `PLAN.md` with Phase 3 details and reference this guide.
 4. Apply v2 structure to all existing model pairs (Registration, Visit Filing Order, Demand Claim).
 5. Create new SOP/Workflow pairs using v2 templates only.
 6. Develop `feedback-loop-framework.md` (governing document for data standards and JSON schemas).
