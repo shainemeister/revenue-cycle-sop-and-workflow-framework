@@ -1,3 +1,19 @@
+---
+title: "Revenue Cycle SOP & Workflow Framework - Master Plan"
+short_title: "PLAN"
+version: "2.0"
+last_updated: "2026-05-16"
+owner: "Shaine Meister"
+status: "Active"
+current_phase: 3
+phase_focus: "Structure Enhancement & Feedback Layer Rollout (v2)"
+tags:
+  - planning
+  - roadmap
+  - v2
+  - governance
+---
+
 # Revenue Cycle SOP & Workflow Framework
 
 **Status**: In Development  
@@ -78,7 +94,7 @@ flowchart TD
         direction TB
         coreDesc["<b>Foundational files — always present, actively maintained & cross-referenced</b><br/><br/>These files form the backbone of every project. They are the first things anyone (including future you or AI collaborators) should read to understand scope, goals, and how to contribute or navigate the work."]:::descBox
         README["readme.md<br/><i>Outline, Purpose, Principles, Navigation, Visual Overview</i>"]
-        PLAN["plan.md<br/><i>Tracker: Goals, Roadmap,<br/>Status and Priorities (Living Document)</i>"]
+        PLAN["PLAN.md<br/><i>Tracker: Goals, Roadmap,<br/>Status and Priorities (Living Document)</i>"]
     end
 
     subgraph Static ["📁 Static / Foundational Directories"]
@@ -90,7 +106,7 @@ flowchart TD
 
     subgraph Content ["📋 Operational Content Layer"]
         direction TB
-        contentDesc["<b>Domain-specific SOPs and Workflows — the living deliverables</b><br/><br/>These contain the actual procedures and visual flows. New items are added here + tracked in plan.md without changing higher-level docs or the README diagram."]:::descBox
+        contentDesc["<b>Domain-specific SOPs and Workflows — the living deliverables</b><br/><br/>These contain the actual procedures and visual flows. New items are added here + tracked in PLAN.md without changing higher-level docs or the README diagram."]:::descBox
         SOPS["sops/<br/><i>Detailed Standard Operating Procedures</i>"]
         WORKFLOWS["workflows/<br/><i>Visual Process Flows (decision trees)</i>"]
     end
@@ -110,8 +126,8 @@ flowchart TD
 **Key takeaways from the visual structure:**
 
 - **Clear separation of concerns** — Strategy (framework + templates) is decoupled from content (sops + workflows).
-- **Centralized tracking** — `plan.md` absorbs all dynamic information (which SOPs exist, their status, priorities, metrics).
-- **Scalability by design** — New SOPs or Workflows are added only to their folders + `plan.md`. The README and this diagram remain unchanged.
+- **Centralized tracking** — `PLAN.md` absorbs all dynamic information (which SOPs exist, their status, priorities, metrics).
+- **Scalability by design** — New SOPs or Workflows are added only to their folders + `PLAN.md`. The README and this diagram remain unchanged.
 - **Intuitive flow for contributors** — Templates feed both SOPs and Workflows; everything traces back to the core principles.
 
 This visual approach aligns with the framework’s own “Clarity & Consistency” and “Optimization Focus” principles while making the architecture immediately understandable to humans and AI agents alike.
@@ -127,7 +143,7 @@ Initial development of this framework is centered on establishing a strong found
 
 **For the complete, up-to-date picture of which specific SOPs and Workflows are Complete, In Progress, or Planned (including Registration, Visit Filing Order, Demand Claims, and future expansions to Billing, Denials, Prior Auth, Coding, etc.):**
 
-→ Refer to the [plan.md](./plan.md) file.  
+→ Refer to the [PLAN.md](./PLAN.md) file.  
 → Browse the latest documents directly in the [sops/](./sops) directory and [workflows/](./workflows) directory.
 
 This directory-based approach ensures that as new documents are created or refined, they automatically become available without any changes to this README.
@@ -175,8 +191,8 @@ Before creating any new content, review the relevant sections of the [framework/
 - Ensure both documents reference the relevant framework files where appropriate (the templates already include guidance for this).
 
 ### Step 6: Update Supporting Files
-- Add the new SOP/Workflow to the [plan.md](./plan.md) file with its current status and priority.
-- **Important for maintenance scaling**: There is **no need to edit this README.md** when adding or updating SOPs or Workflows. All dynamic tracking lives in `plan.md`, and documents are discovered via the directory links.
+- Add the new SOP/Workflow to the [PLAN.md](./PLAN.md) file with its current status and priority.
+- **Important for maintenance scaling**: There is **no need to edit this README.md** when adding or updating SOPs or Workflows. All dynamic tracking lives in `PLAN.md`, and documents are discovered via the directory links.
 
 ### Step 7: Review for Framework Alignment
 Before finalizing, perform a quick self-check:
@@ -188,7 +204,7 @@ Before finalizing, perform a quick self-check:
 ### Step 8: Commit and Version
 - Commit the new file(s) with a clear message describing what was created.
 - Update the Version History table inside the document.
-- Update `plan.md` to reflect the new status.
+- Update `PLAN.md` to reflect the new status.
 
 ## Collaboration & Maintenance
 
@@ -201,16 +217,16 @@ This framework is being developed collaboratively. High-level direction, feedbac
 To keep maintenance of **this README.md** minimal even as the project grows to dozens or hundreds of SOPs and Workflows:
 
 - **No direct links to individual SOP or Workflow documents** — Only directory links (`sops/`, `workflows/`) are used. New files appear automatically in the GitHub folder view.
-- **Dynamic content lives in `plan.md`** — Status, priorities, metrics, and the living list of which SOPs/Workflows exist or are in progress are tracked in one dedicated file. This README stays high-level and stable.
+- **Dynamic content lives in `PLAN.md`** — Status, priorities, metrics, and the living list of which SOPs/Workflows exist or are in progress are tracked in one dedicated file. This README stays high-level and stable.
 - **High-level, evergreen descriptions** — Sections describe philosophy, process, and structure rather than enumerating current files.
 - **Mermaid diagram** — The visual overview is text-based and abstract; it never needs updating when content files are added or renamed.
 - **Relative links only** — All folder links (e.g. `./sops`) work regardless of branch, fork, or clone — no hard-coded repository paths.
 
-**Result**: Contributors and maintainers can focus almost exclusively on creating excellent SOP/Workflow content and updating the single `plan.md` tracker. This README requires changes only for major philosophical, process, or structural shifts.
+**Result**: Contributors and maintainers can focus almost exclusively on creating excellent SOP/Workflow content and updating the single `PLAN.md` tracker. This README requires changes only for major philosophical, process, or structural shifts.
 
 Edge cases considered:
-- Very large number of SOPs → GitHub folder views and `plan.md` scale gracefully; README does not grow.
-- Frequent renames or refactors of individual documents → Only `plan.md` needs updating.
+- Very large number of SOPs → GitHub folder views and `PLAN.md` scale gracefully; README does not grow.
+- Frequent renames or refactors of individual documents → Only `PLAN.md` needs updating.
 - Multiple contributors or external forks → Relative directory links remain valid everywhere.
 - AI agents or automated tooling parsing the README → Clear section structure + Table of Contents + stable high-level text makes reliable navigation and extraction easy.
 
@@ -223,7 +239,7 @@ Future phases may include:
 - Refinement of optimization and measurement standards
 - Development of supporting tools and examples
 
-**Detailed, always-current status** (including exactly which SOPs and Workflows are Complete / In Progress / Planned, their versions, and next priorities) is maintained in the [plan.md](./plan.md) file.
+**Detailed, always-current status** (including exactly which SOPs and Workflows are Complete / In Progress / Planned, their versions, and next priorities) is maintained in the [PLAN.md](./PLAN.md) file.
 
 This separation keeps the high-level structure in this README clear and low-maintenance while allowing detailed progress tracking in one central, easy-to-update location.
 
