@@ -46,13 +46,7 @@ flowchart TD
     D --> F[End]
     E --> F
 ```
-
-## Version History
-
-| Version | Date       | Changes                                                                 | Author          |
-|---------|------------|-------------------------------------------------------------------------|-----------------|
-| 1.0     | [Date]     | Initial version created                                                 | Shaine Meister  |
-| 2.0     | 2026-05-15 | Converted to v2 structure: Added YAML front matter and standalone Feedback Loop & Data Collection Framework section. Preserved 100% of original operational content. | Shaine Meister  |
+---
 
 ## Feedback Loop & Data Collection Framework
 
@@ -76,3 +70,12 @@ flowchart TD
 - Suggested data export format (JSON schema reference)
 - Error handling and retry considerations
 - Notes on avoiding vendor-specific implementations
+
+---
+
+## Version History
+
+| Version | Date       | Changes                                                                 | Author          |
+|---------|------------|-------------------------------------------------------------------------|-----------------|
+| 1.0     | [Date]     | Initial version created                                                 | Shaine Meister  |
+| 2.0     | 2026-05-15 | Converted to v2 structure: Added YAML front matter and standalone Feedback Loop & Data Collection Framework section. Preserved 100% of original operational content. | Shaine Meister  |
