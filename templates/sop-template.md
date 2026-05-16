@@ -4,7 +4,7 @@ short_title: "[Concise Name]"
 version: "2.0"
 status: "Draft"                    # Draft | In Review | Active | Deprecated
 owner: "Shaine Meister"
-last_updated: "2026-05-15"
+last_updated: "2026-05-16"
 category: "Front-End"              # Front-End | Provider | Back-End | Cross-Cutting
 matrix_position: "1.3"             # e.g., 1.1, 1.2, 1.3, 2.1, etc.
 related_sops:
@@ -21,7 +21,7 @@ tags:
 # [SOP Title]
 
 **Version**: 2.0  
-**Last Updated**: 2026-05-15  
+**Last Updated**: 2026-05-16  
 **Owner**: Shaine Meister  
 **Status**: Draft / In Review / Active
 
@@ -97,32 +97,40 @@ If a companion Workflow exists for this SOP, link to it here. The Workflow serve
 
 - Companion Workflow: [Link to the corresponding workflow file in `workflows/`]
 
+---
+
+## Feedback Loop & Data Collection Framework
+
+> **Purpose of This Section**  
+> This section is intentionally separated from all operational content above. It serves as the standardized interface and data mapping layer for future autonomous Revenue Cycle Management systems, analytics platforms, RPA tools, and AI-driven decision engines. It enables clean integration without altering core clinical or administrative workflows.
+
+### Data Capture Points (Structured Fields)
+- `registration_data` (JSON/object, required) — Key patient/insurance verification outcomes, eligibility results, authorization status, and any discrepancies found.
+- `change_log` (array, optional) — Log of any data corrections or updates made during the process.
+- `exceptions` (array, optional) — Specific exceptions, payer responses, or edge cases encountered.
+
+### Handoff Triggers & Destinations
+- **Trigger**: Completion of registration or verification with discrepancies or high-risk flags  
+  - **Destination**: Provider Service / Notation SOP + Feedback Layer repository
+- **Trigger**: Successful clean registration  
+  - **Destination**: Scheduling / Encounter flow
+- **Trigger**: Authorization or COB issues detected  
+  - **Destination**: Contract Intelligence Module
+
+### Contract Intelligence Mapping
+- Payer-specific patterns, common denial reasons linked to contract terms, reimbursement variances, and documentation gaps that impact contract performance.
+
+### Automation Readiness Notes
+- Recommended integration patterns (real-time API vs. batch export)
+- Suggested data export format: Standardized JSON schema (see `feedback-loop-framework.md`)
+- Error handling, retry logic, and audit trail requirements
+- Vendor-agnostic design principles
+
+---
+
 ## Version History
 
 | Version | Date       | Changes                                                                 | Author          |
 |---------|------------|-------------------------------------------------------------------------|-----------------|
 | 1.0     | [Date]     | Initial version created                                                 | Shaine Meister  |
-| 2.0     | 2026-05-15 | Converted to v2 structure: Added YAML front matter and standalone Feedback Loop & Data Collection Framework section. Preserved 100% of original operational content. | Shaine Meister  |
-
-## Feedback Loop & Data Collection Framework
-
-> **Purpose of This Section**  
-> This section is intentionally separated from operational steps. It serves as the standardized interface and data mapping layer for future autonomous Revenue Cycle Management systems, analytics platforms, RPA tools, and AI-driven decision engines. It enables clean integration without altering core clinical or administrative workflows.
-
-### Data Capture Points (Structured Fields)
-- Field 1: `field_name` (type, required/optional) — Description and business rule
-- Field 2: ...
-
-### Handoff Triggers & Destinations
-- **Trigger**: [Specific condition or event]
-  - **Destination**: `target-file.md` + Feedback Layer repository
-- **Trigger**: ...
-
-### Contract Intelligence Mapping
-- Specific data points useful for legal/contract teams (payer patterns, reimbursement variances, denial root causes linked to contract terms)
-
-### Automation Readiness Notes
-- Recommended integration patterns (real-time vs batch)
-- Suggested data export format (JSON schema reference)
-- Error handling and retry considerations
-- Notes on avoiding vendor-specific implementations
+| 2.0     | 2026-05-16 | Converted to strict v2 structure: YAML front matter + clear separation of Feedback Loop section before Version History at the very bottom. Preserved all operational content. | Shaine Meister  |
