@@ -49,10 +49,8 @@ flowchart TD
 
 ## Related Documents
 
-- **Parent SOP**: [Link to the corresponding SOP file in `sops/`] — This workflow serves as the simplified visual quick-reference companion to the full authoritative SOP.
-- Related Workflows or other supporting documents (if applicable).
-
-**Note**: The companion Workflow is designed for rapid day-to-day use, while the parent SOP remains the detailed procedural authority.
+- **Parent SOP**: [`sops/parent-sop.md`] — The authoritative, detailed source document. This workflow serves as its simplified visual quick-reference companion.
+- Other related SOPs, workflows, or framework documents as applicable.
 
 ---
 
@@ -79,11 +77,9 @@ flowchart TD
 - Error handling and retry considerations
 - Notes on avoiding vendor-specific implementations
 
----
-
 ## Version History
 
 | Version | Date       | Changes                                                                 | Author          |
 |---------|------------|-------------------------------------------------------------------------|-----------------|
 | 1.0     | [Date]     | Initial version created                                                 | Shaine Meister  |
-| 2.0     | 2026-05-16 | Converted to v2 structure with Version History moved to bottom. Added Related Documents section after Visual Process Flow to mirror sop-template.md for consistent cross-referencing and companion relationship clarity. | Shaine Meister  |
+| 2.0     | 2026-05-16 | Converted to full v2 structure: Added YAML front matter, moved Version History to the very bottom with clear separator before Feedback Loop. Added ## Related Documents section after Visual Process Flow to mirror sop-template.md. | Shaine Meister  |
