@@ -4,7 +4,7 @@ short_title: "[Concise Name]"
 version: "2.0"
 status: "Draft"                    # Draft | In Review | Active | Deprecated
 owner: "Shaine Meister"
-last_updated: "2026-05-14"
+last_updated: "2026-05-15"
 category: "Front-End"              # Front-End | Provider | Back-End | Cross-Cutting
 matrix_position: "1.3"             # e.g., 1.1, 1.2, 1.3, 2.1, etc.
 related_sops:
@@ -21,7 +21,7 @@ tags:
 # [SOP Title]
 
 **Version**: 2.0  
-**Last Updated**: 2026-05-14  
+**Last Updated**: 2026-05-15  
 **Owner**: Shaine Meister  
 **Status**: Draft / In Review / Active
 
@@ -99,15 +99,15 @@ If a companion Workflow exists for this SOP, link to it here. The Workflow serve
 
 ## Version History
 
-| Version | Date       | Changes                     | Author          |
-|---------|------------|-----------------------------|-----------------|
-| 1.0     | [Date]     | Initial version created     | Shaine Meister  |
-| 2.0     | 2026-05-14 | Converted to v2 structure: Added YAML front matter and standalone Feedback Loop & Data Collection Framework section | Shaine Meister  |
+| Version | Date       | Changes                                                                 | Author          |
+|---------|------------|-------------------------------------------------------------------------|-----------------|
+| 1.0     | [Date]     | Initial version created                                                 | Shaine Meister  |
+| 2.0     | 2026-05-15 | Converted to v2 structure: Added YAML front matter and standalone Feedback Loop & Data Collection Framework section at the very bottom after Version History | Shaine Meister  |
 
 ## Feedback Loop & Data Collection Framework
 
 > **Purpose of This Section**  
-> This section is intentionally separated from operational steps. It serves as the standardized interface and data mapping layer for future autonomous Revenue Cycle Management systems, analytics platforms, RPA tools, and AI-driven decision engines. It enables clean integration without altering core clinical or administrative workflows.
+> This section is **intentionally separated** from all operational steps and content above (including Version History). It serves as the standardized interface and data mapping layer for future autonomous Revenue Cycle Management systems, analytics platforms, RPA tools, and AI-driven decision engines. It enables clean integration without altering core clinical or administrative workflows.
 
 ### Data Capture Points (Structured Fields)
 - Field 1: `field_name` (type, required/optional) — Description and business rule
