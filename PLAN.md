@@ -141,8 +141,8 @@ Every SOP includes a dedicated `## Feedback Loop & Data Collection Framework` se
 #### Templates (v2)
 | Template | Status | Notes |
 |----------|--------|-------|
-| sop-template.md | Needs Update | Add YAML + Feedback Loop section |
-| workflow-template.md | Needs Update | Add YAML + Feedback Loop section |
+| sop-template.md | Complete | Added YAML + Feedback Loop section |
+| workflow-template.md | Complete | Added YAML + Feedback Loop section |
 
 #### SOPs & Workflows (3×3 Matrix v2)
 **High Priority Model Pairs (Migration + Enhancement in progress)**
