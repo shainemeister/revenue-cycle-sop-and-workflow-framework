@@ -11,7 +11,7 @@ owner: "Shaine Meister"
 **Repository**: shainemeister/revenue-cycle-sop-and-workflow-framework  
 **Purpose**: Single source of truth for cross-session and multi-agent continuity. Records decisions, actions, state snapshots, and open todos related to agentic workflows on this repo.  
 
-> **Rule**: This file is **process metadata only**. It complements (does not replace) `plan.md` / future `PLAN.md`. All project planning content lives in the main plan document.
+> **Rule**: This file is **process metadata only**. It complements (does not replace) `PLAN.md`. All project planning content lives in the main plan document.
 
 ---
 
@@ -82,5 +82,52 @@ owner: "Shaine Meister"
 - [ ] Maintain single source of truth and low mental friction principles.
 
 **Status**: Ready to create feature branch and propose detailed new structure for user review before editing.
+
+---
+
+## Entry: 2026-05-16 ~15:50 PDT — Review Session & Direct Updates to PLAN.md + workflow-template.md
+
+**Agent**: Grok (github-agentic-orchestrator skill)  
+**Trigger**: User request: "Lets start with updating / refreshing `PLAN.md` to reflect the verified v2 completions and standardize Mermaid guidance in `workflow-template.md`. Apply changes directly to this repository and ignore the creation of a feature branch."
+
+### Verification Completed
+- Re-fetched current `PLAN.md` (SHA: 8f960b73e6a55e8714ef24d21ff42bdc62512d3d) and `workflow-template.md` (SHA: 186e75764ed4b6d4855ef121212e1f60ebd04779).
+- Confirmed via code search that all model SOPs (registration.md, visit-filing-order.md, demand-claim.md) and both templates contain the `## Feedback Loop & Data Collection Framework` section and v2 YAML elements.
+- feedback-loop-framework.md is present and complete.
+- No open PRs or issues.
+- User explicitly authorized direct changes to `main` (docs_only + user_explicit per branch_strategy config).
+
+### Decisions & Changes Applied (Direct to main)
+- **workflow-template.md**: Added comprehensive **Mermaid Styling Standards (v2)** subsection under Visual Process Flow. Includes direction preferences, node types, simplicity rules, theming guidance, best practices, and a standardized example flowchart. Updated version history to credit orchestrator assistance.
+- **PLAN.md**: Refreshed status tables to reflect verified v2 completions:
+  - Templates: Marked both as "Complete (v2)" with notes on YAML + Feedback section presence.
+  - Framework: Updated feedback-loop-framework.md to "Complete".
+  - SOPs & Workflows model pairs: Updated notes to indicate v2 migration complete (YAML + Feedback sections); retained enhancement priorities.
+  - Phase 3 steps and Next Priorities/Backlog lightly updated to note progress on template standardization and migrations.
+  - Added new version history entry for this orchestrator-assisted refresh.
+  - Minor updates to last_updated and Executive Summary for accuracy.
+- Changes applied directly to `main` as requested (low-risk docs updates).
+- Appended this detailed entry to state log for full audit trail.
+
+### Rationale & Alignment
+- Directly addresses review findings and user priorities.
+- Maintains single source of truth in PLAN.md.
+- Standardizes visuals for future scalability and consistency (aligns with optimization principles and Phase 3 focus on "Standardized Mermaid visualizations").
+- No feature branch created per explicit user instruction.
+
+### Current State Snapshot (Post-Update)
+- `main` updated with new commits for the two files.
+- PLAN.md now accurately reflects verified v2 status.
+- workflow-template.md now provides clear, actionable Mermaid guidance for all future workflows.
+- Orchestrator state log extended with this session.
+
+### Open Todos / Next Recommendations
+- [ ] Enhance model SOP content (examples, exceptions, pitfalls) — priority #1.
+- [ ] Apply standardized Mermaid styling to existing model workflows (registration-workflow.md, etc.).
+- [ ] Create Contract Intelligence model pair.
+- [ ] Refresh any cross-references if needed (README, structure guide).
+- Continue using orchestrator for next implementation steps.
+
+**Status**: Direct updates completed successfully. Framework is now more accurate and consistent. Ready for next phase of work or user confirmation on further actions.
 
 ---
