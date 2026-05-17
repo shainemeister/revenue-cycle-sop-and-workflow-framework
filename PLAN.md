@@ -1,12 +1,12 @@
 ---
 title: "Revenue Cycle SOP & Workflow Framework - Master Plan"
 short_title: "PLAN"
-version: "2.1"
+version: "2.2"
 last_updated: "2026-05-16"
 owner: "Shaine Meister"
 status: "Active"
 current_phase: 3
-phase_focus: "Structure Enhancement & Feedback Layer Rollout (v2) - Hybrid Numerical + YAML Restructure"
+phase_focus: "Structure Enhancement & Feedback Layer Rollout (v2) - Content Deepening & Contract Intelligence"
 tags:
   - planning
   - roadmap
@@ -18,17 +18,19 @@ tags:
 
 # Revenue Cycle SOP & Workflow Framework - Master Plan
 
-**Version**: 2.1 (Hybrid YAML + Markdown)  
+**Version**: 2.2 (Hybrid YAML + Markdown)  
 **Last Updated**: 2026-05-16  
 **Owner**: Shaine Meister
 
 > This is the single authoritative master plan. It uses a **hybrid structure**: YAML blocks provide structured, ordered, machine- and agent-friendly data (phases with order_of_operations, matrix, backlog). Markdown provides narrative context, formatting, and self-maintenance templates. All target dates and timelines have been removed to minimize friction during agentic workflows.
 
+**Active Development Branch**: `phase-3-enhancements` (created for executing Phase 3 backlog items 1, 2, and 3).
+
 ---
 
 ## Executive Summary & Guiding Principles
 
-**Overall Status**: In Development. Foundational framework complete. Three model pairs (Registration, Visit Filing Order, Demand Claim) developed and migrated to v2. **Phase 3 (v2) active** — focused on Feedback Layer rollout, standardized visualizations, and content deepening.
+**Overall Status**: In Development. Foundational framework complete. Three model pairs (Registration, Visit Filing Order, Demand Claim) developed and migrated to v2. **Phase 3 (v2) active** — Content deepening (registration.md enhanced), Mermaid standardization in progress, and Contract Intelligence model pair under development on feature branch.
 
 This document serves as the single source of truth for planning, status, priorities, and clear order of operations for the Revenue Cycle SOP & Workflow Framework. It is designed to be highly instructive, numerically ordered, and suitable for both human contributors and agentic/Copilot-assisted workflows.
 
@@ -117,7 +119,7 @@ phases:
         references: ["framework/feedback-loop-framework.md"]
       - step: "3.5"
         action: "Enhance model SOP content depth: add real-world examples, exception handling tables, and common pitfalls callouts (priority #1)"
-        status: "Planned"
+        status: "In Progress"
         priority: "High"
         references: ["sops/registration.md"]
       - step: "3.6"
@@ -127,7 +129,7 @@ phases:
         references: ["workflows/registration-workflow.md", "workflows/visit-filing-order-workflow.md", "workflows/demand-claim-workflow.md"]
       - step: "3.7"
         action: "Create Contract Intelligence model pair (feedback-loop-contract-intelligence.md + companion workflow) — critical for self-improving matrix"
-        status: "Planned"
+        status: "In Progress"
         priority: "Critical"
         references: ["framework/feedback-loop-framework.md"]
     key_deliverables:
@@ -145,6 +147,7 @@ phases:
 - Phases are strictly ordered (1 → 2 → 3 → 4).
 - Within active phases, numbered steps (3.1, 3.2...) provide clear sequence for execution.
 - Status and priority fields enable easy filtering for agents or humans.
+- Work is being executed on feature branch `phase-3-enhancements`.
 
 ## 3×3 Revenue Cycle Matrix v2 Vision
 
@@ -181,7 +184,7 @@ matrix:
       references: []
     - position: "1.3"
       item: "Registration"
-      status: "Complete (v2)"
+      status: "Complete (v2) — Enhanced v2.1"
       priority: "High"
       sop_file: "sops/registration.md"
       workflow_file: "workflows/registration-workflow.md"
@@ -210,10 +213,10 @@ matrix:
       references: []
     - position: "2.0"
       item: "Contract Intelligence (Cross-Cutting)"
-      status: "Planned"
+      status: "In Progress"
       priority: "Critical"
-      sop_file: "feedback-loop-contract-intelligence.md (planned)"
-      workflow_file: "feedback-loop-contract-intelligence-workflow.md (planned)"
+      sop_file: "feedback-loop-contract-intelligence.md (in development)"
+      workflow_file: "feedback-loop-contract-intelligence-workflow.md (in development)"
       references: ["framework/feedback-loop-framework.md"]
   back_end:
     - position: "3.1"
@@ -280,25 +283,25 @@ templates_v2:
 
 sops:
   - name: "registration.md"
-    status: "Complete (v2)"
+    status: "Enhanced (v2.1)"
     priority: "High"
     category: "Front-End"
     matrix_position: "1.3"
-    notes: "Model pair — v2 migrated. Next: enhance with examples, exception tables, pitfalls (priority #1)"
+    notes: "Model pair — v2 migrated + v2.1 content enhancement complete (real-world examples, exception table, pitfalls). On phase-3-enhancements branch."
     references: ["workflows/registration-workflow.md", "framework/feedback-loop-framework.md"]
   - name: "visit-filing-order.md"
     status: "Complete (v2)"
     priority: "High"
     category: "Front-End"
     matrix_position: "1.3 (related)"
-    notes: "Model pair — v2 migrated"
+    notes: "Model pair — v2 migrated. Pending Mermaid standardization."
     references: ["workflows/visit-filing-order-workflow.md"]
   - name: "demand-claim.md"
     status: "Complete (v2)"
     priority: "High"
     category: "Front-End / Demand"
     matrix_position: "N/A (model)"
-    notes: "Model pair — v2 migrated"
+    notes: "Model pair — v2 migrated. Pending Mermaid standardization."
     references: ["workflows/demand-claim-workflow.md"]
   # Additional planned SOPs follow the same structure when created
 
@@ -308,21 +311,21 @@ workflows:
     priority: "High"
     category: "Front-End"
     matrix_position: "1.3"
-    notes: "Model pair — next: apply standardized Mermaid styling (priority #2)"
+    notes: "Model pair — v2 migrated. Pending standardized Mermaid styling (priority #2)."
     references: ["sops/registration.md"]
   - name: "visit-filing-order-workflow.md"
     status: "Complete (v2)"
     priority: "High"
     category: "Front-End"
     matrix_position: "1.3 (related)"
-    notes: "Model pair — v2 migrated"
+    notes: "Model pair — v2 migrated. Pending standardized Mermaid styling."
     references: ["sops/visit-filing-order.md"]
   - name: "demand-claim-workflow.md"
     status: "Complete (v2)"
     priority: "High"
     category: "Front-End / Demand"
     matrix_position: "N/A (model)"
-    notes: "Model pair — v2 migrated"
+    notes: "Model pair — v2 migrated. Pending standardized Mermaid styling."
     references: ["sops/demand-claim.md"]
   # Additional planned workflows follow the same structure
 ```
@@ -333,7 +336,7 @@ workflows:
 backlog:
   - id: 1
     title: "Enhance model SOP content depth with real-world examples, exception tables, and common pitfalls"
-    status: "Planned"
+    status: "In Progress / Complete on feature branch"
     priority: "High"
     category: "Content Enhancement"
     description: "Add concrete real-world examples, exception handling tables, and 'common pitfalls' callouts to model SOPs (starting with registration.md)."
@@ -347,7 +350,7 @@ backlog:
     references:
       - "sops/registration.md"
       - "PLAN.md (backlog section)"
-    next_action: "Begin enhancement on registration.md as the highest-leverage first step"
+    next_action: "Complete enhancement and merge to main. Then proceed to Mermaid standardization."
 
   - id: 2
     title: "Apply standardized Mermaid styling to model workflows"
@@ -365,11 +368,11 @@ backlog:
     references:
       - "workflows/registration-workflow.md"
       - "templates/workflow-template.md"
-    next_action: "Apply to registration-workflow.md and other models"
+    next_action: "Apply to registration-workflow.md and other models after SOP enhancement."
 
   - id: 3
     title: "Create Contract Intelligence model pair"
-    status: "Planned"
+    status: "In Progress on feature branch"
     priority: "Critical"
     category: "Feedback Layer Completion"
     description: "Develop feedback-loop-contract-intelligence.md (SOP) + companion workflow. Leverage the new feedback-loop-framework.md."
@@ -382,7 +385,7 @@ backlog:
       - "Update PLAN.md and matrix YAML"
     references:
       - "framework/feedback-loop-framework.md"
-    next_action: "Create the pair after model content enhancements begin"
+    next_action: "Finalize pair and update matrix/PLAN.md."
 
   - id: 4
     title: "Create tactical adoption resources (Pilot Checklist + Adoption Guide)"
@@ -455,7 +458,8 @@ Lightweight, actionable measurement:
 | 1.7 | Major expansion: full 3×3 Matrix v2 vision, Feedback Loop Orchestration Layer, Closed-Loop Handoff Protocol, Contract Intelligence Module, detailed tables | Shaine Meister |
 | 1.8 | Integrated 5 recommended enhancements from repo review into plan | Shaine Meister |
 | 2.0 | Refactored with v2 YAML front matter and improved chronological structure while preserving full original context and detail | Shaine Meister |
-| **2.1** | Hybrid YAML + Markdown restructure: numerical ordering, explicit order_of_operations in YAML blocks, date-free design, self-maintenance templates, preserved all substantive content and references | Shaine Meister |
+| 2.1 | Hybrid YAML + Markdown restructure: numerical ordering, explicit order_of_operations in YAML blocks, date-free design, self-maintenance templates, preserved all substantive content and references | Shaine Meister |
+| **2.2** | Updated on phase-3-enhancements branch: Marked 3.5 In Progress / enhanced registration.md v2.1; 3.7 In Progress for Contract Intelligence pair; updated matrix, sops/workflows YAML, backlog statuses, and added branch note. | Shaine Meister |
 
 ---
 
