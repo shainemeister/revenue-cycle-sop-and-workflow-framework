@@ -40,11 +40,11 @@ This workflow provides a high-level visual flow for ingesting operational data f
 
 ```mermaid
 flowchart TD
-    Start[Operational Data from Feedback Loops<br/>(Registration, Provider, Back-End SOPs)] --> Ingest[Ingest & Validate Structured Data
-(JSON schema aligned)]
+    Start["Operational Data from Feedback Loops<br/>(Registration, Provider, Back-End SOPs)"] --> Ingest["Ingest & Validate Structured Data
+(JSON schema aligned)"]
     
-    Ingest --> Pattern[Identify High-Impact Patterns
-(Payer, CARC/RARC, Root Cause, $ Impact)]
+    Ingest --> Pattern["Identify High-Impact Patterns
+(Payer, CARC/RARC, Root Cause, $ Impact)"]
     
     Pattern --> Map[Map Patterns to Contract Terms
 & Quantify Variance/Opportunity]
@@ -57,8 +57,8 @@ flowchart TD
     Report --> Handoff[ Handoff to Contract/Legal
 + Feedback to Operational SOPs]
     
-    Handoff --> Outcome[Track Outcomes
-(Payment improvement, Amendment success)]
+    Handoff --> Outcome["Track Outcomes
+(Payment improvement, Amendment success)"]
     
     Outcome --> Loop[Close Loop: Update Feedback Capture
 & Refine Patterns]
